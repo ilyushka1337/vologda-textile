@@ -1,0 +1,41 @@
+.content-file-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+
+    .icon {
+        font-size: 2.5em;
+        flex: 0 0 auto;
+    }
+
+    .name {
+        flex: 1 1 50%;
+        @include h3;
+    }
+
+    .meta {
+        @include p2;
+        flex: 0 0 17%;
+        padding-right: clampFluid(30);
+        margin-left: clampFluid(30);
+        transition: color .4s;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: clampFluid(30);
+    }
+}
+
+@media (max-width: 575px) {
+    .content-file-row {
+        .meta {
+            flex: 1 1 auto;
+        }
+
+        .name {
+            margin-top: 8px;
+            flex: 0 0 100%;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.offcanvas {
+    height: 100%;
+    padding: clampFluid(40);
+
+    &__close {
+        position: absolute;
+    }
+
+    &--md {
+        width: 30%;
+    }
+
+    &--right {
+        margin-left: auto;
+        background: #fff;
+    }
+}

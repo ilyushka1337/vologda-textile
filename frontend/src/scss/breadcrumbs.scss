@@ -1,0 +1,15 @@
+.breadcrumbs {
+    ul {
+        color: $dark-gray;
+
+        li {
+            display: inline;
+
+            &:not(:first-child){
+                >span::before{
+                    content: '-';
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+{
+	"title": "Текст",
+	"sort": "20",
+	"js": ["/local/libs/ckeditor/build/ckeditor.js"]
+}

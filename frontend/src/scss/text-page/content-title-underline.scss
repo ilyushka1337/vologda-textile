@@ -1,0 +1,7 @@
+.content-title-underline {
+    margin: 1.2em 0 .5em;
+    text-transform: uppercase;
+    @include h2;
+    padding-bottom: clampFluid(4);
+    border-bottom: 2px solid $brown-03;
+}

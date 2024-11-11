@@ -1,0 +1,39 @@
+.submit-btn {
+    display: inline-flex;
+    position: relative;
+
+    &.loading,
+    &.htmx-request {
+        .loader-icon {
+            opacity: 1;
+        }
+    }
+
+    &.success {
+        .check-icon {
+            opacity: 1;
+        }
+    }
+
+    &:disabled,
+    &.loading,
+    &.htmx-request,
+    &.success {
+        color: transparent !important;
+        transition-duration: 0ms;
+        pointer-events: none;
+    }
+
+    .check-icon,
+    .loader-icon {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        color: var(--text-color);
+        font-size: 1.8em;
+    }
+}

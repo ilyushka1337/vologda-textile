@@ -1,0 +1,48 @@
+@import "@/scss/base/base.scss";
+
+.select {
+    position: relative;
+
+    &__value {
+        padding: clampFluid(7) clampFluid(12);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clampFluid(20);
+        border: 1px solid $gray-stroke;
+        background: $white;
+        @include p2;
+    }
+
+    &__arrow {
+        font-size: .8em;
+        transition: transform .4s;
+
+        &--rotate {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        z-index: 5;
+        padding: clampFluid(7) clampFluid(12);
+        border: 1px solid $gray-stroke;
+        background: $white;
+
+        &[x-cloak] {
+            display: none;
+        }
+    }
+
+    &__option {
+        display: flex;
+        width: 100%;
+        padding: clampFluid(5);
+        @include p2;
+        border-radius: clampFluid(4);
+    }
+}

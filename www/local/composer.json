@@ -1,0 +1,43 @@
+{
+    "name": "placestart/vologda-textile.ru",
+    "type": "project",
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "../bitrix/modules/{$name}/": [
+                "type:bitrix-module",
+                "type:bitrix-d7-module"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Placestart\\": "lib"
+        },
+        "files": [
+            "lib/functions.php"
+        ]
+    },
+    "require": {
+        "php": ">=8.2",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "psr/log": "^3.0",
+        "psr/http-message": "^2.0",
+        "psr/http-client": "^1.0",
+        "psr/container": "^2.0",
+        "php-http/promise": "^1.1",
+        "league/plates": "^3.5",
+        "symfony/console": "^6.4",
+        "andreyryabin/sprint.migration": "^4.15",
+        "andreyryabin/sprint.editor": "^4.18",
+        "andreyryabin/sprint.options": "^2.5",
+        "symfony/var-dumper": "^6.4",
+        "respect/validation": "^2.3",
+        "giggsey/libphonenumber-for-php-lite": "^8.13"
+    }
+}

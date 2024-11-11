@@ -1,0 +1,91 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    border: 1px solid var(--border-color);
+    border-radius: clampFluid(4);
+    background: var(--bg-color);
+    cursor: pointer;
+
+    &--sm {
+        padding: clampFluid(16) clampFluid(19);
+        @include p2-bold;
+
+        @media (max-width: 1279px) {
+            padding: 16px 20px;
+        }
+    }
+
+    &--md {
+        padding: clampFluid(20) clampFluid(30);
+        @include p1-bold;
+
+        @media (max-width: 1279px) {
+            padding: 20px 30px;
+            font-size: 20px;
+        }
+    }
+
+    &--solid-brown {
+        --text-color: #{$white};
+        --bg-color: #{$brown-02};
+        --border-color: #{$brown-02};
+
+        &:hover {
+            --text-color: #{$brown-03};
+            --bg-color: transparent;
+            --border-color: #{$brown-03};
+        }
+    }
+
+    &--solid-brown2 {
+        --text-color: #{$white};
+        --bg-color: #{$brown-02};
+        --border-color: #{$brown-02};
+
+        &:hover {
+            --text-color: #{$white};
+            --bg-color: transparent;
+            --border-color: #{$white};
+        }
+    }
+
+    &--outline-light-brown {
+        --text-color: #{$brown-03};
+        --bg-color: transparent;
+        --border-color: #{$brown-03};
+
+        &:hover {
+            --text-color: #{$white};
+            --bg-color: #{$brown-02};
+            --border-color: #{$brown-02};
+        }
+    }
+
+    &--outline-gray {
+        --text-color: #{$gray};
+        --bg-color: transparent;
+        --border-color: #{$gray};
+
+        &:hover {
+            --text-color: #{$white};
+            --bg-color: #{$brown-02};
+            --border-color: #{$brown-02};
+        }
+    }
+
+    &:not(:disabled) {
+        transition-duration: .4s;
+        transition-property: border-color, background-color, color;
+    }
+
+    &:disabled {
+        pointer-events: none;
+        transition-duration: 0ms;
+    }
+}

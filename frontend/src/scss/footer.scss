@@ -1,0 +1,26 @@
+.footer {
+    .top {
+        padding: clampFluid(36) 0 0;
+        margin-bottom: clampFluid(110);
+        border-top: 1px solid rgba($color: $black, $alpha: .2);
+        border-radius: clampFluid(50);
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contacts {
+            display: flex;
+            align-items: center;
+            gap: clampFluid(178);
+        }
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 clampFluid(21);
+        color: rgba($color: $black, $alpha: .8);
+    }
+}

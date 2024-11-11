@@ -1,0 +1,17 @@
+.idea
+.fleet
+logs
+.env
+/www/bitrix
+/www/upload
+/www/local/vendor
+
+# Editor directories and files
+.vscode/*
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,33 @@
+.feedback-section {
+    position: relative;
+    padding: clampFluid(84) 0 clampFluid(100);
+    margin-top: clampFluid(180);
+
+    .title {
+        text-transform: uppercase;
+        color: $white;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clampFluid(40);
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 1279px) {
+        padding: 50px 0 60px;
+        margin-top: 60px;
+    }
+
+    @media (max-width: 767px) {
+        .grid {
+            grid-template-columns: 100%;
+            gap: 20px;
+        }
+    }
+}

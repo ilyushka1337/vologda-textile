@@ -1,0 +1,71 @@
+@import "@/scss/base/base.scss";
+
+.alert {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: clampFluid(40);
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: clampFluid(10);
+    padding: clampFluid(20);
+    background: var(--bg-color);
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: clampFluid(10);
+        padding: clampFluid(20);
+    }
+
+    &__close {
+        display: flex;
+        color: var(--close-color);
+    }
+
+    &__title {
+        @include h2;
+        text-transform: uppercase;
+        color: var(--title-color);
+    }
+
+    &__text {
+        @include h3;
+        text-transform: uppercase;
+        color: var(--text-color);
+    }
+
+    &--bottom-right {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 10;
+    }
+
+    &--success {
+        --close-color: #{$brown-02};
+        --bg-color: #{$beige-bg};
+        --text-color: #{$black-txt};
+        --title-color: #{$black};
+    }
+
+    @media (max-width: 1279px) {
+        padding: 10px;
+        gap: 10px;
+
+        &__body {
+            padding: 10px;
+        }
+
+        &--bottom-right {
+            right: 10px;
+            bottom: 10px;
+        }
+    }
+
+    @media (max-width: 374px) {
+        &--bottom-right {
+            left: 10px;
+        }
+    }
+}

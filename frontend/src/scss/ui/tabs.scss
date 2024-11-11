@@ -1,0 +1,22 @@
+.tabs {
+    display: flex;
+    justify-content: center;
+
+    &__row {
+        display: inline-flex;
+        padding: clampFluid(5) clampFluid(10);
+        gap: clampFluid(20);
+        background: #F9F9F9;
+        border-radius: clampFluid(5);
+    }
+
+    &__tab {
+        padding: clampFluid(5) clampFluid(10);
+        border-radius: clampFluid(5);
+
+        &--active {
+            background: $blue;
+            color: #fff;
+        }
+    }
+}

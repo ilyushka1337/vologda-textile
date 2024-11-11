@@ -1,0 +1,30 @@
+#!/usr/bin/php
+<?php
+use Symfony\Component\Console\Application;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+
+
+$app = new Application();
+
+$isBitrixInstalled = file_exists(realpath('../bitrix/modules/main/cli/bootstrap.php'));
+if ($isBitrixInstalled) {
+    // Регистрация команд из установленных модулей
+    require_once realpath('../bitrix/modules/main/cli/bootstrap.php');
+    $modules = \Bitrix\Main\ModuleManager::getInstalledModules();
+    foreach ($modules as $moduleId => $_) {
+        $config = \Bitrix\Main\Config\Configuration::getInstance($moduleId)->get('console');
+        if (isset($config['commands']) && is_array($config['commands'])) {
+            if (\Bitrix\Main\Loader::includeModule($moduleId)) {
+                foreach ($config['commands'] as $commandClass) {
+                    if (is_a($commandClass, \Symfony\Component\Console\Command\Command::class, true)) {
+                        $app->add(new $commandClass());
+                    }
+                }
+            }
+        }
+    }
+}
+
+$app->run();

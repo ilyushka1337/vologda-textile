@@ -1,0 +1,41 @@
+.seo-section {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clampFluid(40);
+    }
+
+    .img {
+        width: 91.5%;
+        border-radius: clampFluid(4);
+    }
+
+    @media (max-width: 1279px) {
+        .grid {
+            gap: 30px;
+        }
+
+        .img {
+            width: 100%;
+            border-radius: 4px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .grid {
+            gap: 20px;
+            grid-template-columns: 100%;
+        }
+
+        .img {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .img {
+            width: 100%;
+        }
+    }
+}

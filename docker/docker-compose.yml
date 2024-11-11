@@ -1,0 +1,118 @@
+services:
+    php:
+        build: ./php
+        container_name: php
+        depends_on:
+            - source
+        volumes_from:
+            - source
+        links:
+            - db
+        environment:
+            TZ: Europe/Moscow
+            PROJECT_ENV: ${PROJECT_ENV}
+        stdin_open: true
+        tty: true
+        networks:
+            - bitrixdock
+        restart: unless-stopped
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+
+    web_server:
+        hostname: ${HOSTNAME}
+        build: ./nginx
+        container_name: web_server
+        depends_on:
+            - source
+        volumes_from:
+            - source
+        ports:
+            - '${INTERFACE}:80:80'
+            - '${INTERFACE}:443:443'
+        links:
+            - php
+        networks:
+            - bitrixdock
+        environment:
+            TZ: Europe/Moscow
+        stdin_open: true
+        tty: true
+        restart: unless-stopped
+
+    db:
+        build: ./mysql
+        container_name: db
+        volumes:
+            - ./mysql/init:/docker-entrypoint-initdb.d
+        volumes_from:
+            - source
+        ports:
+            - '${INTERFACE}:3306:3306'
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            TZ: Europe/Moscow
+        command: mysqld --user=root --sql-mode=""
+        networks:
+            - bitrixdock
+        stdin_open: true
+        tty: true
+        restart: unless-stopped
+
+    adminer:
+        image: dockette/adminer:full
+        container_name: adminer
+        links:
+            - db:db
+        ports:
+            - '${INTERFACE}:8080:80'
+        environment:
+            UPLOAD: 1024M # upload_max_filesize, post_max_size
+            TZ: Europe/Moscow
+        restart: unless-stopped
+        stdin_open: true
+        tty: true
+        networks:
+            - bitrixdock
+
+    smtp:
+        image: axllent/mailpit
+        restart: unless-stopped
+        hostname: ${HOSTNAME}
+        depends_on:
+            - source
+        volumes_from:
+            - source
+        ports:
+            - 8025:8025
+            - 1025:1025
+        networks:
+            - bitrixdock
+        environment:
+            MP_MAX_MESSAGES: 5000
+            MP_SMTP_AUTH_ACCEPT_ANY: 1
+            MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
+    source:
+        image: alpine:latest
+        container_name: source
+        volumes:
+            - ./logs/nginx:/var/log/nginx
+            - ./logs/php:/var/log/php
+            - ./logs/mail:/var/log/mail
+            - ./logs/db:/var/log/mysql
+            - db:/var/lib/mysql
+            - ../www:/var/www/bitrix
+            - /etc/localtime:/etc/localtime/:ro
+        networks:
+            - bitrixdock
+
+volumes:
+    db:
+        driver: local
+
+networks:
+    bitrixdock:

@@ -1,0 +1,30 @@
+{
+    "name": "frontend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "./bin/dev.js",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "sass": "1.77.6",
+        "vite": "^5.4.2"
+    },
+    "dependencies": {
+        "@alpinejs/collapse": "^3.14.1",
+        "@alpinejs/intersect": "^3.14.1",
+        "@alpinejs/mask": "^3.14.1",
+        "@fancyapps/ui": "^5.0.36",
+        "alpinejs": "^3.14.1",
+        "htmx.org": "^1.9.12",
+        "ky": "^1.7.1",
+        "swiper": "^11.1.10"
+    },
+    "browserslist": "> 0.9%, last 4 versions, iOS 14, not dead"
+}

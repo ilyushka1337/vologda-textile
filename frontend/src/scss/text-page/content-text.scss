@@ -1,0 +1,118 @@
+.content-text {
+    h1 {
+        @include h1;
+        margin: .5em 0;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        @include h2;
+    }
+
+    h3 {
+        @include h3;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 1.2em 0 .5em;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin-bottom: .8em;
+    }
+
+    p,
+    li {
+        @include p1;
+    }
+
+    a {
+        color: $blue;
+        text-decoration: none;
+        color: $brown-03;
+        border-bottom: 1px solid currentColor;
+
+        &:visited {
+            border-color: transparent;
+        }
+
+        &:hover {
+            font-weight: 700;
+            border-color: transparent;
+        }
+    }
+
+    img {
+        display: block;
+        margin: r(60) auto;
+        max-width: 100%;
+        width: auto !important;
+        height: auto !important;
+        border-radius: var(--img-border-radius);
+    }
+
+    ul,
+    ol {
+        margin: 1em 0;
+    }
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: .5em;
+        }
+    }
+
+    ul {
+        padding-left: clampFluid(30);
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal inside;
+    }
+
+    .table {
+        overflow: auto;
+        border-radius: 0 clampFluid(50) 0 0;
+    }
+
+    table {
+        min-width: 100%;
+        border: 0;
+        border-spacing: 0;
+        border-collapse: collapse;
+        overflow: hidden;
+
+        th {
+            @include h3;
+            color: $white;
+            text-align: left;
+            text-transform: uppercase;
+            background: $brown-02;
+            border: 1px solid $black-txt;
+        }
+
+        td {
+            @include p1;
+            border: 1px solid $gray-stroke;
+        }
+
+        td,
+        th {
+            padding: clampFluid(20) clampFluid(30);
+        }
+    }
+
+    > :first-child {
+        margin-top: 0 !important;
+    }
+
+    > :last-child {
+        margin-bottom: 0 !important;
+    }
+}

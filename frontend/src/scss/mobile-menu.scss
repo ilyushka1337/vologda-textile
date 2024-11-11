@@ -1,0 +1,43 @@
+.mobile-menu {
+    .mobile-catalog-menu {
+        .parent {
+            >.link {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .submenu {
+            display: grid;
+            grid-template-columns: 100%;
+            gap: 8px;
+            padding: 10px 0 0 10px;
+        }
+    }
+
+    .tel,
+    .second-menu {
+        color: $dark-gray;
+    }
+
+    .second-menu {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 8px;
+        margin-top: auto;
+
+        .submenu {
+            display: grid;
+            grid-template-columns: 100%;
+            gap: 8px;
+            padding: 10px 0 0 10px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: clampFluid(26);
+        padding-bottom: 80px !important;
+    }
+}

@@ -1,0 +1,31 @@
+@import "@/scss/base/base.scss";
+
+.count-input {
+    display: flex;
+    width: clampFluid(70);
+    height: clampFluid(40);
+    border: 1px solid $blue;
+    border-radius: clampFluid(4);
+
+    .count {
+        flex: 0 0 50%;
+        @include p1;
+        text-align: center;
+        border: 0;
+    }
+
+    .count,
+    .minus,
+    .plus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .minus,
+    .plus {
+        flex: 0 0 25%;
+        @include p3;
+        color: $blue;
+    }
+}
