@@ -1,0 +1,42 @@
+.section-block {
+    position: relative;
+    aspect-ratio: 450/600;
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__logo {
+        position: absolute;
+        top: clampFluid(19);
+        left: clampFluid(19);
+        width: clampFluid(112);
+        aspect-ratio: 1/1;
+    }
+
+    &__overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: .5);
+        opacity: 0;
+
+        &-logo {
+            width: clampFluid(324);
+            aspect-ratio: 324/104;
+            object-fit: scale-down;
+        }
+
+        &:hover {
+            transform: translate(-10px, 10px);
+            opacity: 1;
+        }
+    }
+}

@@ -1,16 +1,29 @@
 .container {
     margin-left: auto;
     margin-right: auto;
-    max-width: clampFluid(1760);
+    max-width: clampFluid(1720);
 
     @media (min-width: 1920px) {
-        max-width: 1760px;
+        max-width: 1720px;
     }
 
     @media (max-width: 1279px) {
         max-width: 100%;
-        padding: 0 20px;
+        padding: 0 15px;
     }
+
+    &-fluid {
+        max-width: clampFluid(1860);
+
+        @media (min-width: 1920px) {
+            max-width: 1860px;
+        }
+    }
+}
+
+.center-content {
+    margin: 0 auto;
+    max-width: clampFluid(1258);
 }
 
 

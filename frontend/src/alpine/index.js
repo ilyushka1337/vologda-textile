@@ -21,4 +21,11 @@ Alpine.data("PhoneInputMask", PhoneInputMask)
 import Accordion from "../components/Accordion";
 Alpine.data("Accordion", Accordion)
 
+import MainSlider from "./MainSlider"
+Alpine.data("MainSlider", MainSlider)
+
+Alpine.store('catalogMenu', {
+    isOpen: false
+})
+
 Alpine.start();

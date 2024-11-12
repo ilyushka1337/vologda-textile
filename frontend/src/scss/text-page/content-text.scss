@@ -32,10 +32,8 @@
     }
 
     a {
-        color: $blue;
         text-decoration: none;
-        color: $brown-03;
-        border-bottom: 1px solid currentColor;
+        border-bottom: 1px solid $red;
 
         &:visited {
             border-color: transparent;
@@ -93,13 +91,10 @@
             color: $white;
             text-align: left;
             text-transform: uppercase;
-            background: $brown-02;
-            border: 1px solid $black-txt;
         }
 
         td {
             @include p1;
-            border: 1px solid $gray-stroke;
         }
 
         td,

@@ -1,0 +1,63 @@
+.main-directions {
+    overflow: hidden;
+
+    .fullhd-container {
+        padding: 0 0 clampFluid(180);
+        position: relative;
+    }
+
+    .title {
+        width: 75%;
+        margin-bottom: clampFluid(69);
+        @include h1;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 15% clampFluid(1258);
+        gap: clampFluid(20);
+        align-items: flex-start;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clampFluid(30);
+    }
+
+    .direction-block {
+        display: flex;
+        flex-direction: column;
+        padding: clampFluid(18) clampFluid(30) clampFluid(24);
+        position: relative;
+        border: 1px solid rgba($color: $black, $alpha: .2);
+
+        .img {
+            width: clampFluid(266);
+            margin: clampFluid(57) 0 clampFluid(67);
+            align-self: center;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .name {
+            @include h2;
+        }
+
+        .text {
+            margin-top: auto;
+            @include p1;
+        }
+
+        &:hover {
+            background: $bg;
+        }
+    }
+
+    .decor {
+        position: absolute;
+        bottom: 0;
+        right: -27%;
+    }
+}

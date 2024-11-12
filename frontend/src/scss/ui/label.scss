@@ -1,0 +1,12 @@
+.label {
+    display: inline-flex;
+    padding: clampFluid(6) clampFluid(14) clampFluid(8);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+
+    &--gray {
+        opacity: 0.5;
+        --border-color: #{rgba(#A1A7B5, .5)};
+        --text-color: #{rgba($black, .8)};
+    }
+}

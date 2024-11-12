@@ -5,6 +5,7 @@ logs
 /www/bitrix
 /www/upload
 /www/local/vendor
+/www/local/assets/dist
 
 # Editor directories and files
 .vscode/*

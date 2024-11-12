@@ -1,0 +1,24 @@
+.search-form {
+    position: relative;
+
+    .input {
+        width: 100%;
+        height: clampFluid(32);
+        padding: 0 clampFluid(30) 0 0;
+        font-size: clampFluid(16);
+        border: 0;
+        border-bottom: 1px solid rgba($color: #505665, $alpha: .3)
+    }
+
+    .search-btn {
+        display: flex;
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        font-size: clampFluid(24);
+    }
+}

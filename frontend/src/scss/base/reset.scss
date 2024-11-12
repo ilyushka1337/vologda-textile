@@ -18,19 +18,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $blue !important
+    background-color: $red !important
 }
 
 html {
-    scrollbar-color: $blue;
+    scrollbar-color: $red;
 }
 
 body {
-    font-family: 'Random Grotesque Standart', sans-serif;
+    font-family: 'Montserrat Variable', sans-serif;
     color: $black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    --link-hover-color: #{$blue};
+    --link-hover-color: #{$red};
     background: $white;
 }
 

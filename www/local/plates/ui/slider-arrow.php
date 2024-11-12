@@ -1,12 +1,12 @@
 <?php
 /**
  * @var League\Plates\Template\Template $this
+ * @var string $direction
  * @var string $style
  * @var string $attrs
- * @var bool $isPrev
  */
 ?>
 
-<button class="slider-arrow <?= $isPrev ? 'slider-arrow--prev' : '' ?> <?= $style ?>" <?= $attrs ?>>
-    <span class="icon arrow-right-icon"></span>
+<button class="slider-arrow slider-arrow--<?= $direction ?> <?= $style ?>" x-ref="<?= $direction ?>">
+    <span class="icon chevron-right-icon"></span>
 </button>

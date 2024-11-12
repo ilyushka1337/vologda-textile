@@ -2,9 +2,10 @@
 
 $tr-time: 0.4s;
 
-$black: #292A34;
-$white: #FCFDFF;
-$blue: #3177CE;
+$black: #434345;
+$white: #fff;
+$red: #BE0F34;
+$bg: #F2F2F2;
 
 
 @function calcFluid($f-min, $f-max, $v-min: 320px, $v-max: 1279px) {
@@ -79,43 +80,37 @@ $blue: #3177CE;
 }
 
 @mixin h1 {
-    font-size: clampFluid(120);
-    font-weight: 500;
-    line-height: .9;
+    font-size: clampFluid(48);
+    line-height: 1.25;
+    font-weight: 600;
 }
 
 @mixin h2 {
-    font-size: clampFluid(65);
-    font-weight: 500;
-    line-height: 1;
+    font-size: clampFluid(28);
+    line-height: 1.25;
+    font-weight: 600;
 }
 
 @mixin h3 {
-    font-size: clampFluid(32);
-    font-weight: 500;
-    line-height: 1;
+    font-size: clampFluid(28);
+    line-height: 1.25;
+    font-weight: 600;
 }
 
 @mixin p1 {
-    font-size: clampFluid(24);
-    font-weight: 500;
+    font-size: clampFluid(18);
     line-height: 1.3;
+    font-weight: 400;
 }
 
 @mixin p2 {
-    font-size: clampFluid(20);
-    font-weight: normal;
-    line-height: 1.3;
-}
-
-@mixin p2-bold {
-    font-size: clampFluid(20);
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-@mixin p3 {
     font-size: clampFluid(16);
-    font-weight: normal;
-    line-height: 1.2;
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+@mixin button {
+    font-size: clampFluid(18);
+    line-height: 1.3;
+    font-weight: 600;
 }

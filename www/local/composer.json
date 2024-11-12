@@ -38,6 +38,7 @@
         "andreyryabin/sprint.options": "^2.5",
         "symfony/var-dumper": "^6.4",
         "respect/validation": "^2.3",
-        "giggsey/libphonenumber-for-php-lite": "^8.13"
+        "giggsey/libphonenumber-for-php-lite": "^8.13",
+        "pentatrion/vite-bundle": "^7.0"
     }
 }

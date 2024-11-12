@@ -1,15 +1,19 @@
 @import "./scss/base/base.scss";
 @import "./scss/base/reset.scss";
-@import "./scss/base/fonts.scss";
 @import "./scss/base/icons.scss";
 @import "./scss/base/utils.scss";
 
-// @import "./scss/header.scss";
-// @import "./scss/footer.scss";
-// @import "./scss/main-screen.scss";
-// @import "./scss/feedback-section.scss";
-// @import "./scss/seo-section.scss";
-// @import "./scss/callback-form.scss";
+@import "./scss/ui/slider-arrow.scss";
+@import "./scss/ui/label.scss";
+@import "./scss/ui/page-link.scss";
 
-// @import "./scss/ui/btn.scss";
-// @import "./scss/ui/form-input.scss";
+@import "./scss/text-page/content-text.scss";
+
+@import "./scss/header.scss";
+@import "./scss/lang-switch.scss";
+@import "./scss/catalog-menu.scss";
+@import "./scss/search-form.scss";
+@import "./scss/main-screen.scss";
+@import "./scss/main-directions.scss";
+@import "./scss/votex-sections.scss";
+@import "./scss/section-block.scss";

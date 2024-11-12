@@ -1,0 +1,18 @@
+.slider-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    background: rgba(#ECECEC, .7);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+
+    .icon {
+        font-size: .25em;
+    }
+
+    &--prev {
+        transform: rotate(180deg);
+    }
+}

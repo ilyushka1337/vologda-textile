@@ -13,6 +13,8 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@types/node": "^22.9.0",
+        "@types/alpinejs": "^3.13.10",
         "sass": "1.77.6",
         "vite": "^5.4.2"
     },
@@ -21,10 +23,12 @@
         "@alpinejs/intersect": "^3.14.1",
         "@alpinejs/mask": "^3.14.1",
         "@fancyapps/ui": "^5.0.36",
+        "@fontsource-variable/montserrat": "^5.1.0",
         "alpinejs": "^3.14.1",
         "htmx.org": "^1.9.12",
         "ky": "^1.7.1",
-        "swiper": "^11.1.10"
+        "swiper": "^11.1.14",
+        "vite-plugin-symfony": "^7.0.5"
     },
     "browserslist": "> 0.9%, last 4 versions, iOS 14, not dead"
 }

@@ -2,6 +2,11 @@ import { defineConfig } from 'vite'
 import path from 'path'
 
 export default defineConfig({
+    server: {
+        strictPort: true,
+        port: 5173,
+        origin: 'http://localhost:5173'
+    },
     root: path.resolve(__dirname, "./src"),
     css: {
         devSourcemap: true
@@ -11,7 +16,9 @@ export default defineConfig({
         outDir: path.resolve(__dirname, "../www/local/assets/dist"),
         emptyOutDir: true,
         rollupOptions: {
-            input: path.resolve(__dirname, "./src/app.js")
+            input: {
+                app: path.resolve(__dirname, "./src/app.ts")
+            }
         },
     },
     experimental: {

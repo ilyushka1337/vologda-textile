@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Votex";
+$arDirProperties = Array(
+
+);
+?>
