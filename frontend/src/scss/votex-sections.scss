@@ -3,14 +3,19 @@
     background: #F2F2F2;
 
     .logo {
-        width: clampFluid(141);
-        aspect-ratio: 141/51;
+        grid-row: span 2;
+
+        &-icon {
+            width: clampFluid(141);
+            aspect-ratio: 141/51;
+        }
+
+        &-text {
+            opacity: 0.5;
+            text-align: right;
+        }
     }
 
-    .logo-text {
-        opacity: 0.5;
-        text-align: right;
-    }
 
     .top {
         display: grid;
@@ -26,13 +31,6 @@
             @include p1;
         }
 
-        .column2 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
         .text3 {
             margin-top: clampFluid(32);
         }
@@ -43,5 +41,11 @@
         grid-template-columns: repeat(4, 1fr);
         gap: clampFluid(20);
         margin-top: clampFluid(54);
+    }
+
+    @media (max-width: 1279px) {
+        .top {
+            grid-template-columns: 100%;
+        }
     }
 }

@@ -28,4 +28,12 @@ Alpine.store('catalogMenu', {
     isOpen: false
 })
 
+Alpine.store('mobileCatalog', {
+    isOpen: false
+})
+
+Alpine.store('mobileMenu', {
+    isOpen: false
+})
+
 Alpine.start();

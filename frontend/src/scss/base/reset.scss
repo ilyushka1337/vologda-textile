@@ -127,3 +127,15 @@ h3 {
 main {
     flex-grow: 1;
 }
+
+@media (max-width: 1279px) {
+
+    .admin-panel,
+    .desktop-catalog {
+        display: none !important;
+    }
+
+    section:not(.main-screen, .main-directions, .votex-sections) {
+        display: none !important;
+    }
+}

@@ -47,11 +47,61 @@
         }
 
         .content-text {
+            width: 65%;
             color: $white;
         }
     }
 
     .swiper {
         overflow: visible;
+    }
+
+    @media (max-width: 1279px) {
+        .slider-controls {
+            margin-top: 15px;
+            padding: 0 10px;
+            gap: 9px;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        .swiper-slide {
+            padding: 24px 15px;
+            height: 427px;
+        }
+
+        .bg {
+            object-position: 80% 0;
+        }
+
+        .text-column {
+            width: 100%;
+            justify-content: flex-end;
+
+            .title {
+                font-size: 21px;
+            }
+
+            .content-text {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        .slider-arrow {
+            font-size: 46px;
+        }
+
+        .slider-pagination {
+            gap: 6px;
+            flex: 1 0 auto;
+
+            .swiper-pagination-bullet {
+                width: auto;
+                flex: 1 0 auto;
+            }
+        }
     }
 }

@@ -127,4 +127,44 @@
     .lang-switch {
         margin-left: clampFluid(40);
     }
+
+    @media (min-width: 1280px) {
+        .phone {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1279px) {
+        padding: 8px 0 11px;
+
+        .menu-left,
+        .menu-right,
+        .lang-switch {
+            display: none;
+        }
+
+        .logo {
+            margin-right: auto;
+
+            &-icon {
+                width: 68px;
+            }
+        }
+
+        .action {
+            width: 38px;
+            font-size: 18px;
+
+            .count {
+                width: 18px;
+                top: -8px;
+                right: -8px;
+                font-size: 10px;
+            }
+        }
+
+        .phone {
+            margin-left: 14px;
+        }
+    }
 }

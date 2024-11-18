@@ -11,52 +11,25 @@ use Sprint\Options\Custom\WysiwygOption;
 return (new Builder)
     ->setTitle('Настройки контента')
     ->setSort(60)
-    ->addPage('Страница 1')
-    ->addTab('О компании')
+    ->addPage('Общие настройки')
+    ->addTab('Контакты')
     ->addCustomOption(
-        (new StringOption('EMAIL'))
-            ->setTitle('Email компании')
-            ->setDefault('about@example.com')
-            ->setWidth('400')
+        (new StringOption('SITE_PRODUCTION_ADDRESS'))
+            ->setTitle('Адрес производства')
     )
     ->addCustomOption(
-        (new TextareaOption('OFFICE'))
-            ->setTitle('Адрес офиса')
-            ->setDefault('Адрес офиса')
-            ->setWidth('400')
-            ->setHeight('100')
+        (new StringOption('SITE_STORE_ADDRESS'))
+            ->setTitle('Адрес магазина')
     )
     ->addCustomOption(
-        (new WysiwygOption('DESCRIPTION'))
-            ->setTitle('Подробная информация о компании')
-            ->setHeight('300')
-    )
-    ->addTab('Общие')
-    ->addCustomOption(
-        (new SelectOption('SELECT1'))
-            ->setTitle('Значение из списка')
-            ->setDefault('var2')
-            ->setWidth(100)
-            ->setOptions([
-                'var1' => 'Вариант 1',
-                'var2' => 'Вариант 2',
-                'var3' => 'Вариант 3',
-                'var4' => 'Вариант 4',
-            ])
-    )
-    ->addPage('Страница 2')
-    ->addTab('Таб 1')
-    ->addCustomOption(
-        (new FileOption('PICTURE'))
-            ->setTitle('Фото офиса')
-            ->setAllowImages(1)
+        (new StringOption('SITE_WORK_HOURS'))
+            ->setTitle('Режим работы')
     )
     ->addCustomOption(
-        (new FileOption('FILES'))
-            ->setTitle('Документы')
-            ->setAllowFiles(0)
+        (new StringOption('SITE_EMAIL'))
+            ->setTitle('Email')
     )
     ->addCustomOption(
-        (new CheckboxOption('SHOW_FILES'))
-            ->setTitle('Показывать документы')
+        (new StringOption('SITE_PHONE'))
+            ->setTitle('Телефон')
     );

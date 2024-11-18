@@ -123,6 +123,10 @@
                     <span class="count">5</span>
                 </a>
 
+                <a href="tel:" class="action phone">
+                    <span class="icon phone-icon"></span>
+                </a>
+
                 <?= tpl('components/lang-switch', [
                     'lang' => 'RU'
                 ]) ?>

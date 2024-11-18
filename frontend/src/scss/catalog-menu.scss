@@ -76,8 +76,65 @@
 
             .item {
                 font-size: clampFluid(16);
+                line-height: 1.3;
                 color: #505665;
             }
+        }
+    }
+
+    @media (max-width: 1279px) {
+        position: static;
+        padding: 16px 15px;
+
+        .wrap {
+            max-width: 100%;
+            grid-template-columns: 100%;
+            gap: 32px;
+        }
+
+        .search-form {
+            margin-bottom: 30px;
+        }
+
+        .left-column {
+            .menu {
+                flex-direction: row;
+                justify-content: space-between;
+
+                .item {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .right-column {
+            .submenu {
+                padding: 0;
+                background: transparent;
+
+                .title {
+                    display: none;
+                }
+
+                .grid {
+                    grid-template-columns: 100%;
+                    gap: 34px;
+                }
+
+                .item {
+                    font-size: 16px;
+                }
+
+                .column {
+                    gap: 14px;
+
+                    .column-title {}
+                }
+            }
+        }
+
+        .section-logo {
+            display: none;
         }
     }
 }
