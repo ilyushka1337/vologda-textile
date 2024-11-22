@@ -12,6 +12,9 @@ class MainDirectionsComponent extends Boilerplate
     public static function getComponentParameters(): Parameters
     {
         $params = new Parameters();
+        $params->group('DATA', 'Параметры', 100, [
+            'IS_PAGE_BLOCK' => $params->checkbox('Добавить отступы блока')
+        ]);
         return $params;
     }
 }

@@ -1,0 +1,104 @@
+@use "@/base.scss";
+
+.main-slider {
+    overflow: hidden;
+
+    .slider-arrow {
+        font-size: base.clampFluid(73);
+    }
+
+    .swiper-slide {
+        height: base.clampFluid(670);
+        padding: base.clampFluid(147) base.clampFluid(147) base.clampFluid(119);
+        background: base.$bg;
+    }
+
+    .slider-controls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: base.clampFluid(33);
+        gap: base.clampFluid(16);
+    }
+
+    .slider-pagination {
+        display: flex;
+        gap: base.clampFluid(6);
+
+        .swiper-pagination-bullet {
+            width: base.clampFluid(67);
+            height: base.clampFluid(4);
+            background: rgba($color: #434345, $alpha: .3);
+
+            &.swiper-pagination-bullet-active {
+                background: base.$red;
+            }
+        }
+    }
+
+    .text-column {
+        height: 100%;
+        width: 52%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .title {
+            color: base.$white;
+        }
+
+        .content-text {
+            width: 65%;
+            color: base.$white;
+        }
+    }
+
+    .swiper {
+        overflow: visible;
+    }
+
+    @media (max-width: 1279px) {
+        .slider-controls {
+            margin-top: 15px;
+            padding: 0 10px;
+            gap: 9px;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        .swiper-slide {
+            padding: 24px 15px;
+            height: 427px;
+        }
+
+        .bg {
+            object-position: 80% 0;
+        }
+
+        .text-column {
+            width: 100%;
+            justify-content: flex-end;
+
+            .content-text {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        .slider-arrow {
+            font-size: 46px;
+        }
+
+        .slider-pagination {
+            gap: 6px;
+            flex: 1 0 auto;
+
+            .swiper-pagination-bullet {
+                width: auto;
+                flex: 1 0 auto;
+            }
+        }
+    }
+}

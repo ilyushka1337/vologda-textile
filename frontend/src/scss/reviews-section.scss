@@ -1,0 +1,58 @@
+@use "@/base.scss";
+
+.reviews-section {
+    overflow: hidden;
+
+    .top {
+        @include base.label-columns-grid;
+    }
+
+    .marketplace-link {
+        font-size: base.clampFluid(60, 76);
+    }
+
+    .marketplace {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: base.clampFluid(20) base.clampFluid(30);
+        margin-top: base.clampFluid(50);
+
+        .text {
+            flex: 0 0 100%;
+            text-align: center;
+        }
+    }
+
+    .slider {
+        margin-top: base.clampFluid(50);
+
+        .swiper {
+            width: 71%;
+            margin: 0;
+            overflow: visible;
+        }
+
+        .img {
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba($color: #A1A7B5, $alpha: .3);
+            object-fit: cover;
+        }
+
+        .swiper-scrollbar {
+            position: static;
+            margin-top: base.clampFluid(40);
+            --swiper-scrollbar-sides-offset: 0;
+            --swiper-scrollbar-border-radius: 0;
+            --swiper-scrollbar-bg-color: #{base.$bg};
+            --swiper-scrollbar-drag-bg-color: #{base.$black};
+        }
+    }
+
+    @media (max-width: 1279px) {
+        .top {
+            grid-template-columns: 100%;
+        }
+    }
+}

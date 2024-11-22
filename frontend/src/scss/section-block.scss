@@ -1,3 +1,5 @@
+@use "@/base.scss";
+
 .section-block {
     position: relative;
     aspect-ratio: 450/600;
@@ -10,9 +12,9 @@
 
     &__logo {
         position: absolute;
-        top: clampFluid(19);
-        left: clampFluid(19);
-        width: clampFluid(112);
+        top: 2%;
+        left: 2%;
+        width: base.clampFluid(112);
         aspect-ratio: 1/1;
     }
 
@@ -29,7 +31,7 @@
         opacity: 0;
 
         &-logo {
-            width: clampFluid(324);
+            width: 72%;
             aspect-ratio: 324/104;
             object-fit: scale-down;
         }
@@ -37,6 +39,12 @@
         &:hover {
             transform: translate(-10px, 10px);
             opacity: 1;
+        }
+    }
+
+    @media (max-width: 1279px) {
+        &__logo {
+            width: 38px;
         }
     }
 }

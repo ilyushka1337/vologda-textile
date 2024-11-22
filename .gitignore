@@ -3,7 +3,9 @@
 logs
 .env
 /www/bitrix
+!/www/bitrix/.settings_extra.php
 /www/upload
+/www/test
 /www/local/vendor
 /www/local/assets/dist
 

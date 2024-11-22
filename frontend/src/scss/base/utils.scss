@@ -1,7 +1,9 @@
+@use "@/base.scss";
+
 .container {
     margin-left: auto;
     margin-right: auto;
-    max-width: clampFluid(1720);
+    max-width: base.clampFluid(1720);
 
     @media (min-width: 1920px) {
         max-width: 1720px;
@@ -13,17 +15,20 @@
     }
 
     &-fluid {
-        max-width: clampFluid(1860);
+        max-width: base.clampFluid(1860);
 
         @media (min-width: 1920px) {
             max-width: 1860px;
         }
     }
-}
 
-.center-content {
-    margin: 0 auto;
-    max-width: clampFluid(1258);
+    &-sm {
+        max-width: base.clampFluid(1260);
+
+        @media (min-width: 1920px) {
+            max-width: 1260px;
+        }
+    }
 }
 
 
@@ -35,7 +40,7 @@
 .link {
     transition: color .4s;
 
-    @include hover {
+    @include base.hover {
         color: var(--link-hover-color, inherit);
     }
 
@@ -104,4 +109,36 @@
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.h1 {
+    @include base.h1;
+}
+
+.h2 {
+    @include base.h2;
+}
+
+.h3 {
+    @include base.h3;
+}
+
+.h4 {
+    @include base.h4;
+}
+
+.p1 {
+    @include base.p1;
+}
+
+.p2 {
+    @include base.p2;
+}
+
+.button {
+    @include base.button;
+}
+
+.red-text {
+    color: base.$red;
 }

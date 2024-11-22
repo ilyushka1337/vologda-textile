@@ -1,4 +1,4 @@
-<section class="feedback-section">
+<section class="feedback-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
     <div class="container">
         <div class="grid">
             <h2 class="title h2">Оставьте заявку и получите оптовый каталог на продукцию</h2>

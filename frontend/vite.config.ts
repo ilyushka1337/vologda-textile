@@ -17,7 +17,7 @@ export default defineConfig({
         emptyOutDir: true,
         rollupOptions: {
             input: {
-                app: path.resolve(__dirname, "./src/app.ts")
+                app: path.resolve(__dirname, "./src/app.js")
             }
         },
     },

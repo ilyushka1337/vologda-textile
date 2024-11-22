@@ -1,0 +1,15 @@
+@use "@/base.scss";
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: base.clampFluid(20);
+
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 575px) {
+        grid-template-columns: 100%;
+    }
+}

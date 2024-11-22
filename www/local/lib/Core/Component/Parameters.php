@@ -133,27 +133,11 @@ class Parameters
 		];
 	}
 
-	public function checkbox($name)
+	public function checkbox($name, $params = [])
 	{
-		return [
+		return $this->createParam([
 			'NAME' => $name,
 			'TYPE' => 'CHECKBOX'
-		];
-
-	}
-
-	public function custom($name)
-	{
-		return [
-			'NAME' => $name,
-			'TYPE' => 'CUSTOM',
-			'JS_FILE' => ViteAssets::getBitrixComponentsScriptSrc(),
-			'JS_EVENT' => '__initCustomBitrixParameter__',
-			'JS_DATA' => [
-				'isDevelopment' => getenv("PROJECT_ENV") == "development",
-				'vueComponent' => 'HelloWorld',
-				'createScriptSrc' => 'http://localhost:5173/bitrix/components.ts'
-			]
-		];
+		], $params);
 	}
 }

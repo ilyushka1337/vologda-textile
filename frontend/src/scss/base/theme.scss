@@ -1,0 +1,13 @@
+@use "@/base.scss";
+
+:root {
+    --page-font-family: 'Montserrat Variable', sans-serif;
+
+    --page-bg-color: #{base.$white};
+    --link-hover-color: #{base.$red};
+    --scrollbar-color: #{base.$red};
+    --page-text-color: #{base.$black};
+
+    --page-block-margin: #{base.clampFluid(80, 180)};
+    --text-block-gap: #{base.clampFluid(40,40)};
+}

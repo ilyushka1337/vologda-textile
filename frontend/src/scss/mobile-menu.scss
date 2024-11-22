@@ -1,43 +1,21 @@
+@use "@/base.scss";
+
 .mobile-menu {
-    .mobile-catalog-menu {
-        .parent {
-            >.link {
-                display: flex;
-                align-items: center;
-            }
-        }
-
-        .submenu {
-            display: grid;
-            grid-template-columns: 100%;
-            gap: 8px;
-            padding: 10px 0 0 10px;
-        }
-    }
-
-    .tel,
-    .second-menu {
-        color: $dark-gray;
-    }
-
-    .second-menu {
-        display: grid;
-        grid-template-columns: 100%;
-        gap: 8px;
-        margin-top: auto;
-
-        .submenu {
-            display: grid;
-            grid-template-columns: 100%;
-            gap: 8px;
-            padding: 10px 0 0 10px;
-        }
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    padding: 73px 0 56px;
+    z-index: 8;
+    background: #fff;
 
     &__body {
-        display: flex;
-        flex-direction: column;
-        gap: clampFluid(26);
-        padding-bottom: 80px !important;
+        height: 100%;
+        overflow: auto;
+    }
+
+    @media (min-width: 1280px) {
+        display: none;
     }
 }

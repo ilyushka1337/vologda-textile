@@ -1,61 +1,32 @@
-<section class="main-screen page-block">
-    <div class="container">
-        <div class="swiper" x-data="MainSlider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="/local/assets/slide-1.jpg" alt="" class="bg">
-                    <div class="text-column">
-                        <h2 class="title">Приветствуем вас на странице Вологодского Текстильного Комбината!</h2>
-                        <div class="content-text">
-                            <p>Мы являемся предприятием полного цикла: от изготовления ткани на современных ткацких
-                                станках до продажи готовой продукции по всей территории Российской Федерации и за её
-                                пределами</p>
+<?php if (count($arResult['SLIDES']) > 0): ?>
+    <section class="main-slider <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
+        <div class="container">
+            <div class="swiper" x-data="MainSlider">
+                <div class="swiper-wrapper">
+                    <?php foreach ($arResult['SLIDES'] as $arSlide): ?>
+                        <div class="swiper-slide">
+                            <?php if ($arSlide['IMG']): ?>
+                                <img src="<?= $arSlide['IMG']['SRC'] ?>" loading="lazy" class="bg">
+                            <?php endif ?>
+                            <div class="text-column">
+                                <h2 class="title h1"><?= $arSlide['TITLE'] ?></h2>
+                                <div class="content-text">
+                                    <?= $arSlide['TEXT'] ?>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
-                <div class="swiper-slide">
-                    <img src="/local/assets/slide-1.jpg" alt="" class="bg">
-                    <div class="text-column">
-                        <h2 class="title">Приветствуем вас на странице Вологодского Текстильного Комбината!</h2>
-                        <div class="content-text">
-                            <p>Мы являемся предприятием полного цикла: от изготовления ткани на современных ткацких
-                                станках до продажи готовой продукции по всей территории Российской Федерации и за её
-                                пределами</p>
-                        </div>
-                    </div>
+                <div class="slider-controls">
+                    <div class="slider-pagination" x-ref="pagination"></div>
+                    <?= tpl('ui/slider-arrow', [
+                        'direction' => 'prev'
+                    ]) ?>
+                    <?= tpl('ui/slider-arrow', [
+                        'direction' => 'next'
+                    ]) ?>
                 </div>
-                <div class="swiper-slide">
-                    <img src="/local/assets/slide-1.jpg" alt="" class="bg">
-                    <div class="text-column">
-                        <h2 class="title">Приветствуем вас на странице Вологодского Текстильного Комбината!</h2>
-                        <div class="content-text">
-                            <p>Мы являемся предприятием полного цикла: от изготовления ткани на современных ткацких
-                                станках до продажи готовой продукции по всей территории Российской Федерации и за её
-                                пределами</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="/local/assets/slide-1.jpg" alt="" class="bg">
-                    <div class="text-column">
-                        <h2 class="title">Приветствуем вас на странице Вологодского Текстильного Комбината!</h2>
-                        <div class="content-text">
-                            <p>Мы являемся предприятием полного цикла: от изготовления ткани на современных ткацких
-                                станках до продажи готовой продукции по всей территории Российской Федерации и за её
-                                пределами</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <div class="slider-pagination" x-ref="pagination"></div>
-                <?= tpl('ui/slider-arrow', [
-                    'direction' => 'prev'
-                ]) ?>
-                <?= tpl('ui/slider-arrow', [
-                    'direction' => 'next'
-                ]) ?>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif ?>

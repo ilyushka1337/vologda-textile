@@ -1,7 +1,7 @@
 <?php
 namespace Placestart\Core\Component;
 
-abstract class Boilerplate extends \CBitrixComponent implements IComponent
+abstract class Boilerplate extends \CBitrixComponent
 {
     protected $cacheKeys = [];
 
@@ -10,7 +10,7 @@ abstract class Boilerplate extends \CBitrixComponent implements IComponent
     protected static $group = "placestart";
 
 
-    public static $groups = [
+    protected static $groups = [
         "placestart" => [
             "ID" => "placestart",
             "NAME" => "PLACESTART"
@@ -24,6 +24,12 @@ abstract class Boilerplate extends \CBitrixComponent implements IComponent
     public static function getComponentDescription(): Description
     {
         return new Description(static::$name, static::$group);
+    }
+
+    public static function getComponentParameters(): Parameters
+    {
+        $params = new Parameters();
+        return $params;
     }
 
     protected function getData()

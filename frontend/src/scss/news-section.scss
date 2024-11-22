@@ -1,0 +1,24 @@
+@use "@/base.scss";
+
+.news-section {
+    .top {
+        display: grid;
+        gap: base.clampFluid(13, 20);
+        grid-template-columns: 13% base.clampFluid(1260) auto;
+        margin-bottom: base.clampFluid(40);
+
+        .link-column {
+            justify-self: end;
+        }
+    }
+
+    @media (max-width: 1279px) {
+        .top {
+            grid-template-columns: 100%;
+
+            .link-column {
+                justify-self: start;
+            }
+        }
+    }
+}
