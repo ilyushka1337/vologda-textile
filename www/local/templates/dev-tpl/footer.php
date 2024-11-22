@@ -1,13 +1,90 @@
 <?
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
-    die();
-
 use Bitrix\Main\Loader;
 
 Loader::includeModule('sprint.options');
 ?>
 
+
 </main>
+
+<footer class="footer">
+    <div class="top">
+        <div class="container">
+            <div class="contacts-column">
+                <div class="contact address p1"><?= sprint_options_get('SITE_STORE_ADDRESS') ?></div>
+                <div class="contact work-hours p1"><?= sprint_options_get('SITE_WORK_HOURS') ?></div>
+                <div class="callback">
+                    <a href="tel:<?= sprint_options_get('SITE_PHONE') ?>"
+                        class="tel button"><?= sprint_options_get('SITE_PHONE') ?></a>
+                    <?= tpl('ui/page-link', [
+                        'type' => 'button',
+                        'text' => 'Заказать звонок'
+                    ]) ?>
+                </div>
+            </div>
+            <nav class="menu-column">
+                <a href="/catalog/home/" class="link button">Home</a>
+                <a href="/catalog/spa/" class="link button">Spa</a>
+                <a href="/catalog/kids/" class="link button">Kids</a>
+                <a href="/catalog/premium/" class="link button">Premium</a>
+            </nav>
+            <div class="social-column">
+                <p class="text p2">Мы в соцсетях:</p>
+                <div>
+                    <?= tpl('ui/page-link', [
+                        'type' => 'link',
+                        'text' => 'ВКонтакте',
+                        'link' => sprint_options_get('SITE_VK'),
+                        'target' => '_blank'
+                    ]) ?>
+                </div>
+                <div>
+                    <?= tpl('ui/page-link', [
+                        'type' => 'link',
+                        'text' => 'Телеграмм',
+                        'link' => sprint_options_get('SITE_TELEGRAM'),
+                        'target' => '_blank'
+                    ]) ?>
+                </div>
+                <div>
+                    <?= tpl('ui/page-link', [
+                        'type' => 'link',
+                        'text' => 'Одноклассники',
+                        'link' => sprint_options_get('SITE_OK'),
+                        'target' => '_blank'
+                    ]) ?>
+                </div>
+                <div>
+                    <?= tpl('ui/page-link', [
+                        'type' => 'link',
+                        'text' => 'YouTube',
+                        'link' => sprint_options_get('SITE_YOUTUBE'),
+                        'target' => '_blank'
+                    ]) ?>
+                </div>
+            </div>
+            <div class="marketplace-column">
+                <p class="text p2">Мы на маркетплейсах:</p>
+                <?= tpl('ui/wildberries-link', [
+                    'link' => 'https://wildberries.ru/'
+                ]) ?>
+                <?= tpl('ui/ozon-link', [
+                    'link' => 'https://ozon.ru//'
+                ]) ?>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="container">
+            <p class="p2">© ООО "Вологодский текстильный комбинат", <?= date('Y') ?></p>
+            <a href="/privacy-policy/" class="link p2">Политика конфиденциальности</a>
+            <a href="https://place-start.ru/" target="_blank" class="link ps-link p2">
+                Сделано в
+                <span class="icon ps-icon"></span>
+            </a>
+        </div>
+    </div>
+</footer>
 
 <div class="catalog-menu desktop-catalog" x-data="{currentMenu: -1, logo: ''}" x-show="$store.catalogMenu.isOpen"
     @keyup.escape.window="$store.catalogMenu.isOpen = false" @click.outside="$store.catalogMenu.isOpen = false">
@@ -126,7 +203,7 @@ Loader::includeModule('sprint.options');
             ); ?>
 
             <div class="contacts">
-                <a href="tel:+7 495 152 20 00" class="tel"><?= sprint_options_get('SITE_PHONE') ?></a>
+                <a href="tel:+7 495 152 20 00" class="tel button"><?= sprint_options_get('SITE_PHONE') ?></a>
                 <?= tpl('ui/page-link', [
                     'type' => 'button',
                     'text' => 'Заказать звонок'

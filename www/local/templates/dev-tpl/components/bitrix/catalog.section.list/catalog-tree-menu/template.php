@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 ?>
 
 <div class="left-column">
-    <form action="" class="search-form">
+    <form action="" class="search-form p2">
         <input class="input" type="search" name="q" placeholder="Поиск">
         <button class="search-btn">
             <span class="icon search-icon"></span>
@@ -40,12 +40,12 @@ $this->setFrameMode(true);
             }
             ?>
             <?php if ($arSection['IS_PARENT']): ?>
-                <div class="item">
+                <div class="item button">
                     <a href="<?= $arSection['SECTION_PAGE_URL'] ?>" class="link"
                         @click.prevent="currentMenu = <?= $i ?>; logo = '<?= $logo ?>'"><?= $arSection['NAME'] ?></a>
                 </div>
             <?php else: ?>
-                <div class="item">
+                <div class="item button">
                     <a href="<?= $arSection['SECTION_PAGE_URL'] ?>" class="link"><?= $arSection['NAME'] ?></a>
                 </div>
             <?php endif ?>
@@ -59,16 +59,16 @@ $this->setFrameMode(true);
     <?php foreach ($arResult['SECTIONS'] as $i => $arSection): ?>
         <?php if ($arSection['IS_PARENT']): ?>
             <div class="submenu" x-show="currentMenu === <?= $i ?>">
-                <p class="title">Home</p>
+                <p class="title h2">Home</p>
                 <div class="grid">
                     <?php foreach ($arSection['CHILD'] as $arChild): ?>
                         <div class="column">
-                            <div class="item column-title">
-                                <a href="<?= $arChild['SECTION_PAGE_URl'] ?>" class="link"><?= $arChild['NAME'] ?></a>
+                            <div class="item p2 column-title">
+                                <a href="<?= $arChild['SECTION_PAGE_URL'] ?>" class="link"><?= $arChild['NAME'] ?></a>
                             </div>
                             <?php foreach ($arChild['CHILD'] as $arSubChild): ?>
-                                <div class="item">
-                                    <a href="<?= $arSubChild['SECTION_PAGE_URl'] ?>" class="link"><?= $arSubChild['NAME'] ?></a>
+                                <div class="item p2">
+                                    <a href="<?= $arSubChild['SECTION_PAGE_URL'] ?>" class="link"><?= $arSubChild['NAME'] ?></a>
                                 </div>
                             <?php endforeach ?>
                         </div>

@@ -1,0 +1,7 @@
+@use "@/base.scss";
+
+.new-section {
+    .wrap {
+        @include base.label-columns-grid;
+    }
+}

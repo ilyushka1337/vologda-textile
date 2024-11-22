@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\VotextSectionsComponent;
+use Placestart\Components\VotexSectionsComponent;
 
 \CBitrixComponent::includeComponentClass('placestart:votex.sections');
 
-$arComponentParameters = VotextSectionsComponent::getComponentParameters()->create();
+$arComponentParameters = VotexSectionsComponent::getComponentParameters()->create();

@@ -1,0 +1,46 @@
+@use "@/base.scss";
+
+.text-block {
+    display: grid;
+    gap: var(--text-block-gap);
+
+    &--left-img {
+        grid-template-columns: 43% 1fr;
+        --img-column-position: 1/2;
+    }
+
+    &--right-img {
+        grid-template-columns: 1fr 43%;
+        --img-column-position: 2/3;
+    }
+
+    &__img-column {
+        grid-column: var(--img-column-position);
+    }
+
+    &__text-column {
+        padding-top: base.clampFluid(30);
+        grid-row: 1/2;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 767px) {
+        &--left-img {
+            grid-template-columns: 100%;
+            --img-column-position: auto;
+        }
+
+        &--right-img {
+            grid-template-columns: 100%;
+            --img-column-position: auto;
+        }
+
+        &__text-column {
+            padding-top: 0;
+        }
+    }
+}

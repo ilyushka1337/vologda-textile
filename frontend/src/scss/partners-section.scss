@@ -1,0 +1,14 @@
+@use "@/base.scss";
+
+.partners-section {
+    .top {
+        margin-bottom: base.clampFluid(40);
+        @include base.label-columns-grid;
+    }
+
+    @media (max-width: 1279px) {
+        .top {
+            grid-template-columns: 100%;
+        }
+    }
+}

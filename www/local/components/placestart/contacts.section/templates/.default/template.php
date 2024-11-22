@@ -1,4 +1,4 @@
-<section class="contacts-section page-block">
+<section class="contacts-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
     <div class="container">
         <h1 class="h1 page-title">Контакты</h1>
     </div>

@@ -1,11 +1,8 @@
+@use "@/base.scss";
+
 :root {
     scroll-behavior: smooth;
     font-size: 16px;
-    --page-block-margin: #{clampFluid(150)};
-
-    @media (max-width: 1279px) {
-        --page-block-margin: 60px;
-    }
 }
 
 ::-webkit-scrollbar {
@@ -18,20 +15,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $red !important
+    background-color: var(--scrollbar-color) !important
 }
 
 html {
-    scrollbar-color: $red;
+    scrollbar-color: var(--scrollbar-color);
 }
 
 body {
-    font-family: 'Montserrat Variable', sans-serif;
-    color: $black;
+    font-family: var(--page-font-family);
+    color: var(--page-text-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    --link-hover-color: #{$red};
-    background: $white;
+    background: var(--page-bg-color);
 }
 
 .app-wrap {
@@ -95,7 +91,7 @@ a {
 svg {
     vertical-align: middle;
     transition-property: fill, stroke;
-    transition-duration: $tr-time;
+    transition-duration: base.$tr-time;
 }
 
 img {
@@ -125,6 +121,7 @@ h3 {
 }
 
 main {
+    padding-bottom: var(--page-block-margin);
     flex-grow: 1;
 }
 
@@ -135,7 +132,7 @@ main {
         display: none !important;
     }
 
-    section:not(.main-screen, .main-directions, .votex-sections) {
+    section:not(.main-slider, .main-directions, .votex-sections, .reviews-section, .partners-section, .seo-section, .news-section, .advantages-section) {
         display: none !important;
     }
 }

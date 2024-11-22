@@ -9,19 +9,15 @@ Alpine.magic("sessid", () => {
     return window.sessid
 })
 
-import Modal from '../components/Modal'
-Alpine.data("Modal", Modal)
 
-import FancyboxGallery from "../components/FancyboxGallery"
-Alpine.data("FancyboxGallery", FancyboxGallery)
 
-import PhoneInputMask from "../components/PhoneInputMask"
-Alpine.data("PhoneInputMask", PhoneInputMask)
+import ReviewsSlider from "./ReviewsSlider"
+Alpine.data("ReviewsSlider", ReviewsSlider)
 
-import Accordion from "../components/Accordion";
-Alpine.data("Accordion", Accordion)
+import PartnersSlider from "../components/PartnersSlider"
+Alpine.data("PartnersSlider", PartnersSlider)
 
-import MainSlider from "./MainSlider"
+import MainSlider from "../components/MainSlider";
 Alpine.data("MainSlider", MainSlider)
 
 Alpine.store('catalogMenu', {

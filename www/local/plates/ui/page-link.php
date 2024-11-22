@@ -4,11 +4,12 @@
  * @var string $link
  * @var string $text
  * @var string $type
+ * @var string $target
  */
 ?>
 
 <?php if ($type == 'link'): ?>
-    <a href="<?= $this->e($link) ?>" class="page-link link">
+    <a href="<?= $this->e($link) ?>" target="<?= $this->e($target) ?>" class="page-link link button">
         <?= $this->e($text) ?>
         <svg class="page-link__arrow" width="14" height="15" viewBox="0 0 14 15" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +18,7 @@
         </svg>
     </a>
 <?php elseif ($type == 'button'): ?>
-    <button class="page-link link">
+    <button class="page-link link button">
         <?= $this->e($text) ?>
         <svg class="page-link__arrow" width="14" height="15" viewBox="0 0 14 15" fill="none"
             xmlns="http://www.w3.org/2000/svg">

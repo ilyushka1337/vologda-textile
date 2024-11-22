@@ -32,4 +32,20 @@ return (new Builder)
     ->addCustomOption(
         (new StringOption('SITE_PHONE'))
             ->setTitle('Телефон')
+    )
+    ->addCustomOption(
+        (new StringOption('SITE_VK'))
+            ->setTitle('ВКонтакте')
+    )
+    ->addCustomOption(
+        (new StringOption('SITE_TELEGRAM'))
+            ->setTitle('Телеграмм')
+    )
+    ->addCustomOption(
+        (new StringOption('SITE_OK'))
+            ->setTitle('Одноклассники')
+    )
+    ->addCustomOption(
+        (new StringOption('SITE_YOUTUBE'))
+            ->setTitle('YouTube')
     );

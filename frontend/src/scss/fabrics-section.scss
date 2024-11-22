@@ -1,0 +1,62 @@
+@use "@/base.scss";
+
+.fabrics-section {
+    overflow-x: clip;
+
+    .decor {
+        width: base.clampFluid(1372);
+        position: absolute;
+        bottom: calc(-1 * var(--page-block-margin));
+        right: -27%;
+        aspect-ratio: 1372/817;
+        pointer-events: none;
+    }
+
+    .fullhd-container {
+        position: relative;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 26.5% 55%;
+        gap: 0 base.clampFluid(90);
+    }
+
+    .title-wrap {
+        display: flex;
+        align-items: center;
+        align-self: start;
+
+        .title {
+            margin-left: base.clampFluid(84);
+        }
+    }
+
+    .text-wrap {
+        display: grid;
+        grid-template-columns: 50% 31.5%;
+        justify-content: space-between;
+
+        .page-link {
+            justify-self: start;
+        }
+    }
+
+    .img-wrap {
+        margin-top: base.clampFluid(-120);
+        position: relative;
+
+        .img1 {
+            width: 100%;
+            aspect-ratio: 456/526;
+        }
+
+        .img2 {
+            position: absolute;
+            bottom: 0;
+            right: -70%;
+            width: base.clampFluid(233);
+            aspect-ratio: 233/269;
+        }
+    }
+}

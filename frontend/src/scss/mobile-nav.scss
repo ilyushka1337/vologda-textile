@@ -1,20 +1,22 @@
+@use "@/base.scss";
+
 .mobile-nav {
     display: flex;
     justify-content: space-between;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 9;
     background: #fff;
-    border-top: 1px solid $bg;
+    border-top: 1px solid base.$bg;
 
     .action {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        flex: 0 0 20%;
+        flex: 1 1 auto;
         padding: 4px 0 6px;
         color: #A1A7B5;
 
@@ -28,7 +30,7 @@
         }
 
         &.active {
-            color: $red;
+            color: base.$red;
         }
     }
 

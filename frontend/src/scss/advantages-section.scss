@@ -1,0 +1,60 @@
+@use "@/base.scss";
+
+.advantages-section {
+    padding: base.clampFluid(60) 0 base.clampFluid(80);
+    background: base.$bg;
+
+    .title {
+        text-align: center;
+    }
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: base.clampFluid(40);
+
+        .label {
+            margin-bottom: base.clampFluid(10);
+        }
+    }
+
+    .advantages {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: base.clampFluid(25);
+    }
+
+    .advantage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: base.clampFluid(18, 18);
+
+        .text {
+            text-align: center;
+        }
+
+        .img {
+            width: base.clampFluid(80, 160);
+            aspect-ratio: 160/90;
+            object-position: center;
+        }
+    }
+
+    @media (max-width: 1279px) {}
+
+    @media (max-width: 767px) {
+        .advantages {
+            grid-template-columns: 100%;
+        }
+
+        .advantage {
+            flex-direction: row;
+
+            .text {
+                text-align: left;
+            }
+        }
+    }
+}

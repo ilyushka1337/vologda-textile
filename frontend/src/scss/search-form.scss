@@ -1,11 +1,12 @@
+@use "@/base.scss";
+
 .search-form {
     position: relative;
 
     .input {
         width: 100%;
-        height: clampFluid(32);
-        padding: 0 clampFluid(30) 0 0;
-        font-size: clampFluid(16);
+        height: 2em;
+        padding: 0 base.clampFluid(30) 0 0;
         border: 0;
         border-bottom: 1px solid rgba($color: #505665, $alpha: .3)
     }
@@ -19,17 +20,6 @@
         top: 0;
         bottom: 0;
         margin: auto 0;
-        font-size: clampFluid(24);
-    }
-
-    @media (max-width: 1279px) {
-        .input {
-            height: 32px;
-            font-size: 14px;
-        }
-
-        .search-btn {
-            font-size: 24px;
-        }
+        font-size: 1.5em;
     }
 }

@@ -4,11 +4,10 @@ namespace Placestart\Components;
 
 use Bitrix\Iblock\Iblock;
 use Bitrix\Main\Loader;
+use Bitrix\Iblock\Elements\ElementSeotextsTable;
 use Placestart\Core\Component\Boilerplate;
 use Placestart\Core\Component\Parameters;
 use Placestart\Core\Utils;
-
-Loader::includeModule('placestart.core');
 
 class SeoSectionComponent extends Boilerplate
 {
@@ -16,14 +15,11 @@ class SeoSectionComponent extends Boilerplate
 
     protected function getData()
     {
-        $seotextsIblock = Iblock::wakeUp(Utils::locateIblock('seotexts'));
-        $q = $seotextsIblock->getEntityDataClass()::query()
-            ->setSelect(['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE'])
-            ->setFilter(['ID' => $this->arParams['ELEMENT_ID']]);
+        $q = ElementSeotextsTable::getList([
+            'select' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE'],
+            'filter' => ['CODE' => $this->arParams['ELEMENT_CODE']]
+        ]);
 
-        /**
-         * @var \Bitrix\Iblock\Elements\EO_ElementSeotexts $seoText
-         */
         $seoText = $q->fetchObject();
 
         $this->arResult = [
@@ -37,9 +33,12 @@ class SeoSectionComponent extends Boilerplate
     {
         $params = new Parameters();
         $params->group('DATA', 'Параметры', 100, [
-            'IBLOCK_ID' => $params->iblock('Инфоблок с текстами'),
-            'ELEMENT_ID' => $params->string('ID элемента'),
-            'IS_PAGE_BLOCK' => $params->yesNo('Добавить отступы блока')
+            'ELEMENT_CODE' => $params->string('Символьный код элемента'),
+            'IS_PAGE_BLOCK' => $params->checkbox('Добавить отступы блока'),
+            'IMG_POSITION' => $params->list('Расположение изображения', [
+                'left' => 'Слева',
+                'right' => 'Справа'
+            ])
         ]);
 
         return $params;

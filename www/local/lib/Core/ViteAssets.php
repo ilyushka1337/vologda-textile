@@ -47,14 +47,14 @@ class ViteAssets
         $assets = $this->assets;
         $distPath = $this->distPath;
 
-        if (!isset($assets["app.ts"])) {
-            throw new \Exception("Нет app.ts");
+        if (!isset($assets["app.js"])) {
+            throw new \Exception("Нет app.js");
         }
 
-        $result = '<script defer type="module" src="' . $distPath . "/" . $assets["app.ts"]["file"] . '"></script>';
+        $result = '<script defer type="module" src="' . $distPath . "/" . $assets["app.js"]["file"] . '"></script>';
 
-        if (isset($assets["app.ts"]["css"])) {
-            foreach ($assets["app.ts"]["css"] as $src) {
+        if (isset($assets["app.js"]["css"])) {
+            foreach ($assets["app.js"]["css"] as $src) {
                 $result .= '<link rel="stylesheet" href="' . $distPath . "/" . $src . '">';
             }
         }
@@ -66,7 +66,7 @@ class ViteAssets
     {
         return '
     <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script type="module" src="http://localhost:5173/app.ts"></script>';
+    <script type="module" src="http://localhost:5173/app.js"></script>';
     }
 
     public static function loadFrontend(string $distPath = "/local/assets/dist")
@@ -75,13 +75,5 @@ class ViteAssets
             echo self::getInsance($distPath)->loadForDevelopment();
         else
             echo self::getInsance($distPath)->loadFromManifest();
-    }
-
-    public static function getBitrixComponentsScriptSrc(): string
-    {
-        if (getenv("PROJECT_ENV") == "development")
-            return "http://localhost:5173/bitrix/initComponents.ts";
-        else
-            return "http://localhost:5173/bitrix/initComponents.ts";
     }
 }

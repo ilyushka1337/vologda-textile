@@ -1,6 +1,6 @@
 <?php
-use Placestart\Components\VotextSectionsComponent;
+use Placestart\Components\VotexSectionsComponent;
 
 \CBitrixComponent::includeComponentClass('placestart:votex.sections');
 
-$arComponentDescription = VotextSectionsComponent::getComponentDescription()->getDescription();
+$arComponentDescription = VotexSectionsComponent::getComponentDescription()->getDescription();

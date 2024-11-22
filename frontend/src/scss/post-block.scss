@@ -1,0 +1,25 @@
+@use "@/base.scss";
+
+.post-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    padding: base.clampFluid(20, 50);
+    color: base.$white;
+    aspect-ratio: 1/1;
+
+    .date {
+        margin-bottom: base.clampFluid(12);
+    }
+
+    .bg {
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(216deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+            opacity: 0.6;
+        }
+    }
+}
