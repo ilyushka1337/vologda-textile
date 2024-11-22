@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\PageHeadComponent;
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:page.head');
+use Placestart\Components\PageHeadComponent;
 
 $arComponentParameters = PageHeadComponent::getComponentParameters()->create();

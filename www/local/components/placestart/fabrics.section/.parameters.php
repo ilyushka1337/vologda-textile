@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\FabricsSectionComponent;
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:fabrics.section');
+use Placestart\Components\FabricsSectionComponent;
 
 $arComponentParameters = FabricsSectionComponent::getComponentParameters()->create();

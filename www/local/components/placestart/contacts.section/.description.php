@@ -1,6 +1,6 @@
-<?php
-use Placestart\Components\ContactsSectionComponent;
+<?
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:contacts.section');
+use Placestart\Components\ContactsSectionComponent;
 
 $arComponentDescription = ContactsSectionComponent::getComponentDescription()->getDescription();

@@ -1,6 +1,6 @@
-<?php
-use Placestart\Components\MainDirectionsComponent;
+<?
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:main.directions');
+use Placestart\Components\MainDirectionsComponent;
 
 $arComponentDescription = MainDirectionsComponent::getComponentDescription()->getDescription();

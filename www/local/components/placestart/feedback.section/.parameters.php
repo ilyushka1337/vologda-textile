@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\FeedbackSectionComponent;
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:feedback.section');
+use Placestart\Components\FeedbackSectionComponent;
 
 $arComponentParameters = FeedbackSectionComponent::getComponentParameters()->create();

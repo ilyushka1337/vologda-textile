@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\ReviewsSectionComponent;
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:reviews.section');
+use Placestart\Components\ReviewsSectionComponent;
 
 $arComponentParameters = ReviewsSectionComponent::getComponentParameters()->create();

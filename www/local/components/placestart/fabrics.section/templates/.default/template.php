@@ -1,6 +1,6 @@
 <section class="fabrics-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
     <div class="fullhd-container">
-        <img src="/local/assets/decor.svg" alt="" class="decor">
+        <img src="/local/assets/decor.svg" loading="lazy" class="decor">
         <div class="container">
             <div class="title-wrap">
                 <div class="label label--gray">производство</div>
@@ -33,8 +33,8 @@
             </div>
 
             <div class="img-wrap">
-                <img src="/local/assets/fabrics-1.jpg" alt="" class="img1">
-                <img src="/local/assets/fabrics-2.jpg" alt="" class="img2">
+                <img src="/local/assets/fabrics-1.jpg" loading="lazy" class="img1">
+                <img src="/local/assets/fabrics-2.jpg" loading="lazy" class="img2">
             </div>
         </div>
     </div>

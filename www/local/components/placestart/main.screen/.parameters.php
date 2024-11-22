@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\MainScreenComponent;
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:main.screen');
+use Placestart\Components\MainScreenComponent;
 
 $arComponentParameters = MainScreenComponent::getComponentParameters()->create();
