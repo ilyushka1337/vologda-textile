@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\PartnersSectionComponent;
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:partners.section');
+use Placestart\Components\PartnersSectionComponent;
 
 $arComponentParameters = PartnersSectionComponent::getComponentParameters()->create();

@@ -1,6 +1,6 @@
-<?php
-use Placestart\Components\NewSectionComponent;
+<?
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:new.section');
+use Placestart\Components\NewSectionComponent;
 
 $arComponentDescription = NewSectionComponent::getComponentDescription()->getDescription();

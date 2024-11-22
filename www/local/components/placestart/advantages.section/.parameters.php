@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\AdvantagesSectionComponent;
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:advantages.section');
+use Placestart\Components\AdvantagesSectionComponent;
 
 $arComponentParameters = AdvantagesSectionComponent::getComponentParameters()->create();

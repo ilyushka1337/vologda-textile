@@ -1,6 +1,6 @@
-<?php
-use Placestart\Components\SeoSectionComponent;
+<?
+require_once "./class.php";
 
-\CBitrixComponent::includeComponentClass('placestart:seo.section');
+use Placestart\Components\SeoSectionComponent;
 
 $arComponentDescription = SeoSectionComponent::getComponentDescription()->getDescription();
