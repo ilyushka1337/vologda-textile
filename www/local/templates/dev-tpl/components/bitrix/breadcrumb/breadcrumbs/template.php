@@ -6,14 +6,14 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 if (empty($arResult))
     return "";
 
-$breadcrumbs = '<nav id="breadcrumbs" class="breadcrumbs p1" itemscope itemtype="http://schema.org/BreadcrumbList"><ul>';
+$breadcrumbs = '<nav id="breadcrumbs" class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><ul>';
 
 foreach ($arResult as $i => $item) {
     $link = $item['LINK'];
     $title = $item['TITLE'];
 
     $breadcrumbs .= <<<EOD
-    <li itemscope itemprop="itemListElement" class="caption">
+    <li itemscope itemprop="itemListElement">
         <span itemprop="name">
             <a class="link" href="$link">
                 $title

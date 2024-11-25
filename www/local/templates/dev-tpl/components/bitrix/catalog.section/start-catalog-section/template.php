@@ -54,11 +54,7 @@ $arParams['MESS_RELATIVE_QUANTITY_FEW'] = ($arParams['MESS_RELATIVE_QUANTITY_FEW
 $arParams['MESS_BTN_LAZY_LOAD'] = $arParams['MESS_BTN_LAZY_LOAD'] ?: Loc::getMessage('CT_BCS_CATALOG_MESS_BTN_LAZY_LOAD');
 ?>
 
-<form class="filter" action="<?= $arResult['SECTION_PAGE_URL'] ?>" hx-get="<?= $arResult['SECTION_PAGE_URL'] ?>"
-    hx-trigger="change-value" hx-target="#catalog-section" hx-select="#catalog-section" hx-swap="outerHTML">
-</form>
-
-<div class="catalog-section" id="catalog-section">
+<div class="container">
     <?
     if (!empty($arResult['ITEMS'])):
         $generalParams = [
@@ -115,12 +111,12 @@ $arParams['MESS_BTN_LAZY_LOAD'] = $arParams['MESS_BTN_LAZY_LOAD'] ?: Loc::getMes
             ];
         }
         ?>
-        <div class="products-grid" id="items-list">
+        <div class="products-grid">
             <?php
             foreach ($arResult['ITEMS'] as $item) {
                 $APPLICATION->IncludeComponent(
                     'bitrix:catalog.item',
-                    'custom-item',
+                    'start-item',
                     array(
                         'RESULT' => array(
                             'ITEM' => $item,
@@ -148,7 +144,5 @@ $arParams['MESS_BTN_LAZY_LOAD'] = $arParams['MESS_BTN_LAZY_LOAD'] ?: Loc::getMes
 </div>
 
 <? if ($showBottomPager): ?>
-    <div id="catalog-pagination">
-        <?= $arResult['NAV_STRING'] ?>
-    </div>
+    <?= $arResult['NAV_STRING'] ?>
 <? endif ?>

@@ -2,12 +2,18 @@
 @use "./scss/base/reset.scss";
 @use "./scss/base/icons.scss";
 @use "./scss/base/utils.scss";
+@use "./scss/base/animations.scss";
 
 @use "./scss/ui/slider-arrow.scss";
 @use "./scss/ui/label.scss";
+@use "./scss/ui/link.scss";
 @use "./scss/ui/page-link.scss";
 @use "./scss/ui/marketplace-link.scss";
 @use "./scss/ui/text-block.scss";
+@use "./scss/ui/submit-btn.scss";
+@use "./scss/ui/personal.scss";
+@use "./scss/ui/form-input.scss";
+@use "./scss/ui/pagination.scss";
 
 @use "./scss/text-page/content-text.scss";
 
@@ -31,3 +37,12 @@
 @use "./scss/advantages-section.scss";
 @use "./scss/fabrics-section.scss";
 @use "./scss/about-section.scss";
+@use "./scss/feedback-section.scss";
+@use "./scss/callback-form.scss";
+@use "./scss/page-head.scss";
+@use "./scss/breadcrumbs.scss";
+@use "./scss/section-decription.scss";
+@use "./scss/section-img-block.scss";
+@use "./scss/catalog-sections-grid.scss";
+@use "./scss/product-item.scss";
+@use "./scss/products-grid.scss";

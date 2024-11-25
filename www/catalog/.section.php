@@ -1,6 +1,6 @@
 <?
-$sSectionName = "Каталог";
-$arDirProperties = Array(
+$sSectionName = "Каталог Votex";
+$arDirProperties = array(
 
 );
 ?>

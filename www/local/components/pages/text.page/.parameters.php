@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\TextPageComponent;
+require_once "class.php";
 
-\CBitrixComponent::includeComponentClass('pages:text.page');
+use Placestart\Components\TextPageComponent;
 
 $arComponentParameters = TextPageComponent::getComponentParameters()->create();

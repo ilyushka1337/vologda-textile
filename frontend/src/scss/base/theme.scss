@@ -10,4 +10,5 @@
 
     --page-block-margin: #{base.clampFluid(80, 180)};
     --text-block-gap: #{base.clampFluid(40,40)};
+    --personal-color: #{rgba(base.$black, .7)};
 }

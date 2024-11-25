@@ -1,0 +1,39 @@
+@use "@/base.scss";
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: base.clampFluid(80);
+    line-height: 1;
+
+    .next,
+    .prev,
+    .page-num {
+        display: flex;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: base.clampFluid(10) base.clampFluid(14);
+    }
+
+    .page-num {
+        @include base.p2;
+
+        &.current {
+            background: base.$red;
+            color: #fff;
+        }
+    }
+
+    .prev {
+        transform: rotate(180deg);
+    }
+
+    .pages {
+        display: flex;
+        gap: base.clampFluid(10);
+        margin: 0 base.clampFluid(10);
+    }
+}

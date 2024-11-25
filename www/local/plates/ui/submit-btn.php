@@ -6,8 +6,11 @@
  */
 ?>
 
-<button class="submit-btn btn <?= $this->e($style) ?> <?= $this->e($status) ?>">
+<button class="submit-btn <?= $this->e($status) ?>">
     <span class="icon loader-icon animation-spin"></span>
     <span class="icon check-icon"></span>
-    <?= $this->e($text) ?>
+    <span class="submit-btn__text">
+        <?= $this->e($text) ?>
+    </span>
+    <span class="submit-btn__arrow icon arrow-icon"></span>
 </button>

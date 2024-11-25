@@ -1,0 +1,15 @@
+@use "@/base.scss";
+
+.products-grid {
+    display: grid;
+    gap: base.clampFluid(10, 60);
+    grid-template-columns: repeat(5, 1fr);
+
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

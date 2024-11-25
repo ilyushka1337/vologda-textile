@@ -1,0 +1,16 @@
+@use "@/base.scss";
+
+.section-decription {
+    margin-bottom: base.clampFluid(50);
+
+    .text {
+        width: 70%;
+        margin-top: base.clampFluid(20);
+    }
+
+    @media (max-width: 991px) {
+        .text {
+            width: 100%;
+        }
+    }
+}

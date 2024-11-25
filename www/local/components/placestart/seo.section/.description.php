@@ -1,5 +1,5 @@
 <?
-require_once "./class.php";
+require_once "class.php";
 
 use Placestart\Components\SeoSectionComponent;
 
