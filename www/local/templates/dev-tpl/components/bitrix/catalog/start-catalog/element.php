@@ -14,12 +14,6 @@
 
 $this->setFrameMode(true);
 
-if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMON_SETTINGS_BASKET_POPUP'] == 'Y') {
-    $basketAction = (isset($arParams['COMMON_ADD_TO_BASKET_ACTION']) ? array($arParams['COMMON_ADD_TO_BASKET_ACTION']) : array());
-} else {
-    $basketAction = (isset($arParams['DETAIL_ADD_TO_BASKET_ACTION']) ? $arParams['DETAIL_ADD_TO_BASKET_ACTION'] : array());
-}
-
 $componentElementParams = array(
     'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
     'IBLOCK_ID' => $arParams['IBLOCK_ID'],
@@ -169,64 +163,11 @@ $componentElementParams = array(
     'GIFTS_MAIN_PRODUCT_DETAIL_HIDE_BLOCK_TITLE' => $arParams['GIFTS_MAIN_PRODUCT_DETAIL_HIDE_BLOCK_TITLE'],
 );
 
-if (isset($arParams['USER_CONSENT'])) {
-    $componentElementParams['USER_CONSENT'] = $arParams['USER_CONSENT'];
-}
-
-if (isset($arParams['USER_CONSENT_ID'])) {
-    $componentElementParams['USER_CONSENT_ID'] = $arParams['USER_CONSENT_ID'];
-}
-
-if (isset($arParams['USER_CONSENT_IS_CHECKED'])) {
-    $componentElementParams['USER_CONSENT_IS_CHECKED'] = $arParams['USER_CONSENT_IS_CHECKED'];
-}
-
-if (isset($arParams['USER_CONSENT_IS_LOADED'])) {
-    $componentElementParams['USER_CONSENT_IS_LOADED'] = $arParams['USER_CONSENT_IS_LOADED'];
-}
-
 $elementId = $APPLICATION->IncludeComponent(
     'bitrix:catalog.element',
-    'custom-element',
+    'start-element',
     $componentElementParams,
     $component
 );
 
 $GLOBALS['CATALOG_CURRENT_ELEMENT_ID'] = $elementId;
-?>
-
-<?php
-$text1 = $APPLICATION->GetPageProperty('TEXT_1_ID');
-$text2 = $APPLICATION->GetPageProperty('TEXT_2_ID');
-?>
-
-<?php if ($text1): ?>
-    <? $APPLICATION->IncludeComponent(
-        "placestart:seo.section",
-        "noise-bg",
-        array(
-            "BG_COLOR" => "light",
-            "CACHE_TIME" => "3600000",
-            "CACHE_TYPE" => "A",
-            "ELEMENT_ID" => $text1,
-            "IBLOCK_ID" => "\\Placestart\\Core\\Utils::locateIblock('seotexts')",
-            "IMG_POSITION" => "right",
-            "IS_PAGE_BLOCK" => "Y",
-            "NEEDLE_IMG_POSITION" => "right",
-            "TEST" => ""
-        )
-    ); ?>
-<?php endif ?>
-<?php if ($text2): ?>
-    <? $APPLICATION->IncludeComponent(
-        "placestart:seo.section",
-        "",
-        array(
-            "CACHE_TIME" => "3600000",
-            "CACHE_TYPE" => "A",
-            "ELEMENT_ID" => $text2,
-            "IBLOCK_ID" => "\\Placestart\\Core\\Utils::locateIblock('seotexts')",
-            "IS_PAGE_BLOCK" => "Y"
-        )
-    ); ?>
-<?php endif ?>

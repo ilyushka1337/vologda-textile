@@ -1,0 +1,63 @@
+@use "@/base.scss";
+
+.product-offer {
+    &__name {
+        margin-bottom: base.clampFluid(10);
+    }
+
+    &__values {
+        display: flex;
+        gap: base.clampFluid(12);
+    }
+
+    &__value {
+        @include base.p2;
+        padding: base.clampFluid(10) base.clampFluid(14);
+        background: base.$bg;
+        border: 1px solid base.$bg;
+
+        &--active {
+            border-color: base.$red;
+            background: transparent;
+        }
+    }
+
+    &__slider {
+        position: relative;
+
+        &-wrap {
+            overflow: hidden;
+        }
+
+        .swiper {
+            width: 90%;
+            margin: 0;
+            overflow: visible;
+
+            &-slide {
+                border: 1px solid transparent;
+            }
+        }
+
+        .img {
+            width: 100%;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 1;
+            font-size: base.clampFluid(42);
+
+            &--prev {
+                left: -.5em;
+            }
+
+            &--next {
+                right: -.5em;
+            }
+        }
+    }
+}

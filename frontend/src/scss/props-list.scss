@@ -1,0 +1,25 @@
+@use "@/base.scss";
+
+.props-list {
+    display: flex;
+    flex-direction: column;
+    gap: base.clampFluid(14);
+
+    &__row {
+        display: flex;
+    }
+
+    &__name {
+        @include base.p2;
+    }
+
+    &__value {
+        flex: 0 0 50%;
+        @include base.p2;
+    }
+
+    &__border {
+        flex: 1 1 auto;
+        border-bottom: 1px dotted base.$gray;
+    }
+}

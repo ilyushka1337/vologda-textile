@@ -1,0 +1,91 @@
+@use "@/base.scss";
+
+.product-section {
+    .top {
+        display: grid;
+        grid-template-columns: 45% 47%;
+        gap: base.clampFluid(60);
+        align-items: start;
+        position: relative;
+    }
+
+    .to-wishlist {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: base.clampFluid(55);
+        font-size: base.clampFluid(23);
+        aspect-ratio: 1/1;
+        border: 1px solid base.$red;
+        border-radius: 50%;
+    }
+
+    .slider-column {
+        position: relative;
+
+        .thumbs-swiper {
+            width: 100%;
+            height: 90%;
+            overflow: visible;
+
+            .swiper-slide {
+                border: 1px solid transparent;
+
+                &.swiper-slide-thumb-active {
+                    border-color: base.$red;
+                }
+            }
+        }
+
+        .thumbs-wrap {
+            position: absolute;
+            top: 0;
+            right: calc(100% + #{base.clampFluid(20)});
+            width: base.clampFluid(79);
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .main-swiper {
+            height: base.clampFluid(758);
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            font-size: base.clampFluid(42);
+
+            &--prev {
+                left: base.clampFluid(16);
+            }
+
+            &--next {
+                right: base.clampFluid(16);
+            }
+        }
+    }
+
+    .info-column {
+        padding-top: base.clampFluid(20);
+
+        .title {
+            margin-bottom: base.clampFluid(24);
+        }
+
+        .product-offer {
+            margin-bottom: base.clampFluid(24);
+        }
+
+        .props-list {}
+    }
+}

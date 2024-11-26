@@ -7,6 +7,6 @@
  */
 ?>
 
-<button class="slider-arrow slider-arrow--<?= $direction ?> <?= $style ?>" x-ref="<?= $direction ?>">
+<button class="slider-arrow slider-arrow--<?= $direction ?> <?= $style ?>" <?= $attrs ?>>
     <span class="icon chevron-right-icon"></span>
 </button>
