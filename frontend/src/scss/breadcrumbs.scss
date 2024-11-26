@@ -1,14 +1,20 @@
+@use "@/base.scss";
+
 .breadcrumbs {
     ul {
-        color: $dark-gray;
+        @include base.p2;
 
         li {
             display: inline;
 
-            &:not(:first-child){
-                >span::before{
-                    content: '-';
+            &:not(:first-child) {
+                >span::before {
+                    content: '/';
                 }
+            }
+
+            &:last-child {
+                color: rgba(base.$black, .43);
             }
         }
     }

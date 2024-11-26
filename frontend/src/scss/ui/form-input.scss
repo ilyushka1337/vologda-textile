@@ -1,3 +1,5 @@
+@use "@/base.scss";
+
 .form-input {
     display: block;
     position: relative;
@@ -9,62 +11,21 @@
         width: 100%;
 
         &::placeholder {
-            color: var(--placeholder-color, #{$brown-03});
+            color: var(--placeholder-color);
         }
 
         &--md {
-            height: clampFluid(63);
-            padding: 0 clampFluid(20);
-            @include p2;
-
-            @media (max-width: 1279px) {
-                height: 52px;
-                @include mobil-p1;
-            }
-        }
-
-        &--underline-white {
-            border-radius: 0;
-            border: 0;
-            border-bottom: 1px solid $gray;
-            background: transparent;
-            color: $white;
-            --placeholder-color: #{$gray};
+            padding: base.clampFluid(4) 0;
+            @include base.p1;
         }
 
         &--underline-gray {
             border-radius: 0;
             border: 0;
-            border-bottom: 1px solid $gray;
+            border-bottom: 1px solid base.$gray;
             background: transparent;
-            color: $black;
-            --placeholder-color: #{$gray};
-        }
-
-        &--solid-white {
-            border-radius: 0;
-            border: 0;
-            background: $white;
-            color: $black;
-            --placeholder-color: #{$black};
-        }
-
-        &--outline-gray {
-            border: 1px solid $gray-stroke;
-            background: transparent;
-            --placeholder-color: #{$gray};
-        }
-    }
-
-    &__error {
-        position: absolute;
-        top: 0;
-        left: clampFluid(20);
-        color: var(--invalid-color);
-
-        @media (max-width: 1279px) {
-            left: 15px;
-            font-size: 15px;
+            color: base.$black;
+            --placeholder-color: #{base.$gray};
         }
     }
 

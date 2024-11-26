@@ -1,19 +1,24 @@
+@use "@/base.scss";
+
 .callback-form {
     display: flex;
-    flex-direction: column;
-    gap: clampFluid(30);
-    
-    @media (max-width: 1279px) {
-        gap: 20px;
+    flex-wrap: wrap;
+    gap: base.clampFluid(19) base.clampFluid(30);
 
-        .personal {
-            margin: 10px 0;
-        }
+    .form-input {
+        flex: 1 1 10%;
     }
 
-    @media (max-width: 767px) {
-        .submit-btn {
-            width: 100%;
-        }
+    .submit-btn {
+        flex: 0 0 auto;
+    }
+
+    .personal {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    @media (max-width: 1279px) {
+        flex-direction: column;
     }
 }

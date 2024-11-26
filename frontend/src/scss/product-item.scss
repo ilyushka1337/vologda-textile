@@ -1,0 +1,14 @@
+@use "@/base.scss";
+
+.product-item {
+    position: relative;
+
+    .img {
+        width: 100%;
+    }
+
+    .name {
+        margin-top: base.clampFluid(10);
+        color: #{rgba(base.$black, .7)};
+    }
+}

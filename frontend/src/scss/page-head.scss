@@ -1,0 +1,6 @@
+@use "@/base.scss";
+
+.page-head {
+    padding: base.clampFluid(14) 0 0;
+    margin-bottom: base.clampFluid(48);
+}

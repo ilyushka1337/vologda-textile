@@ -1,0 +1,17 @@
+@use "@/base.scss";
+
+.section-img-block {
+    position: relative;
+    padding: base.clampFluid(20);
+    background: base.$bg;
+
+    .img {
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    .name {
+        margin-top: base.clampFluid(16);
+        font-weight: 600;
+    }
+}

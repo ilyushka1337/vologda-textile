@@ -2,6 +2,11 @@
     animation: spin 2s linear 0s infinite normal forwards;
 }
 
+@keyframes shrinkX {
+    to {
+        transform: scaleX(0);
+    }
+}
 
 @keyframes spin {
     to {

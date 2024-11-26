@@ -1,21 +1,22 @@
-@import "@/scss/base/base.scss";
+@use "@/base.scss";
 
 .alert {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: clampFluid(40);
+    gap: base.clampFluid(24);
     position: relative;
     border: 1px solid transparent;
-    border-radius: clampFluid(10);
-    padding: clampFluid(20);
+    border-radius: base.clampFluid(10);
+    padding: base.clampFluid(20);
+    overflow: hidden;
     background: var(--bg-color);
 
     &__body {
         display: flex;
         flex-direction: column;
-        gap: clampFluid(10);
-        padding: clampFluid(20);
+        gap: base.clampFluid(5);
+        padding: base.clampFluid(10);
     }
 
     &__close {
@@ -24,15 +25,32 @@
     }
 
     &__title {
-        @include h2;
-        text-transform: uppercase;
+        @include base.h3;
         color: var(--title-color);
     }
 
     &__text {
-        @include h3;
-        text-transform: uppercase;
+        @include base.p1;
         color: var(--text-color);
+    }
+
+    &__timer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: base.clampFluid(5);
+        background: var(--timer-bg);
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: var(--timer-color);
+            transform-origin: left center;
+            animation: shrinkX var(--timer-timeout) linear 0s 1 normal forwards;
+        }
     }
 
     &--bottom-right {
@@ -43,29 +61,11 @@
     }
 
     &--success {
-        --close-color: #{$brown-02};
-        --bg-color: #{$beige-bg};
-        --text-color: #{$black-txt};
-        --title-color: #{$black};
-    }
-
-    @media (max-width: 1279px) {
-        padding: 10px;
-        gap: 10px;
-
-        &__body {
-            padding: 10px;
-        }
-
-        &--bottom-right {
-            right: 10px;
-            bottom: 10px;
-        }
-    }
-
-    @media (max-width: 374px) {
-        &--bottom-right {
-            left: 10px;
-        }
+        --close-color: #008000;
+        --bg-color: #c1ffc1;
+        --text-color: #008000;
+        --title-color: #008000;
+        --timer-bg: transparent;
+        --timer-color: #87e787;
     }
 }

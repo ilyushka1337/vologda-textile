@@ -1,6 +1,6 @@
 <?
-use Placestart\Components\PrivacyPolicyComponent;
+require_once "class.php";
 
-\CBitrixComponent::includeComponentClass('pages:privacy.policy');
+use Placestart\Components\PrivacyPolicyComponent;
 
 $arComponentParameters = PrivacyPolicyComponent::getComponentParameters()->create();

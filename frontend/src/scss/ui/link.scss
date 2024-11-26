@@ -1,0 +1,13 @@
+@use "@/base.scss";
+
+.link {
+    transition: color .4s;
+
+    @include base.hover {
+        color: var(--link-hover-color, inherit);
+    }
+
+    &--underline {
+        border-bottom: 1px solid currentColor;
+    }
+}

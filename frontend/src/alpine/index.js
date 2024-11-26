@@ -20,6 +20,15 @@ Alpine.data("PartnersSlider", PartnersSlider)
 import MainSlider from "../components/MainSlider";
 Alpine.data("MainSlider", MainSlider)
 
+import PhoneInputMask from "../components/PhoneInputMask";
+Alpine.data("PhoneInputMask", PhoneInputMask);
+
+import ProductPage from "../bitrix/ProductPage";
+Alpine.data("ProductPage", ProductPage);
+
+import Alert from "../components/Alert";
+Alpine.data("Alert", Alert)
+
 Alpine.store('catalogMenu', {
     isOpen: false
 })

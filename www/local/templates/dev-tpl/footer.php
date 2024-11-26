@@ -6,7 +6,23 @@ Loader::includeModule('sprint.options');
 
 
 </main>
-
+<section class="feedback-section">
+    <div class="container">
+        <div class="grid">
+            <div class="img-col">
+                <img src="/local/assets/callback-img.png" loading="lazy" class="img">
+            </div>
+            <div class="form-col">
+                <h2 class="title h2">Возникли вопросы?</h2>
+                <p class="text p1">Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время</p>
+                <?= tpl('forms/callback-form', [
+                    'phone' => '',
+                    'status' => 'init'
+                ]) ?>
+            </div>
+        </div>
+    </div>
+</section>
 <footer class="footer">
     <div class="top">
         <div class="container">

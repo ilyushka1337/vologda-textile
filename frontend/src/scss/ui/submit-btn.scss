@@ -1,11 +1,29 @@
+@use "@/base.scss";
+
 .submit-btn {
     display: inline-flex;
+    align-items: center;
+    gap: base.clampFluid(30);
+    justify-content: space-between;
     position: relative;
+    padding: base.clampFluid(4) 0;
+    border-bottom: 1px solid base.$black;
+    @include base.button;
+
+    &__arrow {
+        color: base.$red;
+        font-size: .7em;
+    }
 
     &.loading,
     &.htmx-request {
         .loader-icon {
             opacity: 1;
+        }
+
+        .submit-btn__text,
+        .submit-btn__arrow {
+            opacity: 0;
         }
     }
 
@@ -19,9 +37,13 @@
     &.loading,
     &.htmx-request,
     &.success {
-        color: transparent !important;
         transition-duration: 0ms;
         pointer-events: none;
+
+        .submit-btn__text,
+        .submit-btn__arrow {
+            opacity: 0;
+        }
     }
 
     .check-icon,
@@ -33,7 +55,6 @@
         right: 0;
         bottom: 0;
         margin: auto;
-        color: var(--text-color);
         font-size: 1.8em;
     }
 }

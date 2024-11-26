@@ -1,6 +1,6 @@
-<?php
-use Placestart\Components\PersonalDataComponent;
+<?
+require_once "class.php";
 
-\CBitrixComponent::includeComponentClass('pages:personal.data');
+use Placestart\Components\PersonalDataComponent;
 
 $arComponentDescription = PersonalDataComponent::getComponentDescription()->getDescription();

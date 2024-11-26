@@ -22,7 +22,7 @@ $strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryStr
 $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?" . $arResult["NavQueryString"] : "");
 ?>
 
-<nav class="pagination p1">
+<nav class="pagination">
     <? if ($arResult["NavPageNomer"] > 1): ?>
         <? if ($arResult["bSavePage"]): ?>
             <a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] - 1) ?>"
@@ -47,7 +47,7 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?" . $arResult["N
         </span>
     <? endif ?>
 
-    <div class="pages text1">
+    <div class="pages">
         <?
         while ($arResult["nStartPage"] <= $arResult["nEndPage"]):
             $is_current = $arResult["nStartPage"] == $arResult["NavPageNomer"];

@@ -1,0 +1,10 @@
+@use "@/base.scss";
+
+.personal {
+    color: var(--personal-color);
+    @include base.p2;
+
+    &__link {
+        color: var(--personal--link-color, inherit);
+    }
+}
