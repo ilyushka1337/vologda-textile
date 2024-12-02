@@ -11,10 +11,10 @@
     }
 
     &__value {
-        @include base.p2;
         padding: base.clampFluid(10) base.clampFluid(14);
         background: base.$bg;
         border: 1px solid base.$bg;
+        @include base.p2;
 
         &--active {
             border-color: base.$red;

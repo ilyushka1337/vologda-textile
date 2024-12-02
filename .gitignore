@@ -8,6 +8,7 @@ logs
 /www/test
 /www/local/vendor
 /www/local/assets/dist
+/www/local/import/files
 
 # Editor directories and files
 .vscode/*

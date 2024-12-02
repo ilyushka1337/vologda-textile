@@ -39,13 +39,8 @@
         text-decoration: none;
         border-bottom: 1px solid base.$red;
 
-        &:visited {
-            border-color: transparent;
-        }
-
         &:hover {
-            font-weight: 700;
-            border-color: transparent;
+            color: base.$red;
         }
     }
 
@@ -59,6 +54,7 @@
 
     ul,
     ol {
+        padding-left: base.clampFluid(30);
         margin: 1em 0;
     }
 
@@ -69,7 +65,6 @@
     }
 
     ul {
-        padding-left: base.clampFluid(30);
         list-style: none;
 
         li {
@@ -91,7 +86,14 @@
     }
 
     ol {
-        list-style: decimal inside;
+        list-style: decimal;
+
+        li {
+            &::marker {
+                color: base.$red;
+                font-weight: 600;
+            }
+        }
     }
 
     .table {

@@ -1,5 +1,6 @@
 #!/usr/bin/php
 <?php
+use Placestart\Import\Console\StartImportCommand;
 use Symfony\Component\Console\Application;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -26,5 +27,7 @@ if ($isBitrixInstalled) {
         }
     }
 }
+
+$app->add(new StartImportCommand());
 
 $app->run();

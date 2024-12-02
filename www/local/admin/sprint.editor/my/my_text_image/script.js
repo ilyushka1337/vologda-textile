@@ -16,7 +16,7 @@ sprint_editor.registerBlock("my_text_image", function ($, $el, data, settings) {
 		},
 		{
 			dataKey: "image",
-			blockName: "my_image",
+			blockName: "image",
 			container: ".image",
 		},
 	]

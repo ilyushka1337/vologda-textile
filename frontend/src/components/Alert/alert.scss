@@ -25,13 +25,13 @@
     }
 
     &__title {
-        @include base.h3;
         color: var(--title-color);
+        @include base.h3;
     }
 
     &__text {
-        @include base.p1;
         color: var(--text-color);
+        @include base.p1;
     }
 
     &__timer {

@@ -14,23 +14,20 @@
 $this->setFrameMode(true);
 ?>
 
-<div class="grid">
+
+<div class="news-grid">
 	<?php
-	foreach ($arResult["ITEMS"] as $i => $arItem):
-		?>
-		<div class="post-card">
-			<?php if ($arItem['PREVIEW_PICTURE']): ?>
-				<img src="<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="" class="bg">
-			<?php endif ?>
-			<div class="bottom">
-				<p class="name">
-					<a href="<?= $arItem['DETAIL_PAGE_URL'] ?>" class="h5 link-cover"><?= $arItem['NAME'] ?></a>
-				</p>
-				<p class="read-more p2">Подробнее</p>
-			</div>
-		</div>
-	<?php endforeach ?>
+	foreach ($arResult['ITEMS'] as $arPost) {
+		echo tpl('components/post-block', [
+			'title' => $arPost['NAME'],
+			'img' => $arPost['PREVIEW_PICTURE'],
+			'date' => $arPost['ACTIVE_FROM'],
+			'link' => $arPost['DETAIL_PAGE_URL']
+		]);
+	}
+	?>
 </div>
+
 <?php if ($arResult["NAV_STRING"]): ?>
 	<?= $arResult["NAV_STRING"] ?>
 <?php endif ?>

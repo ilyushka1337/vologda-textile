@@ -15,7 +15,11 @@
 @use "./scss/ui/form-input.scss";
 @use "./scss/ui/pagination.scss";
 
+@use "./scss/text-page/content-block.scss";
 @use "./scss/text-page/content-text.scss";
+@use "./scss/text-page/content-gallery.scss";
+@use "./scss/text-page/content-gallery-item.scss";
+
 
 @use "./scss/header.scss";
 @use "./scss/footer.scss";

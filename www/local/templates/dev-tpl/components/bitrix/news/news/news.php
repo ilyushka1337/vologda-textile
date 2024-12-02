@@ -18,6 +18,9 @@ $this->setFrameMode(true);
 
 <section class="news-page">
 	<div class="container">
+		<div class="section-decription">
+			<h1 class="block-title h1"><? $APPLICATION->ShowTitle(false) ?></h1>
+		</div>
 		<?php
 		$APPLICATION->IncludeComponent(
 			"bitrix:news.list",

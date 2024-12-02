@@ -1,11 +1,7 @@
+@use "@/base.scss";
+
 .content-block {
     &:not(:last-child) {
-        margin-bottom: clampFluid(60);
-    }
-
-    @media (max-width: 1279px) {
-        &:not(:last-child) {
-            margin-bottom: 50px;
-        }
+        margin-bottom: base.clampFluid(80, 180);
     }
 }
