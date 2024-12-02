@@ -15,29 +15,10 @@ class Importer
 
     private array $xlsxMap;
 
-    private array $sectionsMap = [
-        1 => 'komplekt-postelnogo-belya',
-        2 => 'prostyni',
-        3 => 'navolochki',
-        4 => 'pododeyalniki',
-        5 => 'pokryvala',
-        6 => 'skaterti',
-        7 => 'polotentsa',
-        8 => 'pledy',
-        9 => 'khalaty',
-        10 => 'polotentsa-bannye',
-        11 => 'kilt-zhenskiy',
-        12 => 'kilt-muzhskoy',
-        13 => 'poltentsa-plyazhnye',
-        14 => 'prostyn-vafelnaya',
-        15 => 'komplekt-dlya-sauny',
-        16 => 'detskie-khalaty',
-        17 => 'detskie-polotentsa-ugolki'
-    ];
-
     function __construct(
         private string $filePath,
-        private string $uploadsPath
+        private string $uploadsPath,
+        private SectionHelper $sectionHelper
     ) {
         /** @var \Bitrix\Main\ORM\Fields\ScalarField $field */
         $tableMap = array_map(fn($field) => $field->getName(), XlsxProductTable::getMap());
@@ -92,7 +73,7 @@ class Importer
 
                 $rows[] = $cells;
             }
-            if ($isEmpty || count($rows) % 50 == 0) {
+            if ($isEmpty || count($rows) % 50 === 0) {
                 $this->saveRowsToTable($rows);
                 $rows = [];
             }

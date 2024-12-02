@@ -3,10 +3,12 @@ namespace Placestart\Import\Console;
 
 use Bitrix\Main\Application;
 use Placestart\Import\Importer;
+use Placestart\Import\SectionHelper;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Placestart\Import\XlsxProductTable;
+use Placestart\Core\Utils;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 
 class StartImportCommand extends Command
@@ -23,6 +25,7 @@ class StartImportCommand extends Command
         $importer = new Importer(
             Application::getDocumentRoot() . '/local/import/Номенклатура.xlsx',
             Application::getDocumentRoot() . '/local/import/files/',
+            new SectionHelper(Utils::locateIblock('catalog'))
         );
 
         $importer->startImport();
