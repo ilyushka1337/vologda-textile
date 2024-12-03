@@ -16,7 +16,7 @@ class XlsxProductTable extends Entity\DataManager
                 'primary' => true,
                 'autocomplete' => true
             ]),
-            new Entity\IntegerField('BARCODE', [
+            new Entity\StringField('BARCODE', [
                 'required' => true
             ]),
             new Entity\StringField('DESCRIPTION', [

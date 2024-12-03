@@ -1,6 +1,7 @@
 <?
 namespace Placestart\Import;
 
+use Bitrix\Iblock\Elements\ElementCatalogTable;
 use Bitrix\Iblock\IblockTable;
 use Bitrix\Iblock\Model\Section;
 use Bitrix\Main\Loader;
@@ -28,10 +29,13 @@ class SectionHelper
         17 => 'detskie-polotentsa-ugolki'
     ];
 
-    function __construct(
-        private int $iblockID
-    ) {
+    private int $iblockID;
+
+    function __construct()
+    {
         Loader::requireModule('iblock');
+
+        $this->iblockID = ElementCatalogTable::getEntity()->getIblock()->getId();
     }
 
     function get(int $sectionNumber): int
