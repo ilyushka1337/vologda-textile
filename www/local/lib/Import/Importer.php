@@ -1,6 +1,7 @@
 <?
 namespace Placestart\Import;
 
+use Bitrix\Highloadblock\HighloadBlockTable;
 use Bitrix\Main\Application;
 use Bitrix\Main\Entity\AddResult;
 use Placestart\Import\Entity\XlsxProductTable;
