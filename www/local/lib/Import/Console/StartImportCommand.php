@@ -24,14 +24,6 @@ class StartImportCommand extends Command
             ->setDescription('Запускает импорт товаров из xlsx таблицы');
     }
 
-    private function test()
-    {
-        $hl = new HighloadHelper(
-            Utils::locateIblock('offers'),
-            'COLOR'
-        );
-    }
-
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('Импорт товаров начат');
@@ -51,7 +43,7 @@ class StartImportCommand extends Command
                 new HighloadHelper($offersIblockId, 'BLANKET_SIZE')
             )
         );
-        $importer->startImport(true);
+        $importer->startImport();
 
         $output->writeln('Импорт товаров закончен');
 
