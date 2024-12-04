@@ -2,9 +2,8 @@
     <section class="seo-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
         <div class="container container-sm">
             <?= tpl('ui/text-block', [
-                'title' => $arResult['TITLE'],
                 'text' => $arResult['TEXT'],
-                'img' => $arResult['IMG'],
+                'imgSrc' => $arResult['IMG'] ? $arResult['IMG']['SRC'] : null,
                 'imgPosition' => $arParams['IMG_POSITION']
             ]) ?>
         </div>

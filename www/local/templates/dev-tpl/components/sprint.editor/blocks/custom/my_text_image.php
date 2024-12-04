@@ -1,6 +1,22 @@
-<?php /** @var $block array */ ?>
-<div class="content-text-image <?= $block["imagePosition"] ?>-image content-block ">
-	<img alt="<?= $image["DESCRIPTION"] ?>" class="img" src="<?= $block["image"]["file"]["ORIGIN_SRC"] ?>"
-		loading="lazy">
-	<div class="content-text"><?= $block["text"]["value"] ?></div>
+<?php
+/** @var $block array */
+
+$image = Sprint\Editor\Blocks\Image::getImage(
+	$block['image'],
+	[
+		'width' => 550,
+		'height' => 550,
+		'exact' => 0,
+	]
+);
+?>
+
+<div class="container container-sm content-block">
+	<div class="content-text-block">
+		<?= tpl('ui/text-block', [
+			'text' => $block['text']['value'],
+			'imgSrc' => $image['SRC'],
+			'imgPosition' => $block['imagePosition']
+		]) ?>
+	</div>
 </div>

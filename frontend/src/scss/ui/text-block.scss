@@ -16,6 +16,7 @@
 
     &__img-column {
         grid-column: var(--img-column-position);
+        grid-row: 1/2;
     }
 
     &__text-column {

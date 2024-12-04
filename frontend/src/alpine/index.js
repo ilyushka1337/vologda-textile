@@ -29,6 +29,9 @@ Alpine.data("ProductPage", ProductPage);
 import Alert from "../components/Alert";
 Alpine.data("Alert", Alert)
 
+import FancyboxGallery from "../components/FancyboxGallery";
+Alpine.data("FancyboxGallery", FancyboxGallery)
+
 Alpine.store('catalogMenu', {
     isOpen: false
 })
