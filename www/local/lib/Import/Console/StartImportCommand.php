@@ -2,7 +2,9 @@
 namespace Placestart\Import\Console;
 
 use Bitrix\Main\Application;
+use Placestart\Core\Utils;
 use Placestart\Import\CatalogHelper;
+use Placestart\Import\HighloadHelper;
 use Placestart\Import\Importer;
 use Placestart\Import\SectionHelper;
 use Placestart\Import\SymbolCodeHelper;
@@ -22,16 +24,31 @@ class StartImportCommand extends Command
             ->setDescription('Запускает импорт товаров из xlsx таблицы');
     }
 
+    private function test()
+    {
+        $hl = new HighloadHelper(
+            Utils::locateIblock('offers'),
+            'COLOR'
+        );
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('Импорт товаров начат');
+
+        $offersIblockId = Utils::locateIblock('offers');
 
         $importer = new Importer(
             Application::getDocumentRoot() . '/local/import/files/',
             new XlsxHelper(Application::getDocumentRoot() . '/local/import/Номенклатура.xlsx'),
             new CatalogHelper(
                 new SectionHelper(),
-                new SymbolCodeHelper()
+                new SymbolCodeHelper(),
+                new HighloadHelper($offersIblockId, 'SIZE'),
+                new HighloadHelper($offersIblockId, 'PILLOWSLIP_SIZE'),
+                new HighloadHelper($offersIblockId, 'COLOR'),
+                new HighloadHelper($offersIblockId, 'BEDSHEET_SIZE'),
+                new HighloadHelper($offersIblockId, 'BLANKET_SIZE')
             )
         );
         $importer->startImport(true);

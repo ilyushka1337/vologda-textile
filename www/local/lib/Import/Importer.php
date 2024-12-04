@@ -40,12 +40,21 @@ class Importer
         ]);
 
         while ($product = $q->fetch()) {
-            $result = $this->catalogHelper->product($product);
+            $parentID = $this->catalogHelper->product($product);
 
-            $offersQuery = XlsxProductTable::getList([
-                'select' => ['BARCODE', 'ARTICUL_WB', 'ARTICUL_OZON', 'SIZE', 'PILLOWSLIP_SIZE', 'TITLE', 'IS_NEW', 'BEDSHEET_SIZE', 'BLANKET_SIZE'],
-                'filter' => ['CARD_ID' => $product['CARD_ID']]
-            ]);
+            $this->importProductOffers($product['CARD_ID'], $parentID);
+        }
+    }
+
+    private function importProductOffers(int $cardID, int $parentID)
+    {
+        $q = XlsxProductTable::getList([
+            'select' => ['BARCODE', 'ARTICUL_WB', 'ARTICUL_OZON', 'SIZE', 'COLOR', 'PILLOWSLIP_SIZE', 'DESCRIPTION', 'IS_NEW', 'BEDSHEET_SIZE', 'BLANKET_SIZE'],
+            'filter' => ['CARD_ID' => $cardID]
+        ]);
+
+        while ($offer = $q->fetch()) {
+            $offerID = $this->catalogHelper->offer($offer, $parentID);
         }
     }
 
