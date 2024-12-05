@@ -1,6 +1,8 @@
 <?
 namespace Placestart\Import;
 
+use PhpParser\Node\NullableType;
+use Placestart\Import\Entity\WildberriesCardTable;
 use Placestart\Import\Exception;
 use Bitrix\Iblock\Elements\ElementOffersTable;
 use Bitrix\Iblock\Elements\ElementCatalogTable;
@@ -17,6 +19,7 @@ class CatalogHelper
     function __construct(
         private SectionHelper $sectionHelper,
         private SymbolCodeHelper $symbolCodeHelper,
+        private PhotoDownloader $photoDownloader,
         private HighloadHelper $sizeHelper,
         private HighloadHelper $pillowslipSizeHelper,
         private HighloadHelper $colorHelper,
@@ -98,9 +101,13 @@ class CatalogHelper
      * @param array $info
      * @return int ID элемента инфоблока предложений
      */
-
     public function offer(array $info, int $parentId): int|null
     {
+        $wildberriesOffer = $this->findWildberriesOffer($info['ARTICUL_WB']);
+        if (!$wildberriesOffer) {
+            return null;
+        }
+
         $productID = $this->findOffer($info['BARCODE']);
 
         $info['IS_NEW'] == 'N' ? 1 : 2;
@@ -197,5 +204,28 @@ class CatalogHelper
         } else {
             return null;
         }
+    }
+
+    private function findWildberriesOffer(string $wildberriesArticul): array|null
+    {
+        $q = WildberriesCardTable::getList([
+            'filter' => [
+                'NM_ID' => $wildberriesArticul
+            ],
+            'limit' => 1
+        ]);
+
+        $info = $q->fetch();
+        return $info ? $info : null;
+    }
+
+    private function parsePhotos(string $photosJSON)
+    {
+        $photos = json_decode($photosJSON, true);
+    }
+
+    private function getPhotos(array $photoURLs)
+    {
+
     }
 }

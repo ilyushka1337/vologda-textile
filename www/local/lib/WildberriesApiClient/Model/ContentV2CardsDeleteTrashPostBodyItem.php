@@ -1,0 +1,43 @@
+<?php
+
+namespace Placestart\WildberriesApi\Model;
+
+class ContentV2CardsDeleteTrashPostBodyItem extends \ArrayObject
+{
+    /**
+     * @var array
+     */
+    protected $initialized = [];
+    public function isInitialized($property): bool
+    {
+        return array_key_exists($property, $this->initialized);
+    }
+    /**
+     * Артикул WB (max. 1000)
+     *
+     * @var list<int>
+     */
+    protected $nmIDs;
+    /**
+     * Артикул WB (max. 1000)
+     *
+     * @return list<int>
+     */
+    public function getNmIDs(): array
+    {
+        return $this->nmIDs;
+    }
+    /**
+     * Артикул WB (max. 1000)
+     *
+     * @param list<int> $nmIDs
+     *
+     * @return self
+     */
+    public function setNmIDs(array $nmIDs): self
+    {
+        $this->initialized['nmIDs'] = true;
+        $this->nmIDs = $nmIDs;
+        return $this;
+    }
+}

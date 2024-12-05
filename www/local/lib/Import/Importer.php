@@ -4,17 +4,19 @@ namespace Placestart\Import;
 use Bitrix\Highloadblock\HighloadBlockTable;
 use Bitrix\Main\Application;
 use Bitrix\Main\Entity\AddResult;
+use Placestart\Import\Entity\WildberriesCardTable;
 use Placestart\Import\Entity\XlsxProductTable;
 use Placestart\Import\Exception\ImporterSaveRowsFailureException;
+use Placestart\WildberriesApi\Model\ContentV2GetCardsListPostBody;
 
-class Importer
+final class Importer
 {
     private array $tableMap;
 
     function __construct(
-        private string $uploadsPath,
         private XlsxHelper $xlsxHelper,
-        private CatalogHelper $catalogHelper
+        private CatalogHelper $catalogHelper,
+        private \Placestart\WildberriesApi\Client $wildberriesClient
     ) {
         /** @var \Bitrix\Main\ORM\Fields\ScalarField $field */
         $tableMap = array_map(fn($field) => $field->getName(), XlsxProductTable::getMap());
@@ -26,7 +28,9 @@ class Importer
     {
         if (!$skipLoading) {
             $this->clearTable();
+            $this->clearWildberriesTable();
             $this->loadDataToTable();
+            $this->loadWildberriesCards();
         }
 
         $this->importProducts();
@@ -58,6 +62,56 @@ class Importer
         }
     }
 
+    private function loadWildberriesCards()
+    {
+        $total = 100;
+        $nmID = null;
+        $updatedAt = null;
+        while ($total === 100) {
+            $response = $this->wildberriesClient->postContentV2GetCardsList(
+                new ContentV2GetCardsListPostBody([
+                    "settings" => [
+                        "sort" => [
+                            "ascending" => false
+                        ],
+                        "filter" => [
+                            "textSearch" => "",
+                            "allowedCategoriesOnly" => true,
+                            "tagIDs" => [],
+                            "objectIDs" => [],
+                            "brands" => [],
+                            "imtID" => 0,
+                            "withPhoto" => -1
+                        ],
+                        "cursor" => [
+                            "limit" => 100,
+                            "nmID" => $nmID,
+                            "updatedAt" => $updatedAt
+                        ]
+                    ]
+                ])
+            );
+
+            $cursor = $response->getCursor();
+            $total = $cursor->getTotal();
+            $nmID = $cursor->getNmID();
+            $updatedAt = $cursor->getUpdatedAt();
+
+            $cards = $response->getCards();
+
+            $cardsData = [];
+            foreach ($cards as $card) {
+                $cardsData[] = [
+                    'NM_ID' => $card->getNmID(),
+                    'IMT_ID' => $card->getImtID(),
+                    'PHOTOS' => json_encode($card->getPhotos())
+                ];
+            }
+
+            WildberriesCardTable::addMulti($cardsData);
+        }
+    }
+
     private function loadDataToTable()
     {
         while ($rows = $this->xlsxHelper->fetch()) {
@@ -80,6 +134,12 @@ class Importer
     private function clearTable()
     {
         $table = XlsxProductTable::getTableName();
+        Application::getConnection()->query("TRUNCATE TABLE {$table}");
+    }
+
+    private function clearWildberriesTable()
+    {
+        $table = WildberriesCardTable::getTableName();
         Application::getConnection()->query("TRUNCATE TABLE {$table}");
     }
 }
