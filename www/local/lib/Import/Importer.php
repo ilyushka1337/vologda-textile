@@ -101,10 +101,14 @@ final class Importer
 
             $cardsData = [];
             foreach ($cards as $card) {
+                $photos = [];
+                foreach ($card->getPhotos() as $photoItem) {
+                    $photos[] = $photoItem->getBig();
+                }
                 $cardsData[] = [
                     'NM_ID' => $card->getNmID(),
                     'IMT_ID' => $card->getImtID(),
-                    'PHOTOS' => json_encode($card->getPhotos())
+                    'PHOTOS' => json_encode($photos)
                 ];
             }
 

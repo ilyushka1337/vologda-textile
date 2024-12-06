@@ -23,7 +23,7 @@ class WildberriesCardTable extends Entity\DataManager
                 'required' => true
             ]),
             new Entity\StringField('PHOTOS', [
-                'required' => true
+                'required' => true,
             ]),
         ];
     }

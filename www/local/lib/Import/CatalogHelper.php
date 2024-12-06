@@ -8,6 +8,7 @@ use Bitrix\Iblock\Elements\ElementOffersTable;
 use Bitrix\Iblock\Elements\ElementCatalogTable;
 use Bitrix\Main\Loader;
 use Bitrix\Catalog\Model\Product;
+use Bitrix\Catalog\Model\Price;
 use Bitrix\Catalog\ProductTable;
 
 class CatalogHelper
@@ -26,7 +27,7 @@ class CatalogHelper
         private HighloadHelper $bedsheetSizeHelper,
         private HighloadHelper $blanketSizeHelper,
     ) {
-        Loader::requireModule(moduleName: 'iblock');
+        Loader::requireModule('iblock');
         Loader::requireModule('highloadblock');
         Loader::requireModule('sale');
 
@@ -108,6 +109,9 @@ class CatalogHelper
             return null;
         }
 
+        $photos = $this->getPhotos(
+            $this->parsePhotos($wildberriesOffer['PHOTOS'])
+        );
         $productID = $this->findOffer($info['BARCODE']);
 
         $info['IS_NEW'] == 'N' ? 1 : 2;
@@ -121,6 +125,8 @@ class CatalogHelper
         $fields = [
             'NAME' => $info['DESCRIPTION'],
             'ACTIVE' => 'Y',
+            'PREVIEW_PICTURE' => $photos[0] ?? null,
+            'DETAIL_PICTURE' => $photos[0] ?? null,
             'PROPERTY_VALUES' => [
                 'CML2_LINK' => $parentId,
                 'BARCODE' => $info['BARCODE'],
@@ -132,10 +138,14 @@ class CatalogHelper
                 'PILLOWSLIP_SIZE' => $info['PILLOWSLIP_SIZE'],
                 'BEDSHEET_SIZE' => $info['BEDSHEET_SIZE'],
                 'BLANKET_SIZE' => $info['BLANKET_SIZE'],
+                'PREVIEW_GALLERY' => count($photos) > 0 ? $photos : null,
             ]
         ];
 
         if ($productID) {
+            \CIBlockElement::SetPropertyValuesEx($productID, $this->offersIblockID, [
+                'PREVIEW_GALLERY' => ['del' => 'Y']
+            ]);
             $isSuccess = $el->Update($productID, $fields);
 
             if (!$isSuccess) {
@@ -166,6 +176,13 @@ class CatalogHelper
                 'QUANTITY' => 0,
                 'QUANTITY_RESERVED' => 0,
                 'TYPE' => ProductTable::TYPE_OFFER
+            ]);
+
+            $result = Price::add([
+                'PRODUCT_ID' => $productID,
+                'CATALOG_GROUP_ID' => 1,
+                'PRICE' => 100,
+                'CURRENCY' => 'RUB'
             ]);
 
             if (!$productAddResult->isSuccess()) {
@@ -219,13 +236,18 @@ class CatalogHelper
         return $info ? $info : null;
     }
 
-    private function parsePhotos(string $photosJSON)
+    private function parsePhotos(string $photosJSON): array
     {
-        $photos = json_decode($photosJSON, true);
+        return json_decode($photosJSON, true);
     }
 
     private function getPhotos(array $photoURLs)
     {
+        $downloaded = [];
+        foreach ($photoURLs as $photo) {
+            $downloaded[] = $this->photoDownloader->get($photo);
+        }
 
+        return $downloaded;
     }
 }
