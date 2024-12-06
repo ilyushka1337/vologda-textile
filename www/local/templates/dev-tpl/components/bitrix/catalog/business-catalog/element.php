@@ -165,7 +165,7 @@ $componentElementParams = array(
 
 $elementId = $APPLICATION->IncludeComponent(
     'bitrix:catalog.element',
-    'start-element',
+    'business-catalog-element',
     $componentElementParams,
     $component
 );

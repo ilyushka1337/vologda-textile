@@ -12,7 +12,7 @@ $APPLICATION->SetTitle("Каталог Votex");
 ); ?>
 <? $APPLICATION->IncludeComponent(
     "bitrix:catalog",
-    "start-catalog",
+    "business-catalog",
     array(
         "ACTION_VARIABLE" => "action",
         "ADD_ELEMENT_CHAIN" => "Y",

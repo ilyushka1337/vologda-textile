@@ -3,15 +3,30 @@ import { Thumbs, Navigation } from "swiper/modules"
 
 export default (params = {}) => ({
     isAddedToWishlist: false,
+    showWishlistAlert: false,
+    currentOffer: params.OFFERS[0],
+    thumbsSwiper: null,
+    mainSwiper: null,
     init() {
-        const thumbsSwiper = new Swiper(this.$refs.thumbsSwiper, {
+        this.initSlider()
+
+        this.$watch('currentOffer.PROPERTIES.PREVIEW_GALLERY.VALUE', () => {
+            this.$nextTick(() => {
+                this.thumbsSwiper.update()
+                this.mainSwiper.update()
+            })
+        })
+    },
+
+    initSlider() {
+        this.thumbsSwiper = new Swiper(this.$refs.thumbsSwiper, {
             speed: 400,
             spaceBetween: 11,
             direction: 'vertical',
             slidesPerView: 6
         })
 
-        new Swiper(this.$refs.mainSwiper, {
+        this.mainSwiper = new Swiper(this.$refs.mainSwiper, {
             modules: [Thumbs, Navigation],
             speed: 700,
             spaceBetween: 20,
@@ -20,7 +35,7 @@ export default (params = {}) => ({
                 nextEl: this.$refs.mainSliderNext
             },
             thumbs: {
-                swiper: thumbsSwiper
+                swiper: this.thumbsSwiper
             }
         })
 
@@ -37,6 +52,8 @@ export default (params = {}) => ({
     },
 
     addToWishlist() {
+        console.log(params.ID)
         this.isAddedToWishlist = true
+        this.showWishlistAlert = true
     }
 })

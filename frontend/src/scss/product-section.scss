@@ -21,6 +21,8 @@
         aspect-ratio: 1/1;
         border: 1px solid base.$red;
         border-radius: 50%;
+
+        &.added {}
     }
 
     .slider-column {
@@ -50,7 +52,13 @@
         }
 
         .main-swiper {
-            height: base.clampFluid(758);
+
+            .content-gallery-item {
+                &__img {
+                    height: base.clampFluid(758);
+                    aspect-ratio: auto;
+                }
+            }
         }
 
         .img {
@@ -87,5 +95,22 @@
         }
 
         .props-list {}
+    }
+
+    .marketplace {
+
+        margin-top: base.clampFluid(24);
+
+        .page-link {
+            margin-bottom: base.clampFluid(40);
+        }
+
+        .marketplace-link {
+            font-size: base.clampFluid(58);
+
+            &:not(:last-child) {
+                margin-bottom: base.clampFluid(24);
+            }
+        }
     }
 }

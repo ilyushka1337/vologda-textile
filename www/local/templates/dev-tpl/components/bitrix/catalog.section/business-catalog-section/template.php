@@ -116,16 +116,11 @@ $arParams['MESS_BTN_LAZY_LOAD'] = $arParams['MESS_BTN_LAZY_LOAD'] ?: Loc::getMes
             foreach ($arResult['ITEMS'] as $item) {
                 $APPLICATION->IncludeComponent(
                     'bitrix:catalog.item',
-                    'start-item',
+                    'business-catalog-item',
                     array(
                         'RESULT' => array(
                             'ITEM' => $item,
                             'AREA_ID' => $areaIds[$item['ID']],
-                            'TYPE' => 'CARD',
-                            'BIG_LABEL' => 'N',
-                            'BIG_DISCOUNT_PERCENT' => 'N',
-                            'BIG_BUTTONS' => 'N',
-                            'SCALABLE' => 'N'
                         ),
                         'PARAMS' => $generalParams + $itemParameters[$item['ID']],
                     ),

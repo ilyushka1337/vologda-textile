@@ -5,6 +5,12 @@
 
     &__arrow {
         font-size: .75em;
+
+        &--top-right {}
+
+        &--bottom-right {
+            transform: rotate(90deg);
+        }
     }
 
     &:hover {

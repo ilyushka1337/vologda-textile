@@ -79,7 +79,7 @@ $this->setFrameMode(true);
 
         $GLOBALS['CATALOG_CURRENT_SECTION_ID'] = $APPLICATION->IncludeComponent(
             "bitrix:catalog.section",
-            "start-catalog-section",
+            "business-catalog-section",
             array(
                 "SORT" => $sort,
                 "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
@@ -217,7 +217,7 @@ $this->setFrameMode(true);
             "CACHE_TIME" => "3600000",
             "CACHE_TYPE" => "A",
             "IS_PAGE_BLOCK" => "Y",
-            "ELEMENT_CODE" => "seo-zagolovok-dlya-primera-v-dve-strochki",
+            "ELEMENT_CODE" => $textCode,
             "IMG_POSITION" => "right"
         ]);
     ?>

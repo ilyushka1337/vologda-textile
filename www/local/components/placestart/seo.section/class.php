@@ -22,6 +22,10 @@ class SeoSectionComponent extends Boilerplate
 
         $seoText = $q->fetchObject();
 
+        if (!$seoText) {
+            return;
+        }
+
         $this->arResult = [
             'TITLE' => $seoText->getName(),
             'TEXT' => $seoText->getPreviewText(),

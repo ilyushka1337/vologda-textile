@@ -2,6 +2,7 @@
 /**
  * @var League\Plates\Template\Template $this
  * @var string $link
+ * @var string|null $text
  */
 ?>
 
@@ -21,4 +22,8 @@
             </linearGradient>
         </defs>
     </svg>
+
+    <?php if ($text): ?>
+        <span class="marketplace-link__text button"><?= $this->e($text) ?></span>
+    <?php endif ?>
 </a>
