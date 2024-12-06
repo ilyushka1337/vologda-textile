@@ -9,6 +9,7 @@ logs
 /www/local/vendor
 /www/local/assets/dist
 /www/local/import/files
+/www/local/import/cache
 
 # Editor directories and files
 .vscode/*

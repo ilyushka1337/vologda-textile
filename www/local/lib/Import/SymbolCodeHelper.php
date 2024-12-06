@@ -11,7 +11,7 @@ class SymbolCodeHelper
         Loader::requireModule(moduleName: 'iblock');
     }
 
-    public function createElementCode(string $name, int $iblockID, int $ID)
+    public function createElementCode(string $name, int $iblockID, int $ID): string
     {
         $el = new \CIBlockElement;
         $code = $el->createMnemonicCode([

@@ -3,7 +3,8 @@
     "type": "project",
     "config": {
         "allow-plugins": {
-            "composer/installers": true
+            "composer/installers": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
@@ -36,9 +37,15 @@
         "andreyryabin/sprint.migration": "^4.15",
         "andreyryabin/sprint.editor": "^4.18",
         "andreyryabin/sprint.options": "^2.5",
-        "symfony/var-dumper": "^6.4",
         "respect/validation": "^2.3",
         "giggsey/libphonenumber-for-php-lite": "^8.13",
-        "phpoffice/phpspreadsheet": "^3.5"
+        "phpoffice/phpspreadsheet": "^3.5",
+        "symfony/http-client": "^7.2",
+        "symfony/http-kernel": "^7.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.4",
+        "jane-php/open-api-3": "^7.8",
+        "friendsofphp/php-cs-fixer": "^3.65"
     }
 }
