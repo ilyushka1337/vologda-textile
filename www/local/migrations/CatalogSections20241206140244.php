@@ -3,11 +3,11 @@
 namespace Sprint\Migration;
 
 
-class CatalogSections20241126155900 extends Version
+class CatalogSections20241206140244 extends Version
 {
   protected $author = "admin";
 
-  protected $description = "Разделы каталога";
+  protected $description = "Категории каталога";
 
   protected $moduleVersion = "4.15.1";
 
@@ -75,9 +75,31 @@ class CatalogSections20241126155900 extends Version
                           ),
                         2 =>
                           array(
-                            'NAME' => 'Отдельные предметы',
-                            'CODE' => 'otdelnye-predmety',
-                            'SORT' => '200',
+                            'NAME' => 'Пододеяльники',
+                            'CODE' => 'pododeyalniki',
+                            'SORT' => '500',
+                            'ACTIVE' => 'Y',
+                            'XML_ID' => NULL,
+                            'DESCRIPTION' => '',
+                            'DESCRIPTION_TYPE' => 'text',
+                            'UF_SEO_TEXT' => NULL,
+                          ),
+                        3 =>
+                          array(
+                            'NAME' => 'Наволочки',
+                            'CODE' => 'navolochki',
+                            'SORT' => '500',
+                            'ACTIVE' => 'Y',
+                            'XML_ID' => NULL,
+                            'DESCRIPTION' => '',
+                            'DESCRIPTION_TYPE' => 'text',
+                            'UF_SEO_TEXT' => NULL,
+                          ),
+                        4 =>
+                          array(
+                            'NAME' => 'Простыни',
+                            'CODE' => 'prostyni',
+                            'SORT' => '500',
                             'ACTIVE' => 'Y',
                             'XML_ID' => NULL,
                             'DESCRIPTION' => '',
@@ -120,28 +142,6 @@ class CatalogSections20241126155900 extends Version
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
                           ),
-                        2 =>
-                          array(
-                            'NAME' => 'Шторы',
-                            'CODE' => 'shtory',
-                            'SORT' => '300',
-                            'ACTIVE' => 'Y',
-                            'XML_ID' => NULL,
-                            'DESCRIPTION' => '',
-                            'DESCRIPTION_TYPE' => 'text',
-                            'UF_SEO_TEXT' => NULL,
-                          ),
-                        3 =>
-                          array(
-                            'NAME' => 'Декор стола',
-                            'CODE' => 'dekor-stola',
-                            'SORT' => '400',
-                            'ACTIVE' => 'Y',
-                            'XML_ID' => NULL,
-                            'DESCRIPTION' => '',
-                            'DESCRIPTION_TYPE' => 'text',
-                            'UF_SEO_TEXT' => NULL,
-                          ),
                       ),
                   ),
                 2 =>
@@ -167,28 +167,6 @@ class CatalogSections20241126155900 extends Version
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
                           ),
-                        1 =>
-                          array(
-                            'NAME' => 'Шторы',
-                            'CODE' => 'shtory1',
-                            'SORT' => '200',
-                            'ACTIVE' => 'Y',
-                            'XML_ID' => NULL,
-                            'DESCRIPTION' => '',
-                            'DESCRIPTION_TYPE' => 'text',
-                            'UF_SEO_TEXT' => NULL,
-                          ),
-                        2 =>
-                          array(
-                            'NAME' => 'Декоративный текстиль',
-                            'CODE' => 'dekorativnyy-tekstil',
-                            'SORT' => '300',
-                            'ACTIVE' => 'Y',
-                            'XML_ID' => NULL,
-                            'DESCRIPTION' => '',
-                            'DESCRIPTION_TYPE' => 'text',
-                            'UF_SEO_TEXT' => NULL,
-                          ),
                       ),
                   ),
               ),
@@ -203,6 +181,86 @@ class CatalogSections20241126155900 extends Version
             'DESCRIPTION' => '',
             'DESCRIPTION_TYPE' => 'text',
             'UF_SEO_TEXT' => NULL,
+            'CHILDS' =>
+              array(
+                0 =>
+                  array(
+                    'NAME' => 'Комплект для сауны ',
+                    'CODE' => 'komplekt-dlya-sauny',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+                1 =>
+                  array(
+                    'NAME' => 'Простынь вафельная',
+                    'CODE' => 'prostyn-vafelnaya',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+                2 =>
+                  array(
+                    'NAME' => 'Полтенца пляжные',
+                    'CODE' => 'poltentsa-plyazhnye',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+                3 =>
+                  array(
+                    'NAME' => 'Килт мужской',
+                    'CODE' => 'kilt-muzhskoy',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+                4 =>
+                  array(
+                    'NAME' => 'Килт женский',
+                    'CODE' => 'kilt-zhenskiy',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+                5 =>
+                  array(
+                    'NAME' => 'Полотенца банные',
+                    'CODE' => 'polotentsa-bannye',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+                6 =>
+                  array(
+                    'NAME' => 'Халаты',
+                    'CODE' => 'khalaty',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+              ),
           ),
         2 =>
           array(
@@ -214,6 +272,31 @@ class CatalogSections20241126155900 extends Version
             'DESCRIPTION' => '',
             'DESCRIPTION_TYPE' => 'text',
             'UF_SEO_TEXT' => NULL,
+            'CHILDS' =>
+              array(
+                0 =>
+                  array(
+                    'NAME' => 'Детские полотенца-уголки',
+                    'CODE' => 'detskie-polotentsa-ugolki',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+                1 =>
+                  array(
+                    'NAME' => 'Детские халаты',
+                    'CODE' => 'detskie-khalaty',
+                    'SORT' => '500',
+                    'ACTIVE' => 'Y',
+                    'XML_ID' => NULL,
+                    'DESCRIPTION' => '',
+                    'DESCRIPTION_TYPE' => 'text',
+                    'UF_SEO_TEXT' => NULL,
+                  ),
+              ),
           ),
         3 =>
           array(
