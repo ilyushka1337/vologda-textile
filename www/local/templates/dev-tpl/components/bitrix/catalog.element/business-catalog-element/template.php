@@ -11,12 +11,26 @@
  */
 
 $jsData = [
-    'OFFERS' => $arResult['OFFERS']
+    'ID' => $arResult['ID'],
+    'OFFERS' => $arResult['OFFERS'],
+    'SKU_PROPS' => $arResult['SKU_PROPS']
 ];
-dump($arResult);
 ?>
 
 <div class="product-page" x-data="ProductPage(<?= tpl_js($jsData) ?>)">
+    <template x-teleport="body" x-data="Alert(false, 5)" x-model="showWishlistAlert" x-bind="root">
+        <div class="alert alert--success alert--bottom-right" x-bind="root">
+            <div class="alert__body">
+                <p class="alert__title">Товар "Халат банный вафельный с поясом"</p>
+                <p class="alert__text">добавлен в избранное</p>
+            </div>
+            <button class="alert__close" x-bind="close">
+                <span class="icon cross-icon"></span>
+            </button>
+            <div class="alert__timer" x-bind="timer"></div>
+        </div>
+    </template>
+
     <section class="product-section">
         <div class="top container container-sm">
             <div class="slider-column">
@@ -60,68 +74,57 @@ dump($arResult);
             <div class="info-column">
                 <h1 class="title h2"><?= $arResult['NAME'] ?></h1>
 
-                <div class="product-offer">
-                    <p class="product-offer__name p2">Цвет: серый</p>
-                    <div class="product-offer__slider">
-                        <div class="product-offer__slider-wrap">
-                            <div class="swiper" x-ref="colorsSlider">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="/local/assets/product-slide.jpg" loading="lazy" class="img">
+                <div class="product-sku-properties">
+                    <template x-for="(property, code) in showSkuProps">
+                        <div class="product-offer">
+                            <template x-if="property.PICTURES.length == 0">
+                                <div>
+                                    <p class="product-offer__name p2" x-text="`${property.NAME}:`"></p>
+                                    <div class="product-offer__values">
+                                        <template x-for="value in property.VALUES">
+                                            <button class="product-offer__value"
+                                                :class="property.CURRENT_VALUE == value && 'product-offer__value--active'"
+                                                @click="updateOfferForSelectedProperty(code, value)"
+                                                x-text="value"></button>
+                                        </template>
                                     </div>
                                 </div>
-                            </div>
+                            </template>
+                            <template x-if="property.PICTURES.length > 0">
+                                <div>
+                                    <p class="product-offer__name p2"
+                                        x-text="`${property.NAME}: ${property.CURRENT_VALUE}`"></p>
+                                    <div class="product-offer__slider">
+                                        <div class="product-offer__slider-wrap">
+                                            <div class="swiper" x-ref="colorsSlider" x-init="initColorsSlider">
+                                                <div class="swiper-wrapper">
+                                                    <template x-for="(value, index) in property.VALUES">
+                                                        <div class="swiper-slide"
+                                                            :class="value === property.CURRENT_VALUE && 'active'"
+                                                            @click="updateOfferForSelectedProperty(code, value)">
+                                                            <img :src="property.PICTURES[index]" loading="lazy"
+                                                                class="img">
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?= tpl('ui/slider-arrow', [
+                                            'direction' => 'prev',
+                                            'attrs' => 'x-ref="colorsSliderPrev"'
+                                        ]) ?>
+                                        <?= tpl('ui/slider-arrow', [
+                                            'direction' => 'next',
+                                            'attrs' => 'x-ref="colorsSliderNext"'
+                                        ]) ?>
+                                    </div>
+                                </div>
+                            </template>
                         </div>
-                        <?= tpl('ui/slider-arrow', [
-                            'direction' => 'prev',
-                            'attrs' => 'x-ref="colorsSliderPrev"'
-                        ]) ?>
-                        <?= tpl('ui/slider-arrow', [
-                            'direction' => 'next',
-                            'attrs' => 'x-ref="colorsSliderNext"'
-                        ]) ?>
-                    </div>
-                </div>
-                <div class="product-offer">
-                    <p class="product-offer__name p2">Размер постельного белья:</p>
-                    <div class="product-offer__values">
-                        <button class="product-offer__value product-offer__value--active">1,5-спальное</button>
-                        <button class="product-offer__value">1,5-спальное</button>
-                        <button class="product-offer__value">1,5-спальное</button>
-                        <button class="product-offer__value">1,5-спальное</button>
-                    </div>
+                    </template>
                 </div>
 
                 <div class="marketplace">
-                    <?= tpl('ui/page-link', [
-                        'text' => 'Все характеристики и описание',
-                        'type' => 'button',
-                        'arrowRotation' => 'bottom-right'
-                    ]) ?>
                     <a x-show="currentOffer.PROPERTIES.ARTICUL_OZON.VALUE"
                         :href="`https://www.ozon.ru/product/${currentOffer.PROPERTIES.ARTICUL_OZON.VALUE}`"
                         target="_blank" class="marketplace-link">
@@ -191,17 +194,12 @@ dump($arResult);
         </div>
     </section>
 
-
-    <template x-teleport="body" x-data="Alert(false, 5)" x-model="showWishlistAlert" x-bind="root">
-        <div class="alert alert--success alert--bottom-right" x-bind="root">
-            <div class="alert__body">
-                <p class="alert__title">Товар "Халат банный вафельный с поясом"</p>
-                <p class="alert__text">добавлен в избранное</p>
+    <?php if ($arResult['DETAIL_TEXT']): ?>
+        <div class="container container-sm page-block">
+            <div class="content-text">
+                <h2>Описание</h2>
+                <?= $arResult['DETAIL_TEXT'] ?>
             </div>
-            <button class="alert__close" x-bind="close">
-                <span class="icon cross-icon"></span>
-            </button>
-            <div class="alert__timer" x-bind="timer"></div>
         </div>
-    </template>
+    <?php endif ?>
 </div>

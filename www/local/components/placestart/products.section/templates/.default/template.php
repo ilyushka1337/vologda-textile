@@ -5,10 +5,10 @@
                 <div class="label label--gray">каталог</div>
             </div>
             <div class="products-column">
-                <h2 class="h1">Новинки</h2>
+                <h2 class="title h1"><?= $arParams['TITLE'] ?></h2>
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:catalog.section",
-                    "business-catalog-section",
+                    "simple-section",
                     array(
                         "ACTION_VARIABLE" => "action",
                         "ADD_PROPERTIES_TO_BASKET" => "Y",

@@ -171,3 +171,15 @@ $elementId = $APPLICATION->IncludeComponent(
 );
 
 $GLOBALS['CATALOG_CURRENT_ELEMENT_ID'] = $elementId;
+
+$APPLICATION->IncludeComponent(
+    "placestart:products.section",
+    "simple",
+    array(
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "N",
+        "IS_PAGE_BLOCK" => "Y",
+        "TITLE" => "Рекомендуем вам"
+    )
+);
+?>

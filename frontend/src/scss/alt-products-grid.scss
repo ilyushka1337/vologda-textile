@@ -1,0 +1,7 @@
+@use "@/base.scss";
+
+.alt-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: base.clampFluid(40) base.clampFluid(26);
+}

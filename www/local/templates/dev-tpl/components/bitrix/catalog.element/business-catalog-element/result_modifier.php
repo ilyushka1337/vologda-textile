@@ -1,6 +1,14 @@
 <?
 use Placestart\Core\Utils;
 
+/**
+ * @var CBitrixComponentTemplate $this
+ * @var CatalogElementComponent $component
+ */
+
+$component = $this->getComponent();
+$arParams = $component->applyTemplateModifications();
+
 foreach ($arResult['OFFERS'] as $i => $offer) {
     if ($offer['PROPERTIES']['PREVIEW_GALLERY']['VALUE']) {
         $imgs = [];
@@ -11,3 +19,10 @@ foreach ($arResult['OFFERS'] as $i => $offer) {
         $arResult['OFFERS'][$i]['PROPERTIES']['PREVIEW_GALLERY']['VALUE'] = $imgs;
     }
 }
+
+$skuProps = [];
+foreach ($arResult['SKU_PROPS'] as $prop) {
+    unset($prop['USER_TYPE_SETTINGS']);
+    $skuProps[] = $prop;
+}
+$arResult['SKU_PROPS'] = $skuProps;

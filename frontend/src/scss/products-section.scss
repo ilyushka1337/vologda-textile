@@ -1,10 +1,6 @@
 @use "@/base.scss";
 
-.new-section {
-    .wrap {
-        @include base.label-columns-grid;
-    }
-
+.products-section {
     .title {
         margin-bottom: base.clampFluid(40);
     }
