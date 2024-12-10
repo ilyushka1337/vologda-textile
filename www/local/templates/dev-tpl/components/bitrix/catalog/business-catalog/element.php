@@ -172,6 +172,16 @@ $elementId = $APPLICATION->IncludeComponent(
 
 $GLOBALS['CATALOG_CURRENT_ELEMENT_ID'] = $elementId;
 
+$textCode = $APPLICATION->GetPageProperty('ELEMENT_TEXT_CODE');
+if ($textCode)
+    $APPLICATION->IncludeComponent('placestart:seo.section', '', [
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "A",
+        "IS_PAGE_BLOCK" => "Y",
+        "ELEMENT_CODE" => $textCode,
+        "IMG_POSITION" => "left"
+    ]);
+
 $APPLICATION->IncludeComponent(
     "placestart:products.section",
     "simple",

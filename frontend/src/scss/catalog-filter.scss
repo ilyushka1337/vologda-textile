@@ -1,0 +1,17 @@
+@use "@/base.scss";
+
+.catalog-filter {
+    margin-bottom: base.clampFluid(40);
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: base.clampFluid(12);
+    }
+
+    @media (max-width: 767px) {
+        .container {
+            flex-direction: column;
+        }
+    }
+}

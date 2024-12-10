@@ -1,5 +1,6 @@
 <?
 use Placestart\Core\Utils;
+use Bitrix\Iblock\Elements\ElementCatalogTable;
 
 /**
  * @var CBitrixComponentTemplate $this
@@ -7,6 +8,7 @@ use Placestart\Core\Utils;
  */
 
 $component = $this->getComponent();
+$component->setResultCacheKeys(['TEXT_CODE']);
 $arParams = $component->applyTemplateModifications();
 
 foreach ($arResult['OFFERS'] as $i => $offer) {
@@ -26,3 +28,13 @@ foreach ($arResult['SKU_PROPS'] as $prop) {
     $skuProps[] = $prop;
 }
 $arResult['SKU_PROPS'] = $skuProps;
+
+$element = (ElementCatalogTable::getList([
+    'filter' => ['ID' => $arResult['ID']],
+    'select' => ['SEO_TEXT_CODE_' => 'SEO_TEXT_CODE'],
+    'limit' => 1
+]))->fetch();
+
+if (isset($element['SEO_TEXT_CODE_VALUE'])) {
+    $arResult['TEXT_CODE'] = $element['SEO_TEXT_CODE_VALUE'];
+}
