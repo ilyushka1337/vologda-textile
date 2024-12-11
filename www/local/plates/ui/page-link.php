@@ -5,7 +5,10 @@
  * @var string $text
  * @var string $type
  * @var string $target
+ * @var string $arrowRotation
  */
+
+$arrowRotation = $arrowRotation ?? 'top-right';
 ?>
 
 <?php if ($type == 'link'): ?>
@@ -16,6 +19,6 @@
 <?php elseif ($type == 'button'): ?>
     <button class="page-link link button">
         <?= $this->e($text) ?>
-        <span class="page-link__arrow icon arrow-icon"></span>
+        <span class="page-link__arrow page-link__arrow--<?= $arrowRotation ?> icon arrow-icon"></span>
     </button>
 <?php endif ?>

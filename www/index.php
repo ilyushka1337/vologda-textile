@@ -17,15 +17,12 @@ $APPLICATION->IncludeComponent('placestart:votex.sections', '', [
     "CACHE_TYPE" => "A",
     "IS_PAGE_BLOCK" => "N"
 ]);
-$APPLICATION->IncludeComponent(
-    "placestart:new.section",
-    "",
-    array(
-        "CACHE_TIME" => "3600000",
-        "CACHE_TYPE" => "N",
-        "IS_PAGE_BLOCK" => "Y"
-    )
-);
+$APPLICATION->IncludeComponent('placestart:products.section', '', [
+    "CACHE_TIME" => "3600000",
+    "CACHE_TYPE" => "A",
+    "IS_PAGE_BLOCK" => "Y",
+    "TITLE" => "Новинки"
+]);
 $APPLICATION->IncludeComponent('placestart:reviews.section', '', [
     "CACHE_TIME" => "3600000",
     "CACHE_TYPE" => "A",

@@ -1,9 +1,9 @@
 import "./select.scss";
 
-export default (sortOptions = {}, initialValue = '', initialState = false) => ({
+export default (selectOptions = {}, initialValue = '', initialState = false) => ({
     isOpen: initialState,
-    value: initialValue || Object.keys(sortOptions)[0],
-    options: sortOptions,
+    value: initialValue || Object.keys(selectOptions)[0],
+    options: selectOptions,
     get text() {
         return this.options[this.value]
     },
@@ -23,7 +23,7 @@ export default (sortOptions = {}, initialValue = '', initialState = false) => ({
     },
     root: {
         ['x-ref']: 'root',
-        ['x-modelable']: 'isOpen',
+        ['x-modelable']: 'value',
         ['@click.outside']: 'close()',
         ['@keyup.escape.window']: 'close()',
     },

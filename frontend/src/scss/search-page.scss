@@ -1,0 +1,7 @@
+@use "@/base.scss";
+
+.search-page {
+    .search-form {
+        margin-bottom: base.clampFluid(40);
+    }
+}

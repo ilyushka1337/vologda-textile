@@ -8,6 +8,7 @@
     &__values {
         display: flex;
         gap: base.clampFluid(12);
+        flex-wrap: wrap;
     }
 
     &__value {
@@ -36,6 +37,10 @@
 
             &-slide {
                 border: 1px solid transparent;
+
+                &.active {
+                    border-color: base.$red;
+                }
             }
         }
 

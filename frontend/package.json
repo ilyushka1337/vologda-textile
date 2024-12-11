@@ -24,7 +24,7 @@
         "@alpinejs/mask": "^3.14.1",
         "@fancyapps/ui": "^5.0.36",
         "@fontsource-variable/montserrat": "^5.1.0",
-        "alpinejs": "^3.14.1",
+        "alpinejs": "^3.14.7",
         "htmx.org": "^1.9.12",
         "ky": "^1.7.1",
         "swiper": "^11.1.14"

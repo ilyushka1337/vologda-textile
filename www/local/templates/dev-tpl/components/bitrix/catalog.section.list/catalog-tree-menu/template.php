@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 ?>
 
 <div class="left-column">
-    <form action="" class="search-form p2">
+    <form action="/catalog/" class="search-form p2">
         <input class="input" type="search" name="q" placeholder="Поиск">
         <button class="search-btn">
             <span class="icon search-icon"></span>

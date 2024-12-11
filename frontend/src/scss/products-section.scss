@@ -1,0 +1,7 @@
+@use "@/base.scss";
+
+.products-section {
+    .title {
+        margin-bottom: base.clampFluid(40);
+    }
+}

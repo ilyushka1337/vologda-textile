@@ -30,7 +30,7 @@
                     'link' => 'https://wildberries.ru/'
                 ]) ?>
                 <?= tpl('ui/ozon-link', [
-                    'link' => 'https://ozon.ru//'
+                    'link' => 'https://ozon.ru/'
                 ]) ?>
             </div>
         </div>

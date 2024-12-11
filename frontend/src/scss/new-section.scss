@@ -4,4 +4,8 @@
     .wrap {
         @include base.label-columns-grid;
     }
+
+    .title {
+        margin-bottom: base.clampFluid(40);
+    }
 }

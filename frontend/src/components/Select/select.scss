@@ -1,21 +1,31 @@
-@import "@/scss/base/base.scss";
+@use "@/base.scss";
 
 .select {
+    display: inline-flex;
     position: relative;
 
     &__value {
-        padding: clampFluid(7) clampFluid(12);
+        padding: base.clampFluid(7) base.clampFluid(12);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: clampFluid(20);
-        border: 1px solid $gray-stroke;
-        background: $white;
-        @include p2;
+        gap: base.clampFluid(20);
+        border: 1px solid #CBCCD1;
+        background: base.$white;
+        @include base.p2;
+
+        &-icon {
+            color: base.$black;
+        }
+
+        &:hover {
+            border-color: base.$red;
+        }
     }
 
     &__arrow {
         font-size: .8em;
+        color: rgba($color: base.$black, $alpha: .2);
         transition: transform .4s;
 
         &--rotate {
@@ -24,14 +34,14 @@
     }
 
     &__dropdown {
+        min-width: 100%;
         position: absolute;
         top: calc(100% + 10px);
         left: 0;
-        right: 0;
         z-index: 5;
-        padding: clampFluid(7) clampFluid(12);
-        border: 1px solid $gray-stroke;
-        background: $white;
+        padding: base.clampFluid(7) base.clampFluid(12);
+        background: base.$white;
+        box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
 
         &[x-cloak] {
             display: none;
@@ -40,9 +50,23 @@
 
     &__option {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        padding: clampFluid(5);
-        @include p2;
-        border-radius: clampFluid(4);
+        padding: base.clampFluid(5);
+        white-space: nowrap;
+        @include base.p2;
+        border-radius: base.clampFluid(4);
+
+        .check-icon {
+            opacity: 0;
+            color: base.$red;
+        }
+
+        &--selected {
+            .check-icon {
+                opacity: 1;
+            }
+        }
     }
 }
