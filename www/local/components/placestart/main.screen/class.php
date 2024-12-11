@@ -14,12 +14,12 @@ class MainScreenComponent extends Boilerplate
     {
         $this->arResult['SLIDES'] = [];
         $q = ElementSliderTable::getList([
-            'select' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE']
+            'select' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'TITLE']
         ]);
 
         while ($slide = $q->fetchObject()) {
             $this->arResult['SLIDES'][] = [
-                'TITLE' => $slide->getName(),
+                'TITLE' => $slide->getTitle(),
                 'TEXT' => $slide->getPreviewText(),
                 'IMG' => Utils::resizeImage($slide->getPreviewPicture(), 1722, 670, 'proportional')
             ];

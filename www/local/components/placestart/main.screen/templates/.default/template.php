@@ -9,23 +9,29 @@
                                 <img src="<?= $arSlide['IMG']['SRC'] ?>" loading="lazy" class="bg">
                             <?php endif ?>
                             <div class="text-column">
-                                <h2 class="title h1"><?= $arSlide['TITLE'] ?></h2>
-                                <div class="content-text">
-                                    <?= $arSlide['TEXT'] ?>
-                                </div>
+                                <?php if ($arSlide['TITLE']): ?>
+                                    <h2 class="title h1"><?= $arSlide['TITLE'] ?></h2>
+                                <?php endif ?>
+                                <?php if ($arSlide['TEXT']): ?>
+                                    <div class="content-text">
+                                        <?= $arSlide['TEXT'] ?>
+                                    </div>
+                                <?php endif ?>
                             </div>
                         </div>
                     <?php endforeach ?>
                 </div>
-                <div class="slider-controls">
-                    <div class="slider-pagination" x-ref="pagination"></div>
-                    <?= tpl('ui/slider-arrow', [
-                        'direction' => 'prev'
-                    ]) ?>
-                    <?= tpl('ui/slider-arrow', [
-                        'direction' => 'next'
-                    ]) ?>
-                </div>
+                <?php if (count($arResult['SLIDES']) > 1): ?>
+                    <div class="slider-controls">
+                        <div class="slider-pagination" x-ref="pagination"></div>
+                        <?= tpl('ui/slider-arrow', [
+                            'direction' => 'prev'
+                        ]) ?>
+                        <?= tpl('ui/slider-arrow', [
+                            'direction' => 'next'
+                        ]) ?>
+                    </div>
+                <?php endif ?>
             </div>
         </div>
     </section>
