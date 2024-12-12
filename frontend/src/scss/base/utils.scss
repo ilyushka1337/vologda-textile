@@ -29,6 +29,12 @@
             max-width: 1260px;
         }
     }
+
+    &-no-paddding {
+        @media (max-width: 1279px) {
+            padding: 0;
+        }
+    }
 }
 
 
@@ -137,4 +143,8 @@
 
 .block-title {
     margin-bottom: base.clampFluid(40);
+}
+
+.page-head+.page-block {
+    margin-top: 0;
 }

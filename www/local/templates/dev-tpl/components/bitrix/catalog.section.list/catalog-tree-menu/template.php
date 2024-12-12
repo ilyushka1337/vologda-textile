@@ -50,6 +50,9 @@ $this->setFrameMode(true);
                 </div>
             <?php endif ?>
         <?php endforeach ?>
+        <div class="item button">
+            <a href="/catalog/premium/" class="link">Premium</a>
+        </div>
     </div>
     <template x-if="logo">
         <img :src="`/local/assets/${logo}`" alt="" class="section-logo">
