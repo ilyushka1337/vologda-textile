@@ -12,6 +12,12 @@ class ReviewsSectionComponent extends Boilerplate
 {
     protected static $name = "Отзывы";
 
+    public function __construct($component = null)
+    {
+        parent::__construct($component);
+        Loader::requireModule('sprint.options');
+    }
+
     protected function getData()
     {
         $this->arResult['REVIEWS'] = [];
@@ -24,6 +30,9 @@ class ReviewsSectionComponent extends Boilerplate
                 'IMG' => Utils::resizeImage($slide->getPreviewPicture(), 600, 600, 'proportional'),
             ];
         }
+
+        $this->arResult['SITE_WILDBERRIES'] = sprint_options_get('SITE_WILDBERRIES');
+        $this->arResult['SITE_OZON'] = sprint_options_get('SITE_OZON');
     }
 
     public static function getComponentParameters(): Parameters

@@ -1,4 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Ткани");
-?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+?><?$APPLICATION->IncludeComponent(
+	"placestart:page.head",
+	"",
+Array()
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

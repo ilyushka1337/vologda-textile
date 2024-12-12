@@ -6,8 +6,6 @@ use Placestart\Core\Component\Boilerplate;
 use Placestart\Core\Component\Parameters;
 use Placestart\Core\Utils;
 
-Loader::includeModule('placestart.core');
-
 class ContactsSectionComponent extends Boilerplate
 {
     protected static $name = "Контакты";

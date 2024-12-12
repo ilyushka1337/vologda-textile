@@ -18,33 +18,9 @@ $jsData = [
 ?>
 
 <div class="product-page" x-data="ProductPage(<?= tpl_js($jsData) ?>)">
-    <template x-teleport="body" x-data="Alert(false, 5)" x-model="showWishlistAlert" x-bind="root">
-        <div class="alert alert--success alert--bottom-right" x-bind="root">
-            <div class="alert__body">
-                <p class="alert__title">Товар "Халат банный вафельный с поясом"</p>
-                <p class="alert__text">добавлен в избранное</p>
-            </div>
-            <button class="alert__close" x-bind="close">
-                <span class="icon cross-icon"></span>
-            </button>
-            <div class="alert__timer" x-bind="timer"></div>
-        </div>
-    </template>
-
     <section class="product-section">
         <div class="top container container-sm">
             <div class="slider-column">
-                <div class="thumbs-wrap">
-                    <div class="thumbs-swiper swiper" x-ref="thumbsSwiper">
-                        <div class="swiper-wrapper">
-                            <template x-for="imgSrc in currentOffer.PROPERTIES.PREVIEW_GALLERY.VALUE">
-                                <div class="swiper-slide">
-                                    <img :src="imgSrc" loading="lazy" class="img">
-                                </div>
-                            </template>
-                        </div>
-                    </div>
-                </div>
                 <div class="main-swiper swiper" x-ref="mainSwiper">
                     <div class="swiper-wrapper" x-data="FancyboxGallery">
                         <template x-for="imgSrc in currentOffer.PROPERTIES.PREVIEW_GALLERY.VALUE">
@@ -61,15 +37,26 @@ $jsData = [
                             </div>
                         </template>
                     </div>
+                    <?= tpl('ui/slider-arrow', [
+                        'direction' => 'prev',
+                        'attrs' => 'x-ref="mainSliderPrev"'
+                    ]) ?>
+                    <?= tpl('ui/slider-arrow', [
+                        'direction' => 'next',
+                        'attrs' => 'x-ref="mainSliderNext"'
+                    ]) ?>
                 </div>
-                <?= tpl('ui/slider-arrow', [
-                    'direction' => 'prev',
-                    'attrs' => 'x-ref="mainSliderPrev"'
-                ]) ?>
-                <?= tpl('ui/slider-arrow', [
-                    'direction' => 'next',
-                    'attrs' => 'x-ref="mainSliderNext"'
-                ]) ?>
+                <div class="thumbs-wrap">
+                    <div class="thumbs-swiper swiper" x-ref="thumbsSwiper">
+                        <div class="swiper-wrapper">
+                            <template x-for="imgSrc in currentOffer.PROPERTIES.PREVIEW_GALLERY.VALUE">
+                                <div class="swiper-slide">
+                                    <img :src="imgSrc" loading="lazy" class="img">
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="info-column">
                 <h1 class="title h2"><?= $arResult['NAME'] ?></h1>
@@ -188,7 +175,9 @@ $jsData = [
                 </div>
             </div>
 
-            <button class="to-wishlist" @click="addToWishlist" :class="isAddedToWishlist && 'added'">
+            <button class="to-wishlist" hx-vals='{"id": "<?= $arResult['ID'] ?>"}'
+                hx-post="/bitrix/services/main/ajax.php?action=placestart:wishlist.htmlApi.WishlistApi.toggle"
+                hx-target="body" hx-swap="beforeend">
                 <span class="icon heart-icon"></span>
             </button>
         </div>

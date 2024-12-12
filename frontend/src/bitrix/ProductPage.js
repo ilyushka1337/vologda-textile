@@ -2,7 +2,6 @@ import Swiper from "swiper"
 import { Thumbs, Navigation } from "swiper/modules"
 
 export default (params = {}) => ({
-    isAddedToWishlist: false,
     showWishlistAlert: false,
     currentOffer: params.OFFERS[0],
     thumbsSwiper: null,
@@ -97,8 +96,13 @@ export default (params = {}) => ({
         this.thumbsSwiper = new Swiper(this.$refs.thumbsSwiper, {
             speed: 400,
             spaceBetween: 11,
-            direction: 'vertical',
-            slidesPerView: 6
+            slidesPerView: 4,
+            breakpoints: {
+                768: {
+                    direction: 'vertical',
+                    slidesPerView: 6,
+                }
+            }
         })
 
         this.mainSwiper = new Swiper(this.$refs.mainSwiper, {
@@ -129,17 +133,17 @@ export default (params = {}) => ({
             modules: [Navigation],
             speed: 400,
             spaceBetween: 11,
-            slidesPerView: 6,
+            slidesPerView: 4,
             slideToClickedSlide: true,
             navigation: {
                 prevEl: this.$refs.colorsSliderPrev,
                 nextEl: this.$refs.colorsSliderNext
             },
+            breakpoints: {
+                768: {
+                    slidesPerView: 6,
+                }
+            }
         })
-    },
-
-    addToWishlist() {
-        this.isAddedToWishlist = true
-        this.showWishlistAlert = true
     }
 })

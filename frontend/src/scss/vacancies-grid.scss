@@ -1,0 +1,11 @@
+@use "@/base.scss";
+
+.vacancies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: base.clampFluid(20);
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
+}

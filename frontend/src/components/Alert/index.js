@@ -1,20 +1,30 @@
 import "./alert.scss"
 
-export default (initialState = false, timeOut = 5) => ({
+export default (initialState = false, timeOut = 5, removeOnClose = false) => ({
     isOpen: initialState,
     timeoutID: null,
     init() {
         if (timeOut > 0) {
-            this.$watch('isOpen', (value) => this.handleTimeout(value))
+            this.initTimer()
+            this.$watch('isOpen', (isOpen) => {
+                if (!isOpen)
+                    this.clearTimer()
+
+                if (removeOnClose)
+                    this.$nextTick(() => {
+                        this.$root.remove()
+                    })
+            })
         }
     },
-    handleTimeout(isOpen) {
-        if (isOpen)
+    initTimer() {
+        if (this.isOpen)
             this.timeoutID = setTimeout(() => {
                 this.isOpen = false
             }, timeOut * 1000)
-        else
-            clearTimeout(this.timeoutID)
+    },
+    clearTimer() {
+        this.timeoutID && clearTimeout(this.timeoutID)
     },
     root: {
         ['x-transition']: '',

@@ -5,9 +5,6 @@
 
 use Bitrix\Main\Loader;
 use Placestart\Core\Utils;
-
-Loader::includeModule('placestart.core');
-
 ?>
 <?php if (!empty($block['files'])): ?>
     <div class="content-files content-block">

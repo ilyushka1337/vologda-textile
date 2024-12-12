@@ -55,8 +55,8 @@
         width: 100%;
         padding: base.clampFluid(5);
         white-space: nowrap;
-        @include base.p2;
         border-radius: base.clampFluid(4);
+        @include base.p2;
 
         .check-icon {
             opacity: 0;

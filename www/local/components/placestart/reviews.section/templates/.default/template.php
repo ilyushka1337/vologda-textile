@@ -26,12 +26,16 @@
 
             <div class="marketplace">
                 <p class="text button">Читайте отзывы на маркетплейсах:</p>
-                <?= tpl('ui/wildberries-link', [
-                    'link' => 'https://wildberries.ru/'
-                ]) ?>
-                <?= tpl('ui/ozon-link', [
-                    'link' => 'https://ozon.ru/'
-                ]) ?>
+                <?php if ($arResult['SITE_WILDBERRIES']): ?>
+                    <?= tpl('ui/wildberries-link', [
+                        'link' => $arResult['SITE_WILDBERRIES']
+                    ]) ?>
+                <?php endif ?>
+                <?php if ($arResult['SITE_OZON']): ?>
+                    <?= tpl('ui/ozon-link', [
+                        'link' => $arResult['SITE_OZON']
+                    ]) ?>
+                <?php endif ?>
             </div>
         </div>
     </section>

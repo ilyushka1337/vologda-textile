@@ -134,3 +134,7 @@
         margin-right: -15px;
     }
 }
+
+.block-title {
+    margin-bottom: base.clampFluid(40);
+}
