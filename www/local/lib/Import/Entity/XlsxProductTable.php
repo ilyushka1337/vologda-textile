@@ -23,7 +23,7 @@ class XlsxProductTable extends Entity\DataManager
                 'nullable' => true
             ]),
             new Entity\StringField('ARTICUL_WB', [
-                'required' => true
+                'nullable' => true
             ]),
             new Entity\StringField('ARTICUL_OZON', [
                 'nullable' => true

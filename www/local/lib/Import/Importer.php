@@ -116,8 +116,24 @@ final class Importer
     private function loadDataToTable()
     {
         while ($rows = $this->xlsxHelper->fetch()) {
+            $rows = $this->prepareForSaving($rows);
             $this->saveRowsToTable($rows);
         }
+    }
+
+    private function prepareForSaving(array &$rows): array
+    {
+        foreach ($rows as $i => $row) {
+            if ($row[2] == 'скоро выйдет') { // ARTICUL_WB
+                $rows[$i][2] = null;
+            }
+
+            if ($row[3] == 'скоро выйдет') { // ARTICUL_OZON
+                $rows[$i][3] = null;
+            }
+        }
+
+        return $rows;
     }
 
     private function saveRowsToTable(array $rows)

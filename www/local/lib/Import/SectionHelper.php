@@ -18,15 +18,20 @@ class SectionHelper
         6 => 'skaterti',
         7 => 'polotentsa',
         8 => 'pledy',
-        9 => 'khalaty',
-        10 => 'polotentsa-bannye',
-        11 => 'kilt-zhenskiy',
-        12 => 'kilt-muzhskoy',
+        10 => 'polotentse-vafelnoe-bokho',
+        11 => 'polotentse-vafelnoe',
+        12 => 'prostyn-bannaya',
         13 => 'poltentsa-plyazhnye',
-        14 => 'prostyn-vafelnaya',
-        15 => 'komplekt-dlya-sauny',
-        16 => 'detskie-khalaty',
-        17 => 'detskie-polotentsa-ugolki'
+        14 => 'kilt-zhenskiy',
+        16 => 'kilt-muzhskoy-vafelnyy',
+        17 => 'kilt-muzhskoy-vafelnyy-bokho',
+        18 => 'nabory-dlya-spa',
+        19 => 'detskie-khalaty',
+        20 => 'detskie-polotentsa-ugolki',
+        92 => 'zhenskiy-khalat-vafelnyy-kimono',
+        93 => 'muzhskoy-khalat-vafelnyy-kimono',
+        94 => 'khalat-vafelnyy-bokho-kimono',
+        95 => 'khalat-vafelnyy-bokho-kapyushon'
     ];
 
     private int $iblockID;

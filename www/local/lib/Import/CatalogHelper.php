@@ -143,7 +143,8 @@ class CatalogHelper
     }
 
     /**
-     * Создает или обновляет торговое предложение, если оно уже создано в системе. Деактивирует предложение, если его нет в Wildberries.
+     * Создает или обновляет торговое предложение, если оно уже создано в системе.
+     * Деактивирует предложение, если для него не задан ARTICUL_WB или его нет в Wildberries.
      * Отличительным свойством предложения является BARCODE
      * @param array $info
      * @param int $parentId ID товара
@@ -163,14 +164,14 @@ class CatalogHelper
         if ($offerID) {
             try {
                 $offerID = $this->updateOffer($info, $offerID, $parentId);
-            } catch (Exception\WildberriesOfferNotFoundException $e) {
+            } catch (Exception\WildberriesOfferNotFoundException | Exception\WildberriesArticulNotSetException) {
                 $this->deactivateOffer($offerID);
                 $offerID = null;
             }
         } else {
             try {
                 $offerID = $this->createOffer($info, $parentId);
-            } catch (Exception\WildberriesOfferNotFoundException $e) {
+            } catch (Exception\WildberriesOfferNotFoundException | Exception\WildberriesArticulNotSetException) {
                 $offerID = null;
             }
         }
@@ -189,6 +190,10 @@ class CatalogHelper
      */
     public function updateOffer(array $info, int $offerID, int $parentId): int
     {
+        if (!$info['ARTICUL_WB']) {
+            throw new Exception\WildberriesArticulNotSetException();
+        }
+
         $wildberriesOffer = $this->findWildberriesOffer($info['ARTICUL_WB']);
         if (!$wildberriesOffer) {
             throw new Exception\WildberriesOfferNotFoundException($info['ARTICUL_WB']);
@@ -242,6 +247,10 @@ class CatalogHelper
      */
     public function createOffer(array $info, int $parentId): int
     {
+        if (!$info['ARTICUL_WB']) {
+            throw new Exception\WildberriesArticulNotSetException();
+        }
+
         $wildberriesOffer = $this->findWildberriesOffer($info['ARTICUL_WB']);
         if (!$wildberriesOffer) {
             throw new Exception\WildberriesOfferNotFoundException($info['ARTICUL_WB']);
