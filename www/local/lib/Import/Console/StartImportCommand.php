@@ -21,7 +21,7 @@ class StartImportCommand extends Command
         $output->writeln('Импорт товаров начат');
 
         $importer = ImporterFactory::create();
-        $importer->startImport(true);
+        $importer->startImport();
 
         $output->writeln('Импорт товаров закончен');
 
