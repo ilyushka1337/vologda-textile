@@ -16,6 +16,7 @@
     .container {
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-start;
     }
 
     .img {
@@ -41,18 +42,44 @@
         }
 
         .caption {
-            width: 60%;
+            width: 70%;
             margin-bottom: base.clampFluid(30);
         }
     }
 
     @media (max-width: 1279px) {
         .img {
-            margin-right: 0;
+            margin-right: 80px;
         }
 
         .grid {
             flex: 0 0 60%;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .img {
+            margin-right: 0;
+        }
+
+        .grid {
+            grid-template-columns: 100%;
+            flex: 0 0 50%;
+        }
+
+        .container {
+            justify-content: space-between;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .grid {
+            flex: 0 0 100%;
+        }
+
+        .img {
+            width: 100%;
+            margin-bottom: 30px;
         }
     }
 }

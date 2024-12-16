@@ -35,6 +35,9 @@ Alpine.data("FancyboxGallery", FancyboxGallery)
 import Select from "../components/Select";
 Alpine.data("Select", Select)
 
+import HistorySlider from "./HistorySlider";
+Alpine.data("HistorySlider", HistorySlider)
+
 Alpine.store('catalogMenu', {
     isOpen: false
 })

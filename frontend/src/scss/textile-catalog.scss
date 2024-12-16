@@ -1,0 +1,51 @@
+@use "@/base.scss";
+
+.textile-catalog {
+    .container {
+        @include base.label-columns-grid;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: base.clampFluid(60) base.clampFluid(26);
+    }
+
+    .title {
+        margin-bottom: base.clampFluid(40);
+    }
+
+    .textile-block {
+        .img {
+            width: 100%;
+            margin-bottom: base.clampFluid(16);
+            aspect-ratio: 1/1;
+        }
+
+        .name {
+            margin-bottom: base.clampFluid(14);
+        }
+
+        .description {
+            margin-bottom: base.clampFluid(14);
+        }
+    }
+
+    @media (max-width: 1279px) {
+        .container {
+            grid-template-columns: 100%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 575px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}

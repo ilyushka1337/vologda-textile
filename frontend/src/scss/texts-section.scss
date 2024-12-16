@@ -1,0 +1,18 @@
+@use "@/base.scss";
+
+.texts-section {
+    .block {
+        display: grid;
+        grid-template-columns: 28% 1fr;
+        gap: base.clampFluid(70);
+        padding: base.clampFluid(20) 0 base.clampFluid(60);
+        border-top: 1px solid base.$gray;
+    }
+
+    @media (max-width: 767px) {
+        .block {
+            grid-template-columns: 100%;
+            gap: base.clampFluid(15);
+        }
+    }
+}

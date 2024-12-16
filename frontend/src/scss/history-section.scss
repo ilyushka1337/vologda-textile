@@ -1,0 +1,65 @@
+@use "@/base.scss";
+
+.history-section {
+    padding: base.clampFluid(70) 0 base.clampFluid(180);
+    background: base.$bg;
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+
+        .slider-dot-pagination {
+            margin-top: base.clampFluid(30);
+        }
+
+        .swiper {
+            overflow: visible;
+        }
+
+        .swiper-slide {
+            .year {
+                margin-bottom: base.clampFluid(20);
+                color: base.$red;
+            }
+
+            .dot {
+                width: base.clampFluid(10);
+                aspect-ratio: 1/1;
+                margin-bottom: base.clampFluid(20);
+                border-radius: 50%;
+                background: base.$black;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: base.clampFluid(60);
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: base.$gray;
+        }
+    }
+
+    .gallery {
+        margin-top: base.clampFluid(40, 150);
+    }
+
+    @media (max-width: 1279px) {
+        padding: 40px 0;
+
+        .slider-wrap {
+            .swiper-slide {
+                .dot {
+                    width: 10px;
+                }
+            }
+
+            .swiper {
+                width: 80%;
+                margin-left: 0;
+            }
+        }
+    }
+}

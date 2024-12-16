@@ -1,28 +1,34 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Ткани");
-?>
-<? $APPLICATION->IncludeComponent(
+?><?$APPLICATION->IncludeComponent(
 	"placestart:page.head",
 	"",
-	array()
-); ?>
-<? $APPLICATION->IncludeComponent(
+Array()
+);?>
+<?$APPLICATION->IncludeComponent(
 	"placestart:fabrics.intro",
 	"",
-	array(
+	Array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
 		"IS_PAGE_BLOCK" => "Y"
 	)
-); ?>
-<? $APPLICATION->IncludeComponent(
+);?>
+<?$APPLICATION->IncludeComponent(
 	"placestart:service.types",
 	"",
-	array(
+	Array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
 		"IS_PAGE_BLOCK" => "Y"
 	)
-); ?>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+);?><?$APPLICATION->IncludeComponent(
+	"placestart:textile.catalog",
+	"",
+	Array(
+		"CACHE_TIME" => "3600000",
+		"CACHE_TYPE" => "A",
+		"IS_PAGE_BLOCK" => "Y"
+	)
+);?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
