@@ -10,23 +10,25 @@ use Bitrix\Iblock\SectionTable;
 class SectionHelper
 {
     private array $sectionsMap = [
-        1 => 'komplekt-postelnogo-belya',
-        2 => 'prostyni',
-        3 => 'navolochki',
-        4 => 'pododeyalniki',
-        5 => 'pokryvala',
-        6 => 'skaterti',
-        7 => 'polotentsa',
-        8 => 'pledy',
-        9 => 'khalaty',
-        10 => 'polotentsa-bannye',
-        11 => 'kilt-zhenskiy',
-        12 => 'kilt-muzhskoy',
-        13 => 'poltentsa-plyazhnye',
-        14 => 'prostyn-vafelnaya',
-        15 => 'komplekt-dlya-sauny',
-        16 => 'detskie-khalaty',
-        17 => 'detskie-polotentsa-ugolki'
+        1 => 'komplekt-postelnogo-belya-section',
+        2 => 'prostyni-section',
+        3 => 'navolochki-section',
+        4 => 'pododeyalniki-section',
+        5 => 'pokryvala-section',
+        6 => 'skaterti-section',
+        7 => 'polotentsa-section',
+        8 => 'pledy-section',
+        10 => 'polotentse-vafelnoe-bokho-section',
+        11 => 'polotentse-vafelnoe-section',
+        12 => 'prostyn-bannaya-section',
+        13 => 'poltentsa-plyazhnye-section',
+        14 => 'zhenskiy-kilt-section',
+        16 => 'muzhskoy-kilt-section',
+        18 => 'nabory-dlya-spa-section',
+        19 => 'detskie-khalaty-section',
+        20 => 'detskie-polotentsa-ugolki-section',
+        92 => 'zhenskiy-khalat-section',
+        93 => 'muzhskoy-khalat-section',
     ];
 
     private int $iblockID;

@@ -8,6 +8,7 @@ class PhotoDownloader
         private string $uploadsPath,
         private HttpClientInterface $httpClient
     ) {
+        mkdir($this->uploadsPath, 0777, true);
     }
 
     public function get(string $imgURL): array

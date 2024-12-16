@@ -1,28 +1,23 @@
 <?
 use Bitrix\Main\Loader;
 
-Loader::includeModule('sprint.options');
+Loader::requireModule('sprint.options');
+
+$siteVK = sprint_options_get('SITE_VK');
+$siteTelegram = sprint_options_get('SITE_TELEGRAM');
+$siteOK = sprint_options_get('SITE_OK');
+$siteYoutube = sprint_options_get('SITE_YOUTUBE');
+$siteWildberries = sprint_options_get('SITE_WILDBERRIES');
+$siteOzon = sprint_options_get('SITE_OZON');
 ?>
 
 
 </main>
-<section class="feedback-section">
-    <div class="container">
-        <div class="grid">
-            <div class="img-col">
-                <img src="/local/assets/callback-img.png" loading="lazy" class="img">
-            </div>
-            <div class="form-col">
-                <h2 class="title h2">Возникли вопросы?</h2>
-                <p class="text p1">Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время</p>
-                <?= tpl('forms/callback-form', [
-                    'phone' => '',
-                    'status' => 'init'
-                ]) ?>
-            </div>
-        </div>
-    </div>
-</section>
+<?
+$APPLICATION->IncludeComponent('placestart:feedback.section', '', [
+    'IS_PAGE_BLOCK' => 'N'
+]);
+?>
 <footer class="footer">
     <div class="top">
         <div class="container">
@@ -46,47 +41,59 @@ Loader::includeModule('sprint.options');
             </nav>
             <div class="social-column">
                 <p class="text p2">Мы в соцсетях:</p>
-                <div>
-                    <?= tpl('ui/page-link', [
-                        'type' => 'link',
-                        'text' => 'ВКонтакте',
-                        'link' => sprint_options_get('SITE_VK'),
-                        'target' => '_blank'
-                    ]) ?>
-                </div>
-                <div>
-                    <?= tpl('ui/page-link', [
-                        'type' => 'link',
-                        'text' => 'Телеграмм',
-                        'link' => sprint_options_get('SITE_TELEGRAM'),
-                        'target' => '_blank'
-                    ]) ?>
-                </div>
-                <div>
-                    <?= tpl('ui/page-link', [
-                        'type' => 'link',
-                        'text' => 'Одноклассники',
-                        'link' => sprint_options_get('SITE_OK'),
-                        'target' => '_blank'
-                    ]) ?>
-                </div>
-                <div>
-                    <?= tpl('ui/page-link', [
-                        'type' => 'link',
-                        'text' => 'YouTube',
-                        'link' => sprint_options_get('SITE_YOUTUBE'),
-                        'target' => '_blank'
-                    ]) ?>
-                </div>
+                <?php if ($siteVK): ?>
+                    <div>
+                        <?= tpl('ui/page-link', [
+                            'type' => 'link',
+                            'text' => 'ВКонтакте',
+                            'link' => $siteVK,
+                            'target' => '_blank'
+                        ]) ?>
+                    </div>
+                <?php endif ?>
+                <?php if ($siteTelegram): ?>
+                    <div>
+                        <?= tpl('ui/page-link', [
+                            'type' => 'link',
+                            'text' => 'Телеграмм',
+                            'link' => $siteTelegram,
+                            'target' => '_blank'
+                        ]) ?>
+                    </div>
+                <?php endif ?>
+                <?php if ($siteOK): ?>
+                    <div>
+                        <?= tpl('ui/page-link', [
+                            'type' => 'link',
+                            'text' => 'Одноклассники',
+                            'link' => $siteOK,
+                            'target' => '_blank'
+                        ]) ?>
+                    </div>
+                <?php endif ?>
+                <?php if ($siteYoutube): ?>
+                    <div>
+                        <?= tpl('ui/page-link', [
+                            'type' => 'link',
+                            'text' => 'YouTube',
+                            'link' => $siteYoutube,
+                            'target' => '_blank'
+                        ]) ?>
+                    </div>
+                <?php endif ?>
             </div>
             <div class="marketplace-column">
                 <p class="text p2">Мы на маркетплейсах:</p>
-                <?= tpl('ui/wildberries-link', [
-                    'link' => 'https://wildberries.ru/'
-                ]) ?>
-                <?= tpl('ui/ozon-link', [
-                    'link' => 'https://ozon.ru/'
-                ]) ?>
+                <?php if ($siteWildberries): ?>
+                    <?= tpl('ui/wildberries-link', [
+                        'link' => $siteWildberries
+                    ]) ?>
+                <?php endif ?>
+                <?php if ($siteOzon): ?>
+                    <?= tpl('ui/ozon-link', [
+                        'link' => $siteOzon
+                    ]) ?>
+                <?php endif ?>
             </div>
         </div>
     </div>

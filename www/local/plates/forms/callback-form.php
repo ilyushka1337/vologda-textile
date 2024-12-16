@@ -8,8 +8,8 @@
 ?>
 
 <form class="callback-form" id="feedback-form"
-    hx-post="/bitrix/services/main/ajax.php?action=placestart:core.api.Feedback.callback" hx-swap="outerHTML"
-    hx-indicator="find .submit-btn">
+    hx-post="/bitrix/services/main/ajax.php?mode=class&c=placestart:feedback.section&action=feedback"
+    hx-swap="outerHTML" hx-indicator="find .submit-btn">
 
     <div class="form-input <?= isset($errors['phone']) ? 'form-input--invalid' : '' ?>">
         <input type="tel" name="phone" value="<?= $phone ?>" x-data="PhoneInputMask('Номер телефона')" x-bind="root"

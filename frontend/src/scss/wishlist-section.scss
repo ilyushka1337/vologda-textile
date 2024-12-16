@@ -1,0 +1,45 @@
+@use "@/base.scss";
+
+.wishlist-section {
+    .title-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: base.clampFluid(40);
+    }
+
+    .clear-wishlist {
+        margin-left: base.clampFluid(30);
+        color: base.$gray;
+    }
+
+    .wishlist-item {
+        position: relative;
+
+        .remove {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: base.clampFluid(10);
+            right: base.clampFluid(10);
+            width: base.clampFluid(40);
+            z-index: 1;
+            font-size: base.clampFluid(20);
+            color: base.$red;
+            aspect-ratio: 1/1;
+            border: 2px solid rgba(#fff, .5);
+            border-radius: 50%;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .title-row {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .clear-wishlist {
+            margin: 10px 0 0 0;
+        }
+    }
+}

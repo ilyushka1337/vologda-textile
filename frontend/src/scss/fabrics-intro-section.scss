@@ -1,0 +1,58 @@
+@use "@/base.scss";
+
+.fabrics-intro-section {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 base.clampFluid(115);
+
+    .container {
+        display: grid;
+        grid-template-columns: 27% 32% 20%;
+        gap: base.clampFluid(33) base.clampFluid(80);
+    }
+
+    .decor {
+        width: base.clampFluid(1372);
+        position: absolute;
+        bottom: 0;
+        right: -27%;
+        z-index: -1;
+        aspect-ratio: 1372/817;
+    }
+
+    .img1 {
+        max-width: 100%;
+    }
+
+    .img2 {
+        max-width: 100%;
+    }
+
+    .text1 {
+        width: 50%;
+    }
+
+    .text2 {
+        grid-row: span 2;
+    }
+
+    @media (max-width: 1279px) {
+        .container {
+            grid-template-columns: 60% 1fr;
+            gap: 10px 20px;
+        }
+
+        .title {
+            grid-column: span 2;
+        }
+
+        .text1 {
+            width: 100%;
+            grid-column: span 2;
+        }
+
+        .text2 {
+            grid-column: span 2;
+        }
+    }
+}

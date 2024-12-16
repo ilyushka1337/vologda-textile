@@ -1,7 +1,7 @@
 <?php
 /**
  * @var League\Plates\Template\Template $this
- * @var string $link
+ * @var string|null $link
  * @var string $text
  * @var string $type
  * @var string $target
@@ -9,6 +9,7 @@
  */
 
 $arrowRotation = $arrowRotation ?? 'top-right';
+$type = $type ?? 'link';
 ?>
 
 <?php if ($type == 'link'): ?>

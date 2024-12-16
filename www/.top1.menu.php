@@ -8,15 +8,15 @@ $aMenuLinks = array(
 		""
 	),
 	array(
-		"Выполненные проекты",
-		"/projects/",
+		"Ткани",
+		"/fabrics/",
 		array(),
 		array(),
 		""
 	),
 	array(
-		"Доставка и оплата",
-		"/delivery/",
+		"Сотрудничество",
+		"/partnership/",
 		array(),
 		array(),
 		""

@@ -4,13 +4,16 @@ namespace Placestart\Import;
 use PhpOffice\PhpSpreadsheet\Worksheet\CellIterator;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+use PhpOffice\PhpSpreadsheet\Exception as PhpSpreadsheetException;
 use Placestart\Import\Entity\XlsxProductTable;
 
 class XlsxHelper
 {
-    private array $xlsxMap;
 
     private int $currentIndex = 1;
+
+    private Worksheet $worksheet;
 
     private array $rows = [];
 
@@ -18,22 +21,20 @@ class XlsxHelper
         private string $filePath,
         private int $pageSize = 50
     ) {
-        $tableMap = array_map(fn($field) => $field->getName(), XlsxProductTable::getMap());
-        array_shift($tableMap);
-
-        $columnIndexes = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'];
-        $this->xlsxMap = array_combine($columnIndexes, $tableMap);
-    }
-
-    function fetch(): array|null
-    {
         $spreadsheet = (IOFactory::createReader('Xlsx'))
             ->setReadDataOnly(true)
             ->load($this->filePath);
         $spreadsheet->setActiveSheetIndex(0);
-        $worksheet = $spreadsheet->getActiveSheet();
+        $this->worksheet = $spreadsheet->getActiveSheet();
+    }
 
-        $rowIterator = $worksheet->getRowIterator($this->currentIndex + 1);
+    function fetch(): array|null
+    {
+        try {
+            $rowIterator = $this->worksheet->getRowIterator($this->currentIndex + 1);
+        } catch (PhpSpreadsheetException $e) {
+            return null;
+        }
         $this->rows = [];
 
         foreach ($rowIterator as $row) {
@@ -43,8 +44,8 @@ class XlsxHelper
 
             if (!$isEmpty) {
                 foreach ($cellIterator as $columnIndex => $cell) {
-                    switch ($this->xlsxMap[$columnIndex]) {
-                        case 'IS_NEW':
+                    switch ($columnIndex) {
+                        case 'J': // IS_NEW
                             $value = $cell->getValue();
                             if ($value == 1) {
                                 $cells[] = 'Y';

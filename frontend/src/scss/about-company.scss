@@ -1,0 +1,32 @@
+@use "@/base.scss";
+
+.about-company {
+    .container {
+        display: flex;
+    }
+
+    .img {
+        width: 30%;
+        flex: 1 1 30%;
+    }
+
+    .text-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: base.clampFluid(20);
+        flex: 0 0 38%;
+    }
+
+    @media (max-width: 767px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .img {
+            width: 100%;
+            flex-basis: 100%;
+            margin-top: base.clampFluid(20);
+        }
+    }
+}

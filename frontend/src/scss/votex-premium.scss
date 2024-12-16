@@ -1,0 +1,44 @@
+@use "@/base.scss";
+
+.votex-premium {
+    .logo {
+        margin: 0 auto base.clampFluid(40);
+        width: base.clampFluid(304);
+        aspect-ratio: 304/89;
+    }
+
+    .content-text {
+        max-width: base.clampFluid(896);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .photo-wrap {
+        position: relative;
+        margin: base.clampFluid(70) 0 0;
+
+        .photo {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 7%;
+            height: 43%;
+            z-index: -1;
+            background: #1A1A1F;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .photo-wrap {
+            .photo {
+                width: 100%;
+            }
+        }
+    }
+}

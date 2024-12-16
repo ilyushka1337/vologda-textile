@@ -48,4 +48,12 @@ return (new Builder)
     ->addCustomOption(
         (new StringOption('SITE_YOUTUBE'))
             ->setTitle('YouTube')
+    )
+    ->addCustomOption(
+        (new StringOption('SITE_WILDBERRIES'))
+            ->setTitle('Wildberries')
+    )
+    ->addCustomOption(
+        (new StringOption('SITE_OZON'))
+            ->setTitle('Ozon')
     );

@@ -33,33 +33,30 @@ final class Importer
             $this->loadWildberriesCards();
         }
 
-        $this->importProducts();
+        $this->import();
     }
 
-    private function importProducts()
+    private function import()
     {
-        $q = XlsxProductTable::getList([
+        $productsQuery = XlsxProductTable::getList([
             'select' => ['CARD_ID', 'TITLE', 'CATEGORY_NUMBER'],
             'group' => ['CARD_ID']
         ]);
 
-        while ($product = $q->fetch()) {
-            $parentID = $this->catalogHelper->product($product);
-
-            $this->importProductOffers($product['CARD_ID'], $parentID);
+        while ($product = $productsQuery->fetch()) {
+            $offersInfo = $this->findOffers($product['CARD_ID']);
+            $this->catalogHelper->productAndOffers($product, $offersInfo);
         }
     }
 
-    private function importProductOffers(int $cardID, int $parentID)
+    private function findOffers(int $cardID)
     {
         $q = XlsxProductTable::getList([
             'select' => ['BARCODE', 'ARTICUL_WB', 'ARTICUL_OZON', 'SIZE', 'COLOR', 'PILLOWSLIP_SIZE', 'DESCRIPTION', 'IS_NEW', 'BEDSHEET_SIZE', 'BLANKET_SIZE'],
             'filter' => ['CARD_ID' => $cardID]
         ]);
 
-        while ($offer = $q->fetch()) {
-            $offerID = $this->catalogHelper->offer($offer, $parentID);
-        }
+        return $q->fetchAll();
     }
 
     private function loadWildberriesCards()
@@ -119,8 +116,24 @@ final class Importer
     private function loadDataToTable()
     {
         while ($rows = $this->xlsxHelper->fetch()) {
+            $rows = $this->prepareForSaving($rows);
             $this->saveRowsToTable($rows);
         }
+    }
+
+    private function prepareForSaving(array &$rows): array
+    {
+        foreach ($rows as $i => $row) {
+            if ($row[2] == 'скоро выйдет') { // ARTICUL_WB
+                $rows[$i][2] = null;
+            }
+
+            if ($row[3] == 'скоро выйдет') { // ARTICUL_OZON
+                $rows[$i][3] = null;
+            }
+        }
+
+        return $rows;
     }
 
     private function saveRowsToTable(array $rows)
@@ -129,7 +142,7 @@ final class Importer
         $result = XlsxProductTable::addMulti($rows);
 
         if (!$result->isSuccess()) {
-            throw new ImporterSaveRowsFailureException('Failed to add rows to XlsxProductTable');
+            throw new ImporterSaveRowsFailureException();
         }
 
         return true;

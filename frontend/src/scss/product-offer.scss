@@ -65,4 +65,12 @@
             }
         }
     }
+
+    @media (max-width: 767px) {
+        &__slider {
+            .swiper {
+                width: 85%;
+            }
+        }
+    }
 }

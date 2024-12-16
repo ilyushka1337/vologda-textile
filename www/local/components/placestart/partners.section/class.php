@@ -10,7 +10,7 @@ use Placestart\Core\Utils;
 
 class PartnersSectionComponent extends Boilerplate
 {
-    protected static $name = "Отзывы";
+    protected static $name = "Партнеры";
 
     protected function getData()
     {

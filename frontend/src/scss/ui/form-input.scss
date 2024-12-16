@@ -5,7 +5,6 @@
     position: relative;
     width: 100%;
     transition: border-color .4s;
-    --invalid-color: #B12B2B;
 
     &__field {
         width: 100%;
@@ -22,7 +21,7 @@
         &--underline-gray {
             border-radius: 0;
             border: 0;
-            border-bottom: 1px solid base.$gray;
+            border-bottom: 1px solid var(--invalid-color, base.$gray);
             background: transparent;
             color: base.$black;
             --placeholder-color: #{base.$gray};
@@ -30,6 +29,6 @@
     }
 
     &--invalid {
-        --border-color: var(--invalid-color) !important;
+        --invalid-color: #B12B2B;
     }
 }

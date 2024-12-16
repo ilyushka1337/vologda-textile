@@ -1,3 +1,8 @@
+<?php
+use Placestart\Wishlist\Wishlist;
+use Bitrix\Main\Loader;
+Loader::requireModule('placestart.wishlist');
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -29,6 +34,9 @@
     </script>
 
     <?php Placestart\Core\ViteAssets::loadFrontend() ?>
+    <?php
+    $wishlist = new Wishlist('WISHLIST');
+    ?>
 </head>
 
 <body hx-vals='{"sessid": "<?= bitrix_sessid() ?>"}'>
@@ -94,7 +102,9 @@
 
                 <a href="/wishlist/" class="action">
                     <span class="icon heart-icon"></span>
-                    <span class="count">5</span>
+                    <?= tpl('components/total-wishlist-count', [
+                        'count' => count($wishlist->getWishlist())
+                    ]) ?>
                 </a>
 
                 <a href="tel:" class="action phone">

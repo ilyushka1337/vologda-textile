@@ -5,8 +5,6 @@ use Bitrix\Main\Loader;
 use Placestart\Core\Component\Boilerplate;
 use Placestart\Core\Component\Parameters;
 
-Loader::includeModule('placestart.core');
-
 final class PersonalDataComponent extends Boilerplate
 {
     protected static $name = "Обработка персональных данных";
