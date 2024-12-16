@@ -22,16 +22,13 @@ class SectionHelper
         11 => 'polotentse-vafelnoe',
         12 => 'prostyn-bannaya',
         13 => 'poltentsa-plyazhnye',
-        14 => 'kilt-zhenskiy',
-        16 => 'kilt-muzhskoy-vafelnyy-section',
-        17 => 'kilt-muzhskoy-vafelnyy-bokho-section',
+        14 => 'zhenskiy-kilt',
+        16 => 'muzhskoy-kilt',
         18 => 'nabory-dlya-spa',
         19 => 'detskie-khalaty',
         20 => 'detskie-polotentsa-ugolki',
-        92 => 'zhenskiy-khalat-vafelnyy-kimono',
-        93 => 'muzhskoy-khalat-vafelnyy-kimono',
-        94 => 'khalat-vafelnyy-bokho-kimono',
-        95 => 'khalat-vafelnyy-bokho-kapyushon'
+        92 => 'zhenskiy-khalat',
+        93 => 'muzhskoy-khalat',
     ];
 
     private int $iblockID;
