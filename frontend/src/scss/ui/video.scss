@@ -1,0 +1,22 @@
+@use "@/base.scss";
+
+.video {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #000;
+
+    &__play-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: base.clampFluid(88);
+    }
+
+    &__media {
+        display: block;
+        width: 100%;
+    }
+}

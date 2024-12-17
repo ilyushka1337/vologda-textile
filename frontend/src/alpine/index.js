@@ -38,6 +38,9 @@ Alpine.data("Select", Select)
 import HistorySlider from "./HistorySlider";
 Alpine.data("HistorySlider", HistorySlider)
 
+import Video from "./Video";
+Alpine.data("Video", Video)
+
 Alpine.store('catalogMenu', {
     isOpen: false
 })
