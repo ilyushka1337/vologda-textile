@@ -10,48 +10,6 @@ Loader::includeModule('iblock');
 class Utils
 {
     /**
-     * Получает значение опции модуля
-     *
-     * У каждого сайта в системе свой набор опций
-     *
-     * @param string $option_name Имя опции
-     * @param string $site_id Идентификатор сайта, по умолчанию id текущего сайта
-     * @return string
-     */
-    public static function getSiteOption(string $option_name, string $site_id = SITE_ID)
-    {
-        if (!$option_name)
-            return false;
-
-        $result = Option::get('placestart.core', $option_name . "_$site_id");
-
-        return $result ? $result : false;
-    }
-
-    /**
-     * Получает массив контактных данных
-     *
-     * Возвращает опции tel, address, coordinates, email
-     *
-     * @param string $site_id Идентификатор сайта, по умолчанию id текущего сайта
-     * @return array{
-     *  tel: string,
-     *  address: string,
-     *  coordinates: string,
-     *  email: string,
-     * }
-     */
-    public static function getContacts($site_id = SITE_ID)
-    {
-        return [
-            'tel' => Utils::getSiteOption('tel', $site_id),
-            'address' => Utils::getSiteOption('address', $site_id),
-            'coordinates' => Utils::getSiteOption('coordinates', $site_id),
-            'email' => Utils::getSiteOption('email', $site_id),
-        ];
-    }
-
-    /**
      * Оборачивает все выражения взятые в #решетки# переданным тегом
      *
      * Пример: wrapGroup(<span>$1<span>, "test #test#")
@@ -239,24 +197,6 @@ class Utils
     }
 
     /**
-     * Получает картинку анонса элемента по его ID
-     * @param int $ID ID элемента инфоблока
-     * @return array
-     */
-    public static function getElemPreview($ID, $width, $height, $type = 'exact', $quality = 95)
-    {
-        $img = '';
-        $res = \CIBlockElement::GetByID($ID);
-        $elem = $res->GetNext();
-
-        if ($elem['PREVIEW_PICTURE']) {
-            $img = self::resizeImage($elem['PREVIEW_PICTURE'], $width, $height, $type, $quality);
-        }
-
-        return $img;
-    }
-
-    /**
      * Создает уменьшенную копию изображения. Работает на основе CFile::ResizeImageGet
      * Подробнее в документации битрикса - https://dev.1c-bitrix.ru/api_help/main/reference/cfile/resizeimageget.php
      *
@@ -308,32 +248,6 @@ class Utils
     public static function formatNumber($number_str)
     {
         return preg_replace('/(\d)(?=(\d{3})+([^\d]|$))/i', '$1 ', $number_str);
-    }
-
-    /**
-     * Получает список инфоблоков и типов
-     * @param string $type Тип инфоблока для фильтра, по умолчанию без ограничений
-     * @return array
-     */
-    public static function getIblocksList($type = "")
-    {
-        $arTypes = \CIBlockParameters::GetIBlockTypes();
-
-        $arIBlocks = [];
-        $db_iblock = \CIBlock::GetList(
-            ["SORT" => "ASC"],
-            [
-                "SITE_ID" => $_REQUEST["site"],
-                "TYPE" => $type
-            ]
-        );
-        while ($arRes = $db_iblock->Fetch())
-            $arIBlocks[$arRes["ID"]] = "[" . $arRes["ID"] . "] " . $arRes["NAME"];
-
-        return [
-            'types' => $arTypes,
-            'iblocks' => $arIBlocks
-        ];
     }
 
     /**

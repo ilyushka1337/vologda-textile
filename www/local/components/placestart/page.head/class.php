@@ -15,4 +15,9 @@ class PageHeadComponent extends Boilerplate
         $params = new Parameters();
         return $params;
     }
+
+    public function executeComponent()
+    {
+        $this->includeComponentTemplate();
+    }
 }

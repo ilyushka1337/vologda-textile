@@ -1,0 +1,13 @@
+@use "@/base.scss";
+
+.contacts-section {
+    .grid {
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        gap: base.clampFluid(80);
+    }
+
+    .map {
+        height: base.clampFluid(540);
+    }
+}

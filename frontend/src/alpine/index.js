@@ -23,6 +23,9 @@ Alpine.data("MainSlider", MainSlider)
 import PhoneInputMask from "../components/PhoneInputMask";
 Alpine.data("PhoneInputMask", PhoneInputMask);
 
+import Modal from "../components/Modal";
+Alpine.data("Modal", Modal)
+
 import ProductPage from "../bitrix/ProductPage";
 Alpine.data("ProductPage", ProductPage);
 
@@ -40,6 +43,9 @@ Alpine.data("HistorySlider", HistorySlider)
 
 import Video from "./Video";
 Alpine.data("Video", Video)
+
+import ContactsMap from "../components/ContactsMap";
+Alpine.data("ContactsMap", ContactsMap)
 
 Alpine.store('catalogMenu', {
     isOpen: false
