@@ -1,0 +1,15 @@
+@use "@/base.scss";
+
+.partnership-section {
+    .container {
+        display: grid;
+        grid-template-columns: max-content 30% 17%;
+        gap: base.clampFluid(20) base.clampFluid(120);
+    }
+
+    @media (max-width: 991px) {
+        .container {
+            grid-template-columns: 100%;
+        }
+    }
+}
