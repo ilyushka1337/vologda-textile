@@ -246,14 +246,14 @@ $this->setFrameMode(true);
     <?php endif ?>
 
     <?
-    $textCode = $APPLICATION->GetPageProperty('SECTION_TEXT_CODE');
+    $textCode = $arResult['TEXT_CODE'] ?? $APPLICATION->GetPageProperty('SECTION_TEXT_CODE');
     if ($textCode)
-        $APPLICATION->IncludeComponent('placestart:seo.section', '', [
+        $APPLICATION->IncludeComponent('pages:text.page', 'page-block', [
             "CACHE_TIME" => "3600000",
             "CACHE_TYPE" => "A",
             "IS_PAGE_BLOCK" => "Y",
-            "ELEMENT_CODE" => $textCode,
-            "IMG_POSITION" => "right"
+            'ELEMENT_CODE' => $textCode
         ]);
     ?>
+
 </div>
