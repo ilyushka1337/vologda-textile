@@ -6,7 +6,15 @@
                     <?php foreach ($arResult['SLIDES'] as $arSlide): ?>
                         <div class="swiper-slide">
                             <?php if ($arSlide['IMG']): ?>
-                                <img src="<?= $arSlide['IMG']['SRC'] ?>" loading="lazy" class="bg">
+                                <picture>
+                                    <?php if ($arSlide['PHONE_IMG']): ?>
+                                        <source srcset="<?= $arSlide['PHONE_IMG']['SRC'] ?>" media="(max-width: 575px)">
+                                    <?php endif ?>
+                                    <?php if ($arSlide['TABLET_IMG']): ?>
+                                        <source srcset="<?= $arSlide['TABLET_IMG']['SRC'] ?>" media="(max-width: 991px)">
+                                    <?php endif ?>
+                                    <img src="<?= $arSlide['IMG']['SRC'] ?>" loading="lazy" class="bg">
+                                </picture>
                             <?php endif ?>
                             <?php if ($arSlide['LINK']): ?>
                                 <a href="<?= $arSlide['LINK'] ?>" class="link-cover"></a>
