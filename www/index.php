@@ -19,7 +19,7 @@ $APPLICATION->IncludeComponent('placestart:votex.sections', '', [
 ]);
 $APPLICATION->IncludeComponent('placestart:products.section', '', [
     "CACHE_TIME" => "3600000",
-    "CACHE_TYPE" => "A",
+    "CACHE_TYPE" => "N",
     "IS_PAGE_BLOCK" => "Y",
     "TITLE" => "Новинки"
 ]);
