@@ -23,7 +23,7 @@
             <?= tpl('ui/page-link', [
                 'type' => 'link',
                 'text' => 'Подробнее',
-                'link' => '/about/'
+                'link' => '/o-kompanii/o-kombinate/'
             ]); ?>
         </div>
         <div class="img-column">

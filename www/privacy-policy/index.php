@@ -15,6 +15,6 @@ $APPLICATION->SetTitle("Политика конфиденциальности");
 		"ADDRESS" => "test123",
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
-		"COMPANY" => "Нии Тех"
+		"COMPANY" => "Votex"
 	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
