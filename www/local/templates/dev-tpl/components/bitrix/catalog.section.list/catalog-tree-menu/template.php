@@ -59,7 +59,7 @@ $this->setFrameMode(true);
     <?php foreach ($arResult['SECTIONS'] as $i => $arSection): ?>
         <?php if ($arSection['IS_PARENT']): ?>
             <div class="submenu" x-show="currentMenu === <?= $i ?>">
-                <p class="title h2">Home</p>
+                <p class="title h2"><?= $arSection['NAME'] ?></p>
                 <div class="grid">
                     <?php foreach ($arSection['CHILD'] as $arChild): ?>
                         <div class="column">
