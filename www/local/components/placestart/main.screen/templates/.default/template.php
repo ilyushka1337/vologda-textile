@@ -28,10 +28,12 @@
                     <div class="slider-controls">
                         <div class="slider-pagination" x-ref="pagination"></div>
                         <?= tpl('ui/slider-arrow', [
-                            'direction' => 'prev'
+                            'direction' => 'prev',
+                            'attrs' => 'x-ref="prev"'
                         ]) ?>
                         <?= tpl('ui/slider-arrow', [
-                            'direction' => 'next'
+                            'direction' => 'next',
+                            'attrs' => 'x-ref="next"'
                         ]) ?>
                     </div>
                 <?php endif ?>
