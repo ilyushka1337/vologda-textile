@@ -28,11 +28,11 @@
         </div>
         <div class="img-column">
             <img src="/local/assets/about-img.jpg" alt="" class="img">
-            <a class="link-block h2" href="/production/">
+            <a class="link-block h2" href="/o-kompanii/o-brende/">
                 <span class="text">Производство</span>
                 <span class="icon arrow-icon"></span>
             </a>
-            <a class="link-block h2" href="/partners/">
+            <a class="link-block h2" href="/partnership/">
                 <span class="text">Партнёрам</span>
                 <span class="icon arrow-icon"></span>
             </a>

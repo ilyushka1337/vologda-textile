@@ -21,7 +21,7 @@
                 <div class="link-column">
                     <?= tpl('ui/page-link', [
                         'text' => 'Читать о бренде',
-                        'link' => '/',
+                        'link' => '/o-kompanii/o-brende/',
                         'type' => 'link'
                     ]) ?>
                 </div>

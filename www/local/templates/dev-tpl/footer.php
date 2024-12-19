@@ -28,8 +28,9 @@ $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
                     <a href="tel:<?= sprint_options_get('SITE_PHONE') ?>"
                         class="tel button"><?= sprint_options_get('SITE_PHONE') ?></a>
                     <?= tpl('ui/page-link', [
-                        'type' => 'button',
-                        'text' => 'Заказать звонок'
+                        'type' => 'link',
+                        'text' => 'Заказать звонок',
+                        'link' => '#feedback-form'
                     ]) ?>
                 </div>
             </div>
