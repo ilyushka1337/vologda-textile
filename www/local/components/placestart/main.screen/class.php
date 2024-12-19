@@ -21,7 +21,7 @@ class MainScreenComponent extends Boilerplate
             $this->arResult['SLIDES'][] = [
                 'TITLE' => $slide->getTitle(),
                 'TEXT' => $slide->getPreviewText(),
-                'LINK' => $slide->getLink()->getValue(),
+                'LINK' => $slide->getLink()?->getValue(),
                 'IMG' => Utils::resizeImage($slide->getPreviewPicture(), 1722, 670, 'proportional')
             ];
         }
