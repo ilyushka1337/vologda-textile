@@ -9,6 +9,9 @@ export default (params = {}) => ({
     colorsSwiper: null,
     selectedSkuValues: {},
     get showSkuProps() {
+        if (!this.currentOffer)
+            return null
+
         let result = {}
         for (let property of params.SKU_PROPS) {
             let currentOfferValue = this.currentOffer.PROPERTIES[property.CODE].VALUE
@@ -52,6 +55,9 @@ export default (params = {}) => ({
         return result
     },
     init() {
+        if (!this.currentOffer)
+            return;
+
         this.updateSelectedSkuValues()
         this.initSlider()
     },
