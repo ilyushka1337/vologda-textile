@@ -8,6 +8,9 @@
                             <?php if ($arSlide['IMG']): ?>
                                 <img src="<?= $arSlide['IMG']['SRC'] ?>" loading="lazy" class="bg">
                             <?php endif ?>
+                            <?php if ($arSlide['LINK']): ?>
+                                <a href="<?= $arSlide['LINK'] ?>" class="link-cover"></a>
+                            <?php endif ?>
                             <div class="text-column">
                                 <?php if ($arSlide['TITLE']): ?>
                                     <h2 class="title h1"><?= $arSlide['TITLE'] ?></h2>
