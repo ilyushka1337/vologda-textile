@@ -28,9 +28,9 @@ $this->setFrameMode(true);
                 "images",
                 array(
                     "ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
-                    "ADD_SECTIONS_CHAIN" => "N",
+                    "ADD_SECTIONS_CHAIN" => "Y",
                     "CACHE_FILTER" => "N",
-                    "CACHE_GROUPS" => "Y",
+                    "CACHE_GROUPS" => "N",
                     "CACHE_TIME" => "36000000",
                     "CACHE_TYPE" => "A",
                     "COUNT_ELEMENTS" => "N",
@@ -43,7 +43,7 @@ $this->setFrameMode(true);
                     "SECTION_FIELDS" => array("", ""),
                     "SECTION_URL" => "",
                     "SECTION_USER_FIELDS" => array("", ""),
-                    "SHOW_PARENT_NAME" => "Y",
+                    "SHOW_PARENT_NAME" => "N",
                     "TOP_DEPTH" => "1",
                     "VIEW_MODE" => "LINE"
                 )
