@@ -47,6 +47,9 @@ Alpine.data("Video", Video)
 import ContactsMap from "../components/ContactsMap";
 Alpine.data("ContactsMap", ContactsMap)
 
+import Accordion from "../components/Accordion";
+Alpine.data("Accordion", Accordion)
+
 Alpine.store('catalogMenu', {
     isOpen: false
 })
