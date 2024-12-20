@@ -2,8 +2,6 @@
 namespace Placestart\Components;
 
 use Bitrix\Iblock\Elements\ElementPartnersTable;
-use Bitrix\Iblock\IblockTable;
-use Bitrix\Main\Loader;
 use Placestart\Core\Component\Boilerplate;
 use Placestart\Core\Component\Parameters;
 use Placestart\Core\Utils;

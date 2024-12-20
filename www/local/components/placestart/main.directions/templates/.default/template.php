@@ -13,14 +13,14 @@
                     Вологодский текстильный комбинат ведущий российский производитель
                     <?= tpl('ui/page-link', [
                         'text' => 'Хочу сотрудничать',
-                        'link' => '/',
+                        'link' => '/partnership/',
                         'type' => 'link'
                     ]) ?>
                 </h2>
                 <div class="grid">
                     <div class="direction-block">
                         <p class="name">
-                            <a href="/votex/" class="link-cover h2">Votex</a>
+                            <a href="/o-kompanii/o-brende/" class="link-cover h2">Votex</a>
                         </p>
                         <img src="/local/assets/votex.png" alt="" class="img">
                         <p class="text p1">Собственный бренд готовых текстильных изделий </p>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="direction-block">
                         <p class="name">
-                            <a href="/production/" class="link-cover h2">Изготовление</a>
+                            <a href="/o-kompanii/o-kombinate/" class="link-cover h2">Изготовление</a>
                         </p>
                         <img src="/local/assets/production.png" alt="" class="img">
                         <p class="text p1">Корпоративные подарки и аксессуары</p>

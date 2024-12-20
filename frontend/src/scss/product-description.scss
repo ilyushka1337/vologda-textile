@@ -1,0 +1,6 @@
+@use "@/base.scss";
+
+.product-description {
+    padding: base.clampFluid(80) 0;
+    background: #F2F2F2;
+}

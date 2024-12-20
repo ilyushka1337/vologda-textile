@@ -1,13 +1,6 @@
 <?
 $aMenuLinks = array(
 	array(
-		"Контакты",
-		"/kontakty/",
-		array(),
-		array(),
-		""
-	),
-	array(
 		"Ткани",
 		"/fabrics/",
 		array(),

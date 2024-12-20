@@ -51,7 +51,7 @@ $this->setFrameMode(true);
             <?php endif ?>
         <?php endforeach ?>
         <div class="item button">
-            <a href="/catalog/premium/" class="link">Premium</a>
+            <a href="/catalog/new/" class="link">Новинки</a>
         </div>
     </div>
     <template x-if="logo">
@@ -62,7 +62,7 @@ $this->setFrameMode(true);
     <?php foreach ($arResult['SECTIONS'] as $i => $arSection): ?>
         <?php if ($arSection['IS_PARENT']): ?>
             <div class="submenu" x-show="currentMenu === <?= $i ?>">
-                <p class="title h2">Home</p>
+                <p class="title h2"><?= $arSection['NAME'] ?></p>
                 <div class="grid">
                     <?php foreach ($arSection['CHILD'] as $arChild): ?>
                         <div class="column">

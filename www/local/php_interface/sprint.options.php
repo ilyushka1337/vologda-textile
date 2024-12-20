@@ -1,12 +1,7 @@
 <?php
 
 use Sprint\Options\Builder\Builder;
-use Sprint\Options\Custom\CheckboxOption;
-use Sprint\Options\Custom\FileOption;
-use Sprint\Options\Custom\SelectOption;
 use Sprint\Options\Custom\StringOption;
-use Sprint\Options\Custom\TextareaOption;
-use Sprint\Options\Custom\WysiwygOption;
 
 return (new Builder)
     ->setTitle('Настройки контента')

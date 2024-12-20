@@ -1,0 +1,15 @@
+@use "@/base.scss";
+
+.textile-sample {
+    .img {
+        width: 100%;
+        aspect-ratio: 155/72;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        font-size: base.clampFluid(10, 12);
+        line-height: 1.3;
+    }
+}

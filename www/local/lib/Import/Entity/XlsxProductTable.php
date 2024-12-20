@@ -58,6 +58,9 @@ class XlsxProductTable extends Entity\DataManager
             ]),
             new Entity\StringField('BLANKET_SIZE', [
                 'nullable' => true
+            ]),
+            new Entity\StringField('MODEL', [
+                'nullable' => true
             ])
         ];
     }

@@ -1,4 +1,4 @@
-<?php if (count($arResult['VACANCIES']) > 0): ?>
+<?php if ($arResult['VACANCIES'] && count($arResult['VACANCIES']) > 0): ?>
     <section class="vacancies-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
         <div class="container">
             <h1 class="h1 block-title">Вакансии</h1>

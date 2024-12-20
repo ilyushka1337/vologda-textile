@@ -1,0 +1,23 @@
+@use "@/base.scss";
+
+.textile-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: base.clampFluid(15, 35);
+
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 575px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 424px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

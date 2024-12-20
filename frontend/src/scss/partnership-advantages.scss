@@ -1,0 +1,49 @@
+@use "@/base.scss";
+
+.partnership-advantages {
+    .block-title {
+        text-align: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: base.clampFluid(30);
+    }
+
+    .advantage {
+        .title {
+            margin: base.clampFluid(-50) 0 base.clampFluid(30);
+        }
+
+        .text {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .title,
+        .text {
+            text-align: center;
+        }
+
+        .advantage-icon {
+            width: base.clampFluid(200);
+            height: base.clampFluid(183);
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 1279px) {
+        .advantage {
+            .text {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .grid {
+            grid-template-columns: 100%;
+        }
+    }
+}

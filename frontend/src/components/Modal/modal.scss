@@ -1,4 +1,4 @@
-@import "@/scss/base/base.scss";
+@use "@/base.scss";
 
 .modal {
     position: fixed;
@@ -48,19 +48,7 @@
         background: rgba(#000, 0.5);
 
         &--y-padding {
-            padding: clampFluid(70) 0;
-        }
-    }
-
-    &[aria-hidden="false"] {
-        .modal {
-            &__overlay {
-                animation: mmfadeIn $tr-time cubic-bezier(0, 0, 0.2, 1);
-            }
-
-            &__container {
-                animation: mmslideIn $tr-time cubic-bezier(0, 0, 0.2, 1);
-            }
+            padding: base.clampFluid(70) 0;
         }
     }
 
@@ -69,7 +57,6 @@
         flex-direction: column;
         position: relative;
         background: #fff;
-        border-radius: clampFluid(10);
 
         &--centered {
             margin: auto;
@@ -85,45 +72,45 @@
         }
 
         &--md {
-            width: clampFluid(745);
-            --modal-padding-y: #{clampFluid(50)};
-            --modal-padding-x: #{clampFluid(50)};
+            width: base.clampFluid(745);
+            --modal-padding-y: #{base.clampFluid(50)};
+            --modal-padding-x: #{base.clampFluid(50)};
         }
 
         &--lg {
-            width: clampFluid(900);
-            --modal-padding-y: #{clampFluid(50)};
-            --modal-padding-x: #{clampFluid(50)};
+            width: base.clampFluid(900);
+            --modal-padding-y: #{base.clampFluid(50)};
+            --modal-padding-x: #{base.clampFluid(50)};
         }
 
         &--xl {
-            width: clampFluid(1392);
-            --modal-padding-y: #{clampFluid(80)};
-            --modal-padding-x: #{clampFluid(80)};
+            width: base.clampFluid(1260);
+            --modal-padding-y: #{base.clampFluid(50)};
+            --modal-padding-x: #{base.clampFluid(70)};
         }
 
         &--fullscreen {
             height: 100%;
             width: 100%;
-            --modal-padding-y: #{clampFluid(40)};
-            --modal-padding-x: #{clampFluid(40)};
+            --modal-padding-y: #{base.clampFluid(40)};
+            --modal-padding-x: #{base.clampFluid(40)};
         }
 
         &--rounded {
-            border-radius: clampFluid(20);
+            border-radius: base.clampFluid(20);
         }
     }
 
     &__header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
         padding: var(--modal-padding-y) var(--modal-padding-x) 0;
 
         &--align-left {
             justify-content: flex-start;
         }
+    }
+
+    &__title {
+        text-align: center;
     }
 
     &__body {
@@ -134,9 +121,10 @@
     &__close {
         display: flex;
         position: absolute;
-        top: clampFluid(26);
-        right: clampFluid(26);
-        font-size: clampFluid(12);
+        top: 0;
+        right: 0;
+        padding: base.clampFluid(30);
+        font-size: base.clampFluid(18);
     }
 
     &__footer {
@@ -173,10 +161,6 @@
             &--y-padding {
                 padding: 38px 0;
             }
-        }
-
-        &__close {
-            font-size: 18px;
         }
     }
 

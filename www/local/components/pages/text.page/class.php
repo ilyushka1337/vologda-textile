@@ -28,6 +28,7 @@ final class TextPageComponent extends Boilerplate
         $params = new Parameters();
         $params->group("DATA", "Параметры", 100, [
             "ELEMENT_CODE" => $params->string("Символьный код элемента"),
+            'IS_PAGE_BLOCK' => $params->checkbox('Добавить отступы блока'),
             "CONTENT_PROPERTY_CODE" => $params->string("Код свойства с контентом", [
                 'DEFAULT' => 'CONTENT'
             ])

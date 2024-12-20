@@ -1,0 +1,13 @@
+@use "@/base.scss";
+
+.contact {
+    &__name {
+        margin-bottom: base.clampFluid(4);
+        color: base.$gray;
+        @include base.p2;
+    }
+
+    &__value {
+        @include base.button;
+    }
+}

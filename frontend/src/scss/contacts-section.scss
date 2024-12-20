@@ -1,0 +1,29 @@
+@use "@/base.scss";
+
+.contacts-section {
+    .grid {
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        gap: base.clampFluid(80);
+    }
+
+    .map {
+        height: base.clampFluid(540);
+    }
+
+    .info-column {
+        display: flex;
+        flex-direction: column;
+        gap: base.clampFluid(30);
+    }
+
+    @media (max-width: 767px) {
+        .grid {
+            grid-template-columns: 100%;
+        }
+
+        .map-column {
+            grid-row: 2/3;
+        }
+    }
+}

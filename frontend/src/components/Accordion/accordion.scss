@@ -1,4 +1,4 @@
-@import "@/scss/base/base.scss";
+@use "@/base.scss";
 
 .accordion {
     border-top: 1px solid #86869580;
@@ -7,7 +7,7 @@
     &__name {
         flex: 0 0 75%;
         text-align: left;
-        @include h3;
+        @include base.h3;
     }
 
     &__head {
@@ -15,12 +15,12 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        padding: clampFluid(17) 0 clampFluid(17) clampFluid(20);
+        padding: base.clampFluid(17) 0 base.clampFluid(17) base.clampFluid(20);
         cursor: pointer;
     }
 
     &__icon {
-        font-size: clampFluid(24);
+        font-size: base.clampFluid(24);
         flex: 0 0 auto;
         transition: transform .4s;
 
@@ -30,6 +30,6 @@
     }
 
     &__content {
-        padding-bottom: clampFluid(20);
+        padding-bottom: base.clampFluid(20);
     }
 }

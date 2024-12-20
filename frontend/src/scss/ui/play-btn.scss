@@ -1,0 +1,25 @@
+@use "@/base.scss";
+
+.play-btn {
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__circle {
+        fill: var(--play-circle-color);
+    }
+
+    &__triangle {
+        fill: var(--play-triangle-color);
+    }
+
+    &--red {
+        --play-circle-color: #fff;
+        --play-triangle-color: #{base.$red};
+    }
+}

@@ -27,10 +27,6 @@ $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
                 <div class="callback">
                     <a href="tel:<?= sprint_options_get('SITE_PHONE') ?>"
                         class="tel button"><?= sprint_options_get('SITE_PHONE') ?></a>
-                    <?= tpl('ui/page-link', [
-                        'type' => 'button',
-                        'text' => 'Заказать звонок'
-                    ]) ?>
                 </div>
             </div>
             <nav class="menu-column">
@@ -150,11 +146,11 @@ $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
         <span class="icon catalog-icon"></span>
         <p class="text">Каталог Votex</p>
     </div>
-    <a href="/" class="action">
+    <a href="/fabrics/" class="action">
         <span class="icon fabrics-icon"></span>
         <p class="text">Ткани</p>
     </a>
-    <a href="/" class="action">
+    <a href="/partnership/" class="action">
         <span class="icon partnership-icon"></span>
         <p class="text">Сотрудничество</p>
     </a>
@@ -227,10 +223,6 @@ $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
 
             <div class="contacts">
                 <a href="tel:+7 495 152 20 00" class="tel button"><?= sprint_options_get('SITE_PHONE') ?></a>
-                <?= tpl('ui/page-link', [
-                    'type' => 'button',
-                    'text' => 'Заказать звонок'
-                ]) ?>
             </div>
         </div>
     </div>

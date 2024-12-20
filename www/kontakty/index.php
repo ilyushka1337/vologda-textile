@@ -9,14 +9,11 @@ $APPLICATION->SetTitle("Контакты");
 		"CACHE_TYPE" => "A"
 	)
 );?><?$APPLICATION->IncludeComponent(
-	"pages:text.page",
+	"placestart:contacts.section",
 	"",
 	Array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
-		"CONTENT_PROPERTY_CODE" => "CONTENT",
-		"ELEMENT_CODE" => "primer-tekstovoy-stranitsy",
-		"ELEMENT_ID" => "",
-		"IBLOCK_ID" => "1"
+		"IS_PAGE_BLOCK" => "N"
 	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

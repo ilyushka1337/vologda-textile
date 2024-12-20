@@ -1,0 +1,75 @@
+@use "@/base.scss";
+
+.about-brand {
+    .text-grid {
+        display: grid;
+        gap: base.clampFluid(30) base.clampFluid(316);
+        grid-template-columns: max-content 56%;
+    }
+
+    .logo {
+        display: inline-block;
+
+        .icon {
+            font-size: base.clampFluid(230);
+        }
+
+        .text {
+            padding-right: base.clampFluid(40);
+            text-align: right;
+            color: rgba($color: base.$black, $alpha: .5);
+        }
+    }
+
+    .section-logo-row {
+        display: flex;
+        align-items: center;
+
+        .img {
+            display: inline-block;
+            height: base.clampFluid(35);
+        }
+
+        .hyphen {
+            margin: 0 base.clampFluid(15);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: base.clampFluid(25);
+        }
+    }
+
+    .text-column {
+        display: grid;
+        grid-template-columns: 45% 32%;
+        justify-content: space-between;
+        gap: base.clampFluid(30) 0;
+    }
+
+    .content-text {
+        &:not(:last-child) {
+            margin-bottom: base.clampFluid(30);
+        }
+    }
+
+    .video {
+        margin-top: base.clampFluid(100);
+    }
+
+    @media (max-width: 1279px) {
+        .text-grid {
+            gap: 30px 100px;
+            grid-template-columns: max-content 1fr;
+        }
+
+        .text-column {
+            grid-template-columns: 100%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .text-grid {
+            grid-template-columns: 100%;
+        }
+    }
+}

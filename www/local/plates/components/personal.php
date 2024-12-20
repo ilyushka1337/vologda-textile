@@ -8,7 +8,7 @@
 ?>
 
 <p class="personal">
-    Нажимая на кнопку вы соглашаетесь <a href="/privacy-policy/" target="_blank"
+    Нажимая на кнопку вы соглашаетесь <a href="/personal-data/" target="_blank"
         class="personal__link link link--underline">на обработку
         персональных
         данных</a>

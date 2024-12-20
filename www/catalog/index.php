@@ -1,18 +1,20 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог Votex");
-?><?$APPLICATION->IncludeComponent(
+
+$APPLICATION->IncludeComponent(
 	"placestart:page.head",
 	"",
-	Array(
+	array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A"
 	)
-);?>
-<?$APPLICATION->IncludeComponent(
+);
+
+$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
 	"business-catalog",
-	Array(
+	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
@@ -34,7 +36,7 @@ $APPLICATION->SetTitle("Каталог Votex");
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP","MAGNIFIER"),
+		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP", "MAGNIFIER"),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
@@ -131,7 +133,7 @@ $APPLICATION->SetTitle("Каталог Votex");
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_FOLDER" => "/catalog/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"","smart_filter"=>"#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/"),
+		"SEF_URL_TEMPLATES" => array("compare" => "", "element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/", "section" => "#SECTION_CODE_PATH#/", "sections" => "", "smart_filter" => "#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/", "new_page" => "new/"),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
@@ -167,4 +169,6 @@ $APPLICATION->SetTitle("Каталог Votex");
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_STORE" => "N"
 	)
-);?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+);
+
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");

@@ -172,6 +172,13 @@ $elementId = $APPLICATION->IncludeComponent(
 
 $GLOBALS['CATALOG_CURRENT_ELEMENT_ID'] = $elementId;
 
+$APPLICATION->IncludeComponent('placestart:product.description', '', [
+    "CACHE_TIME" => "3600000",
+    "CACHE_TYPE" => "A",
+    "IS_PAGE_BLOCK" => "Y",
+    "SECTION_CODE" => $arResult['VARIABLES']['SECTION_CODE']
+]);
+
 $textCode = $APPLICATION->GetPageProperty('ELEMENT_TEXT_CODE');
 if ($textCode)
     $APPLICATION->IncludeComponent('placestart:seo.section', '', [
@@ -189,7 +196,7 @@ $APPLICATION->IncludeComponent(
         "CACHE_TIME" => "3600000",
         "CACHE_TYPE" => "N",
         "IS_PAGE_BLOCK" => "Y",
-        "TITLE" => "Рекомендуем вам"
+        "TITLE" => "Рекомендуем вам"
     )
 );
 ?>

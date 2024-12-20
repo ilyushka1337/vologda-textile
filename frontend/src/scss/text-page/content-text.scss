@@ -37,11 +37,7 @@
 
     a {
         text-decoration: none;
-        border-bottom: 1px solid base.$red;
-
-        &:hover {
-            color: base.$red;
-        }
+        color: base.$red;
     }
 
     img {
