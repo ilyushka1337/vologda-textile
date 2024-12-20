@@ -1,18 +1,18 @@
 <?
-$aMenuLinks = Array(
-	Array(
-		"О компании", 
-		"/o-kompanii/", 
-		Array(), 
-		Array(), 
-		"" 
+$aMenuLinks = array(
+	array(
+		"О компании",
+		"/o-kompanii/o-brende/",
+		array(),
+		array(),
+		""
 	),
-	Array(
-		"Контакты", 
-		"/kontakty/", 
-		Array(), 
-		Array(), 
-		"" 
+	array(
+		"Контакты",
+		"/kontakty/",
+		array(),
+		array(),
+		""
 	)
 );
 ?>
