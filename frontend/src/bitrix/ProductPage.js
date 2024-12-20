@@ -60,6 +60,7 @@ export default (params = {}) => ({
 
         this.updateSelectedSkuValues()
         this.initSlider()
+        console.log(this.currentOffer)
     },
 
     updateOfferForSelectedProperty(selectedPropertyCode, selectedPropertyValue) {

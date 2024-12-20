@@ -113,6 +113,16 @@ $jsData = [
                     </div>
                 </template>
 
+                <div class="props-list">
+                    <template x-for="prop in currentOffer.DISPLAY_PROPERTIES">
+                        <div class="props-list__row">
+                            <p class="props-list__name" x-text="prop.NAME"></p>
+                            <div class="props-list__border"></div>
+                            <p class="props-list__value" x-text="prop.VALUE"></p>
+                        </div>
+                    </template>
+                </div>
+
                 <div class="marketplace">
                     <template x-if="currentOffer?.PROPERTIES.ARTICUL_OZON.VALUE">
                         <a x-show="currentOffer?.PROPERTIES.ARTICUL_OZON.VALUE"
