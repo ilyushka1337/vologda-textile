@@ -69,7 +69,7 @@ $jsData = [
                                     <div>
                                         <p class="product-offer__name p2"
                                             x-text="`${property.NAME}: ${property.CURRENT_VALUE}`"></p>
-                                        <template x-if="property.VALUES > 1">
+                                        <template x-if="property.VALUES.length > 1">
                                             <div class="product-offer__values">
                                                 <template x-for="value in property.VALUES">
                                                     <button class="product-offer__value"
@@ -85,7 +85,7 @@ $jsData = [
                                     <div>
                                         <p class="product-offer__name p2"
                                             x-text="`${property.NAME}: ${property.CURRENT_VALUE}`"></p>
-                                        <template x-if="property.VALUES > 1">
+                                        <template x-if="property.VALUES.length > 1">
                                             <div class="product-offer__slider">
                                                 <div class="product-offer__slider-wrap">
                                                     <div class="swiper" x-ref="colorsSlider" x-init="initColorsSlider">
