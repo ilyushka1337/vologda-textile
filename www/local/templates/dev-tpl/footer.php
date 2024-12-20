@@ -146,11 +146,11 @@ $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
         <span class="icon catalog-icon"></span>
         <p class="text">Каталог Votex</p>
     </div>
-    <a href="/" class="action">
+    <a href="/fabrics/" class="action">
         <span class="icon fabrics-icon"></span>
         <p class="text">Ткани</p>
     </a>
-    <a href="/" class="action">
+    <a href="/partnership/" class="action">
         <span class="icon partnership-icon"></span>
         <p class="text">Сотрудничество</p>
     </a>
