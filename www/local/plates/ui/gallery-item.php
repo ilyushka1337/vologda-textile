@@ -10,7 +10,7 @@
 
 <div class="content-gallery-item">
     <a data-fancybox='<?= $fancyboxName ?? 'gallery' ?>' href="<?= $detailUrl ?>" class="content-gallery-item__wrap">
-        <img alt="<?= $caption ?>" src="<?= $previewUrl ?>" class="content-gallery-item__img">
+        <img alt="<?= $caption ?>" src="<?= $previewUrl ?>" loading="lazy" class="content-gallery-item__img">
         <span class="content-gallery-item__overlay">
             <div class="content-gallery-item__zoom">
                 <span class="icon zoom-icon"></span>
