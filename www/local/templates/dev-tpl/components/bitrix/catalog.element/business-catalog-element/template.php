@@ -67,45 +67,50 @@ $jsData = [
                             <div class="product-offer">
                                 <template x-if="property.PICTURES.length == 0">
                                     <div>
-                                        <p class="product-offer__name p2" x-text="`${property.NAME}:`"></p>
-                                        <div class="product-offer__values">
-                                            <template x-for="value in property.VALUES">
-                                                <button class="product-offer__value"
-                                                    :class="property.CURRENT_VALUE == value && 'product-offer__value--active'"
-                                                    @click="updateOfferForSelectedProperty(code, value)"
-                                                    x-text="value"></button>
-                                            </template>
-                                        </div>
+                                        <p class="product-offer__name p2"
+                                            x-text="`${property.NAME}: ${property.CURRENT_VALUE}`"></p>
+                                        <template x-if="property.VALUES > 1">
+                                            <div class="product-offer__values">
+                                                <template x-for="value in property.VALUES">
+                                                    <button class="product-offer__value"
+                                                        :class="property.CURRENT_VALUE == value && 'product-offer__value--active'"
+                                                        @click="updateOfferForSelectedProperty(code, value)"
+                                                        x-text="value"></button>
+                                                </template>
+                                            </div>
+                                        </template>
                                     </div>
                                 </template>
                                 <template x-if="property.PICTURES.length > 0">
                                     <div>
                                         <p class="product-offer__name p2"
                                             x-text="`${property.NAME}: ${property.CURRENT_VALUE}`"></p>
-                                        <div class="product-offer__slider">
-                                            <div class="product-offer__slider-wrap">
-                                                <div class="swiper" x-ref="colorsSlider" x-init="initColorsSlider">
-                                                    <div class="swiper-wrapper">
-                                                        <template x-for="(value, index) in property.VALUES">
-                                                            <div class="swiper-slide"
-                                                                :class="value === property.CURRENT_VALUE && 'active'"
-                                                                @click="updateOfferForSelectedProperty(code, value)">
-                                                                <img :src="property.PICTURES[index]" loading="lazy"
-                                                                    class="img">
-                                                            </div>
-                                                        </template>
+                                        <template x-if="property.VALUES > 1">
+                                            <div class="product-offer__slider">
+                                                <div class="product-offer__slider-wrap">
+                                                    <div class="swiper" x-ref="colorsSlider" x-init="initColorsSlider">
+                                                        <div class="swiper-wrapper">
+                                                            <template x-for="(value, index) in property.VALUES">
+                                                                <div class="swiper-slide"
+                                                                    :class="value === property.CURRENT_VALUE && 'active'"
+                                                                    @click="updateOfferForSelectedProperty(code, value)">
+                                                                    <img :src="property.PICTURES[index]" loading="lazy"
+                                                                        class="img">
+                                                                </div>
+                                                            </template>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <?= tpl('ui/slider-arrow', [
+                                                    'direction' => 'prev',
+                                                    'attrs' => 'x-ref="colorsSliderPrev"'
+                                                ]) ?>
+                                                <?= tpl('ui/slider-arrow', [
+                                                    'direction' => 'next',
+                                                    'attrs' => 'x-ref="colorsSliderNext"'
+                                                ]) ?>
                                             </div>
-                                            <?= tpl('ui/slider-arrow', [
-                                                'direction' => 'prev',
-                                                'attrs' => 'x-ref="colorsSliderPrev"'
-                                            ]) ?>
-                                            <?= tpl('ui/slider-arrow', [
-                                                'direction' => 'next',
-                                                'attrs' => 'x-ref="colorsSliderNext"'
-                                            ]) ?>
-                                        </div>
+                                        </template>
                                     </div>
                                 </template>
                             </div>
