@@ -59,7 +59,7 @@ class XlsxHelper
                             break;
                     }
 
-                    if ($columnIndex == "N")
+                    if ($columnIndex == "O")
                         break;
                 }
 

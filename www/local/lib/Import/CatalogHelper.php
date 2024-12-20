@@ -220,6 +220,7 @@ class CatalogHelper
                 'BEDSHEET_SIZE' => $info['BEDSHEET_SIZE'],
                 'BLANKET_SIZE' => $info['BLANKET_SIZE'],
                 'PREVIEW_GALLERY' => count($photos) > 0 ? $photos : null,
+                'MODEL' => $info['MODEL']
             ]
         ];
 
@@ -278,6 +279,7 @@ class CatalogHelper
                 'BEDSHEET_SIZE' => $info['BEDSHEET_SIZE'],
                 'BLANKET_SIZE' => $info['BLANKET_SIZE'],
                 'PREVIEW_GALLERY' => count($photos) > 0 ? $photos : null,
+                'MODEL' => $info['MODEL']
             ]
         ];
 

@@ -52,7 +52,7 @@ final class Importer
     private function findOffers(int $cardID)
     {
         $q = XlsxProductTable::getList([
-            'select' => ['BARCODE', 'ARTICUL_WB', 'ARTICUL_OZON', 'SIZE', 'COLOR', 'PILLOWSLIP_SIZE', 'DESCRIPTION', 'IS_NEW', 'BEDSHEET_SIZE', 'BLANKET_SIZE'],
+            'select' => ['BARCODE', 'ARTICUL_WB', 'ARTICUL_OZON', 'SIZE', 'COLOR', 'PILLOWSLIP_SIZE', 'DESCRIPTION', 'IS_NEW', 'BEDSHEET_SIZE', 'BLANKET_SIZE', 'MODEL'],
             'filter' => ['CARD_ID' => $cardID]
         ]);
 
