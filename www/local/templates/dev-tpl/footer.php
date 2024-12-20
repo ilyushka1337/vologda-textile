@@ -105,9 +105,11 @@ $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
     </div>
 </footer>
 
-<div class="catalog-menu desktop-catalog" x-data="{currentMenu: -1, logo: ''}" x-show="$store.catalogMenu.isOpen"
-    @keyup.escape.window="$store.catalogMenu.isOpen = false" @click.outside="$store.catalogMenu.isOpen = false">
-    <div class="wrap" @click.outside="currentMenu = -1; logo = ''" @keyup.escape.window="currentMenu = -1">
+<div class="catalog-menu desktop-catalog" x-data="{currentMenu: 0, logo: 'section-home.png'}"
+    x-show="$store.catalogMenu.isOpen" @keyup.escape.window="$store.catalogMenu.isOpen = false"
+    @click.outside="$store.catalogMenu.isOpen = false">
+    <div class="wrap" @click.outside="currentMenu = 0; logo = 'section-home.png'"
+        @keyup.escape.window="currentMenu = -1">
         <? $APPLICATION->IncludeComponent(
             "bitrix:catalog.section.list",
             "catalog-tree-menu",
@@ -163,8 +165,9 @@ $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
 <div class="mobile-menu" x-data x-transition x-show="$store.mobileCatalog.isOpen">
     <div class="mobile-menu__body">
         <div class="mobile-menu__content">
-            <div class="catalog-menu" x-data="{currentMenu: -1, logo: ''}">
-                <div class="wrap" @click.outside="currentMenu = -1; logo = ''" @keyup.escape.window="currentMenu = -1">
+            <div class="catalog-menu" x-data="{currentMenu: 0, logo: 'section-home.png'}">
+                <div class="wrap" @click.outside="currentMenu = 0; logo = 'section-home.png'"
+                    @keyup.escape.window="currentMenu = -1">
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:catalog.section.list",
                         "catalog-tree-menu",

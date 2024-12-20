@@ -41,7 +41,7 @@ $this->setFrameMode(true);
             ?>
             <?php if ($arSection['IS_PARENT']): ?>
                 <div class="item button">
-                    <a href="<?= $arSection['SECTION_PAGE_URL'] ?>" class="link"
+                    <a href="<?= $arSection['SECTION_PAGE_URL'] ?>" class="link" :class="currentMenu == <?= $i ?> && 'active'"
                         @click.prevent="currentMenu = <?= $i ?>; logo = '<?= $logo ?>'"><?= $arSection['NAME'] ?></a>
                 </div>
             <?php else: ?>

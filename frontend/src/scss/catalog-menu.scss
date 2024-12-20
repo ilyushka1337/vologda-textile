@@ -23,6 +23,10 @@
         &:hover {
             background: rgba(base.$red, 10%);
         }
+
+        &.active {
+            color: base.$red;
+        }
     }
 
     .search-form {
