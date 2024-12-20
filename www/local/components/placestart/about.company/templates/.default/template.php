@@ -5,6 +5,6 @@
             <p class="text p1">Вологодский Текстильный Комбинат — это уникальный производственный комплекс с мощной
                 инфраструктурой, развитой технической, организационной и научной базой.</p>
         </div>
-        <img src="/local/assets/about-company.png" alt="" loading="lazy" class="img">
+        <!-- <img src="/local/assets/about-company.png" alt="" loading="lazy" class="img"> -->
     </div>
 </section>
