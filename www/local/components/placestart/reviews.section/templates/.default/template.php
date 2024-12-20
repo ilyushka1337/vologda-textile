@@ -12,10 +12,13 @@
 
             <div class="slider" x-data="ReviewsSlider">
                 <div class="swiper" x-ref="swiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper" x-data="FancyboxGallery">
                         <?php foreach ($arResult['REVIEWS'] as $arReview): ?>
                             <div class="swiper-slide">
-                                <img src="<?= $arReview['IMG']['SRC'] ?>" loading="lazy" class="img">
+                                <?= tpl('ui/gallery-item', [
+                                    'detailUrl' => $arReview['IMG']['SRC'],
+                                    'previewUrl' => $arReview['IMG']['SRC'],
+                                ]) ?>
                             </div>
                         <?php endforeach ?>
                     </div>
