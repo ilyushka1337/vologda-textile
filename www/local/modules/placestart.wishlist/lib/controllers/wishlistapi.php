@@ -43,7 +43,6 @@ class WishlistApi extends Controller
             ]);
 
         $response = new HtmlResponse($body);
-        $response->addHeader("HX-Trigger", "show-success-alert");
         return $response;
     }
 
@@ -65,7 +64,6 @@ class WishlistApi extends Controller
             ]);
 
         $response = new HtmlResponse($body);
-        $response->addHeader("HX-Trigger", "show-success-alert");
         return $response;
     }
 
@@ -87,7 +85,7 @@ class WishlistApi extends Controller
             ]);
 
         $response = new HtmlResponse($body);
-        $response->addHeader("HX-Trigger", "show-success-alert");
+        $result["IN_WISHLIST"] ? $response->addHeader('HX-Trigger', '{"add-to-wishlist": {"ID": "' . $id . '"}}') : $response->addHeader('HX-Trigger', '{"remove-from-wishlist": {"ID": "' . $id . '"}}');
         return $response;
     }
 }
