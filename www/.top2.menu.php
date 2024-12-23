@@ -2,7 +2,7 @@
 $aMenuLinks = array(
 	array(
 		"О компании",
-		"/o-kompanii/o-brende/",
+		"/o-kompanii/o-kombinate/",
 		array(),
 		array(),
 		""
