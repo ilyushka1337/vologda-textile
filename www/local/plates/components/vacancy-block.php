@@ -15,7 +15,9 @@
             <p class="button"><?= $this->e($payment) ?></p>
         </div>
     <?php endif ?>
-    <p class="text p2"><?= $this->e($text) ?></p>
+    <div class="content-text text">
+        <?= $this->e($text) ?>
+    </div>
     <?php if ($HHlink): ?>
         <?= tpl('ui/page-link', [
             'target' => '_blank',
