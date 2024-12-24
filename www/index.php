@@ -28,11 +28,20 @@ $APPLICATION->IncludeComponent('placestart:reviews.section', '', [
     "CACHE_TYPE" => "A",
     "IS_PAGE_BLOCK" => "Y"
 ]);
-$APPLICATION->IncludeComponent('placestart:about.section', '', [
-    "CACHE_TIME" => "3600000",
-    "CACHE_TYPE" => "A",
-    "IS_PAGE_BLOCK" => "Y"
-]);
+$APPLICATION->IncludeComponent(
+    "placestart:about.section",
+    ".default",
+    array(
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "A",
+        "IS_PAGE_BLOCK" => "Y",
+        "COMPONENT_TEMPLATE" => ".default",
+        "ABOUT_ELEMENT_CODE" => "o-kombinate",
+        "PRODUCTION_ELEMENT_CODE" => "proizvodstvo",
+        "PARTNERSHIP_ELEMENT_CODE" => "partnyeram"
+    ),
+    false
+);
 $APPLICATION->IncludeComponent('placestart:fabrics.section', '', [
     "CACHE_TIME" => "3600000",
     "CACHE_TYPE" => "A",
