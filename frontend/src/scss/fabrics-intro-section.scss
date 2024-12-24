@@ -25,7 +25,7 @@
     }
 
     .img2 {
-        max-width: 100%;
+        max-width: base.clampFluid(200);
     }
 
     .text1 {

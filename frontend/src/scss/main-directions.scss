@@ -2,6 +2,7 @@
 
 .main-directions {
     overflow-x: clip;
+    --page-block-margin: #{base.clampFluid(50)};
 
     .fullhd-container {
         position: relative;

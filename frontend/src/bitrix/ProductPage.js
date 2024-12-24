@@ -1,13 +1,14 @@
 import Swiper from "swiper"
 import { Thumbs, Navigation } from "swiper/modules"
 
-export default (params = {}) => ({
+export default (params = {}, inWishlist = false) => ({
     showWishlistAlert: false,
     currentOffer: params.OFFERS[0],
     thumbsSwiper: null,
     mainSwiper: null,
     colorsSwiper: null,
     selectedSkuValues: {},
+    inWishlist,
     get showSkuProps() {
         if (!this.currentOffer)
             return null

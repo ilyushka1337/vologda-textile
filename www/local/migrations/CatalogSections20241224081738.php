@@ -3,13 +3,13 @@
 namespace Sprint\Migration;
 
 
-class CatalogSections20241216143726 extends Version
+class CatalogSections20241224081738 extends Version
 {
   protected $author = "admin";
 
-  protected $description = "обновление разделов каталога";
+  protected $description = "Обновление категория, добавлена \"Новинки\"";
 
-  protected $moduleVersion = "4.15.1";
+  protected $moduleVersion = "4.16.1";
 
   /**
    * @throws Exceptions\HelperException
@@ -36,7 +36,8 @@ class CatalogSections20241216143726 extends Version
             'XML_ID' => NULL,
             'DESCRIPTION' => '',
             'DESCRIPTION_TYPE' => 'text',
-            'UF_SEO_TEXT' => NULL,
+            'UF_SEO_TEXT' => 'primer-tekstovoy-stranitsy',
+            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
             'CHILDS' =>
               array(
                 0 =>
@@ -49,6 +50,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                     'CHILDS' =>
                       array(
                         0 =>
@@ -60,7 +62,8 @@ class CatalogSections20241216143726 extends Version
                             'XML_ID' => NULL,
                             'DESCRIPTION' => 'Откройте для себя мир комфорта и уюта в нашей спальне! Здесь вы найдете все необходимое для идеального отдыха: от изысканного постельного белья до мягких покрывал. Мы предлагаем разнообразные комплекты на любой вкус. Не упустите возможность обновить свою спальню с помощью наших высококачественных товаров. Приходите и убедитесь в этом сами!',
                             'DESCRIPTION_TYPE' => 'text',
-                            'UF_SEO_TEXT' => 'seo-zagolovok-dlya-primera-v-dve-strochki',
+                            'UF_SEO_TEXT' => 'primer-tekstovoy-stranitsy',
+                            'UF_PRODUCT_DESCRIPTION_CODE' => 'primer-tekstovoy-stranitsy',
                           ),
                         1 =>
                           array(
@@ -72,6 +75,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                         2 =>
                           array(
@@ -83,6 +87,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                         3 =>
                           array(
@@ -94,6 +99,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                         4 =>
                           array(
@@ -105,6 +111,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                       ),
                   ),
@@ -118,6 +125,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                     'CHILDS' =>
                       array(
                         0 =>
@@ -130,6 +138,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                         1 =>
                           array(
@@ -141,6 +150,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                       ),
                   ),
@@ -154,6 +164,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                     'CHILDS' =>
                       array(
                         0 =>
@@ -166,6 +177,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                       ),
                   ),
@@ -181,6 +193,7 @@ class CatalogSections20241216143726 extends Version
             'DESCRIPTION' => '',
             'DESCRIPTION_TYPE' => 'text',
             'UF_SEO_TEXT' => NULL,
+            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
             'CHILDS' =>
               array(
                 0 =>
@@ -193,6 +206,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                     'CHILDS' =>
                       array(
                         0 =>
@@ -205,6 +219,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                         1 =>
                           array(
@@ -216,6 +231,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                       ),
                   ),
@@ -229,6 +245,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                     'CHILDS' =>
                       array(
                         0 =>
@@ -241,6 +258,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                         1 =>
                           array(
@@ -252,6 +270,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                         2 =>
                           array(
@@ -263,6 +282,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                       ),
                   ),
@@ -276,6 +296,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                   ),
                 3 =>
                   array(
@@ -287,6 +308,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                   ),
                 4 =>
                   array(
@@ -298,6 +320,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                     'CHILDS' =>
                       array(
                         0 =>
@@ -310,6 +333,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                         1 =>
                           array(
@@ -321,6 +345,7 @@ class CatalogSections20241216143726 extends Version
                             'DESCRIPTION' => '',
                             'DESCRIPTION_TYPE' => 'text',
                             'UF_SEO_TEXT' => NULL,
+                            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                           ),
                       ),
                   ),
@@ -336,6 +361,7 @@ class CatalogSections20241216143726 extends Version
             'DESCRIPTION' => '',
             'DESCRIPTION_TYPE' => 'text',
             'UF_SEO_TEXT' => NULL,
+            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
             'CHILDS' =>
               array(
                 0 =>
@@ -348,6 +374,7 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                   ),
                 1 =>
                   array(
@@ -359,8 +386,21 @@ class CatalogSections20241216143726 extends Version
                     'DESCRIPTION' => '',
                     'DESCRIPTION_TYPE' => 'text',
                     'UF_SEO_TEXT' => NULL,
+                    'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
                   ),
               ),
+          ),
+        3 =>
+          array(
+            'NAME' => 'Новинки',
+            'CODE' => 'new',
+            'SORT' => '500',
+            'ACTIVE' => 'Y',
+            'XML_ID' => NULL,
+            'DESCRIPTION' => '',
+            'DESCRIPTION_TYPE' => 'text',
+            'UF_SEO_TEXT' => NULL,
+            'UF_PRODUCT_DESCRIPTION_CODE' => NULL,
           ),
       )
     );

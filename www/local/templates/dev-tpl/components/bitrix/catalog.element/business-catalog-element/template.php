@@ -17,7 +17,9 @@ $jsData = [
 ];
 ?>
 
-<div class="product-page" x-data="ProductPage(<?= tpl_js($jsData) ?>)">
+<div class="product-page"
+    x-data="ProductPage(<?= tpl_js($jsData) ?>, <?= $arResult['IN_WISHLIST'] ? 'true' : 'false' ?>)"
+    @remove-from-wishlist="inWishlist = false" @add-to-wishlist="inWishlist = true">
     <section class="product-section">
         <div class="top container container-sm">
             <div class="slider-column">
@@ -69,7 +71,7 @@ $jsData = [
                                     <div>
                                         <p class="product-offer__name p2"
                                             x-text="`${property.NAME}: ${property.CURRENT_VALUE}`"></p>
-                                        <template x-if="property.VALUES > 1">
+                                        <template x-if="property.VALUES.length > 1">
                                             <div class="product-offer__values">
                                                 <template x-for="value in property.VALUES">
                                                     <button class="product-offer__value"
@@ -85,7 +87,7 @@ $jsData = [
                                     <div>
                                         <p class="product-offer__name p2"
                                             x-text="`${property.NAME}: ${property.CURRENT_VALUE}`"></p>
-                                        <template x-if="property.VALUES > 1">
+                                        <template x-if="property.VALUES.length > 1">
                                             <div class="product-offer__slider">
                                                 <div class="product-offer__slider-wrap">
                                                     <div class="swiper" x-ref="colorsSlider" x-init="initColorsSlider">
@@ -198,7 +200,12 @@ $jsData = [
             <button class="to-wishlist" hx-vals='{"id": "<?= $arResult['ID'] ?>"}'
                 hx-post="/bitrix/services/main/ajax.php?action=placestart:wishlist.htmlApi.WishlistApi.toggle"
                 hx-target="body" hx-swap="beforeend">
-                <span class="icon heart-icon"></span>
+                <template x-if="!inWishlist">
+                    <span class="icon heart-icon"></span>
+                </template>
+                <template x-if="inWishlist">
+                    <span class="icon heart-filled-icon"></span>
+                </template>
             </button>
         </div>
     </section>

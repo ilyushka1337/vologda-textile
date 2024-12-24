@@ -2,6 +2,7 @@
 
 .main-slider {
     overflow: hidden;
+    --page-block-margin: #{base.clampFluid(50)};
 
     .slider-arrow {
         font-size: base.clampFluid(73);

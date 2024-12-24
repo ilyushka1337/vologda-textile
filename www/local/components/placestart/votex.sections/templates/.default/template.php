@@ -34,29 +34,25 @@
     <div class="container container-fluid">
         <div class="section-blocks-grid">
             <?= tpl('components/section-block', [
-                'logoSrc' => '/local/assets/section-home.png',
-                'imgSrc' => '/local/assets/section-img-home.png',
+                'imgSrc' => '/local/assets/section-img-home.jpg',
                 'overlayLogoSrc' => '/local/assets/logo-home.png',
                 'link' => '/catalog/home/'
             ]) ?>
 
             <?= tpl('components/section-block', [
-                'logoSrc' => '/local/assets/section-spa.png',
-                'imgSrc' => '/local/assets/section-img-spa.png',
+                'imgSrc' => '/local/assets/section-img-spa.jpg',
                 'overlayLogoSrc' => '/local/assets/logo-spa.png',
                 'link' => '/catalog/spa/'
             ]) ?>
 
             <?= tpl('components/section-block', [
-                'logoSrc' => '/local/assets/section-kids.png',
-                'imgSrc' => '/local/assets/section-img-kids.png',
+                'imgSrc' => '/local/assets/section-img-kids.jpg',
                 'overlayLogoSrc' => '/local/assets/logo-kids.png',
                 'link' => '/catalog/kids/'
             ]) ?>
 
             <?= tpl('components/section-block', [
-                'logoSrc' => '/local/assets/section-premium.png',
-                'imgSrc' => '/local/assets/section-img-premium.png',
+                'imgSrc' => '/local/assets/section-img-premium.jpg',
                 'overlayLogoSrc' => '/local/assets/logo-premium.png',
                 'link' => '/catalog/premium/'
             ]) ?>

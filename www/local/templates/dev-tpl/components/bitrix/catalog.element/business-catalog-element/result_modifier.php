@@ -1,5 +1,7 @@
 <?
 use Placestart\Core\Utils;
+use Placestart\Wishlist\Wishlist;
+use Bitrix\Main\Loader;
 use Bitrix\Iblock\Elements\ElementCatalogTable;
 
 /**
@@ -38,3 +40,7 @@ $element = (ElementCatalogTable::getList([
 if (isset($element['SEO_TEXT_CODE_VALUE'])) {
     $arResult['TEXT_CODE'] = $element['SEO_TEXT_CODE_VALUE'];
 }
+
+$wishlist = (new Wishlist('WISHLIST'))->getWishlist();
+
+$arResult['IN_WISHLIST'] = in_array($arResult['ID'], $wishlist);

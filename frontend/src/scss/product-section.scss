@@ -23,7 +23,9 @@
         border: 1px solid base.$red;
         border-radius: 50%;
 
-        &.added {}
+        .heart-filled-icon {
+            color: base.$red;
+        }
     }
 
     .slider-column {
