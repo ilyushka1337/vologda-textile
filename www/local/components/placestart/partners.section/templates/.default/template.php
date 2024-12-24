@@ -6,7 +6,7 @@
                     <div class="label label--gray">партнёры</div>
                 </div>
                 <div class="text-column">
-                    <h2 class="title h1">Благодарим вас за доверие</h2>
+                    <h2 class="title h1">Нам доверяют более 5000 партнеров</h2>
                 </div>
             </div>
         </div>
