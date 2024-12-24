@@ -8,7 +8,7 @@
             <div class="advantage">
                 <img src="/local/assets/advantage-1.svg" loading="lazy" class="img">
                 <div class="text p1">
-                    <p class="h2">Более 5 млн</p>
+                    <p class="h2">5 млн</p>
                     <p>погонных метров в год</p>
                 </div>
             </div>
@@ -22,7 +22,7 @@
             <div class="advantage">
                 <img src="/local/assets/advantage-3.svg" loading="lazy" class="img">
                 <div class="text p1">
-                    <p class="h2">Более 40 тыс</p>
+                    <p class="h2">Порядка 40 тыс</p>
                     <p>видов тканей</p>
                 </div>
             </div>
