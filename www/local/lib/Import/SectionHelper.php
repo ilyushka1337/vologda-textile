@@ -29,6 +29,7 @@ class SectionHelper
         20 => 'detskie-polotentsa-ugolki-section',
         92 => 'zhenskiy-khalat-section',
         93 => 'muzhskoy-khalat-section',
+        404 => 'new'
     ];
 
     private int $iblockID;
