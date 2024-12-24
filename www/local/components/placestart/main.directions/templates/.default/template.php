@@ -22,21 +22,21 @@
                         <p class="name">
                             <a href="/o-kompanii/o-brende/" class="link-cover h2">Votex</a>
                         </p>
-                        <img src="/local/assets/votex.png" alt="" class="img">
+                        <img src="/local/assets/votex.jpg" alt="" class="img">
                         <p class="text p1">Собственный бренд готовых текстильных изделий </p>
                     </div>
                     <div class="direction-block">
                         <p class="name">
                             <a href="/fabrics/" class="link-cover h2">Ткани</a>
                         </p>
-                        <img src="/local/assets/fabrics.png" alt="" class="img">
+                        <img src="/local/assets/tkani.jpg" alt="" class="img">
                         <p class="text p1">Разработка тканей под задачи бизнеса и для оптовых покупателей</p>
                     </div>
                     <div class="direction-block">
                         <p class="name">
                             <a href="/o-kompanii/o-kombinate/" class="link-cover h2">Изготовление</a>
                         </p>
-                        <img src="/local/assets/production.png" alt="" class="img">
+                        <img src="/local/assets/isgotovlenie.jpg" alt="" class="img">
                         <p class="text p1">Корпоративные подарки и аксессуары</p>
                     </div>
                 </div>
