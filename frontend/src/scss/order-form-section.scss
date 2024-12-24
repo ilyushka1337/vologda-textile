@@ -1,0 +1,46 @@
+@use "@/base.scss";
+
+.order-form-section {
+    padding: base.clampFluid(70) 0;
+    background: base.$bg;
+
+    .text-column {
+        max-width: 50%;
+        margin: 0 auto base.clampFluid(50);
+
+        .content-text {
+            text-align: center;
+        }
+    }
+
+    .form-column {
+        max-width: 37%;
+        margin: 0 auto;
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: base.clampFluid(11);
+        margin-top: base.clampFluid(70);
+    }
+
+    @media (max-width: 1279px) {
+        .text-column {
+            max-width: 80%;
+        }
+
+        .form-column {
+            max-width: 70%;
+        }
+    }
+
+    @media (max-width: 767px) {
+
+        .text-column,
+        .form-column {
+            max-width: 100%;
+        }
+    }
+}

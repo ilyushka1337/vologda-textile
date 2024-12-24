@@ -1,0 +1,30 @@
+@use "@/base.scss";
+
+.order-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: base.clampFluid(33) base.clampFluid(20);
+
+    .fio-input {
+        grid-column: span 2;
+    }
+
+    .submit-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .personal {
+            margin-top: base.clampFluid(20);
+        }
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 100%;
+
+        .fio-input {
+            grid-column: auto;
+        }
+    }
+}

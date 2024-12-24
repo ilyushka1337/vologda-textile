@@ -14,9 +14,24 @@ $siteOzon = sprint_options_get('SITE_OZON');
 
 </main>
 <?
-$APPLICATION->IncludeComponent('placestart:feedback.section', '', [
-    'IS_PAGE_BLOCK' => 'N'
-]);
+if ($APPLICATION->GetCurDir() == '/fabrics/')
+    $APPLICATION->IncludeComponent('placestart:order-form.section', '', [
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "N",
+        'IS_PAGE_BLOCK' => 'N'
+    ]);
+elseif ($APPLICATION->GetCurDir() == '/partnership/')
+    $APPLICATION->IncludeComponent('placestart:order-form.section', '', [
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "N",
+        'IS_PAGE_BLOCK' => 'N'
+    ]);
+else
+    $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "N",
+        'IS_PAGE_BLOCK' => 'N'
+    ]);
 ?>
 <footer class="footer">
     <div class="top">
