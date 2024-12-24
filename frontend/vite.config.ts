@@ -1,7 +1,11 @@
 import { defineConfig } from 'vite'
+import UnoCSS from 'unocss/vite'
 import path from 'path'
 
 export default defineConfig({
+    plugins: [
+        UnoCSS(),
+    ],
     server: {
         strictPort: true,
         port: 5173,
