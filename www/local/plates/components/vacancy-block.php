@@ -16,7 +16,7 @@
         </div>
     <?php endif ?>
     <div class="content-text text">
-        <?= $this->e($text) ?>
+        <?= $text ?>
     </div>
     <?php if ($HHlink): ?>
         <?= tpl('ui/page-link', [
