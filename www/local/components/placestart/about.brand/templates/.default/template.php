@@ -3,7 +3,7 @@
         <div class="text-grid">
             <div class="logo-column">
                 <div class="logo">
-                    <span class="icon votex-icon"></span>
+                    <span class="votex-icon"></span>
                     <p class="text p1">Наш бренд</p>
                 </div>
             </div>
@@ -63,18 +63,18 @@
             </div>
         </div>
         <?php /* ?>
-   <div class="video" x-data="Video">
-       <video class="video__media" preload="meta" x-bind="video">
-           <source src="/upload/Ролик ВТК.mp4" type="video/mp4" />
-       </video>
-       <button class="video__play-btn play-btn play-btn--red" x-bind="playBtn">
-           <svg class="play-btn__icon" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <circle cx="45.0018" cy="44.9009" r="44.3299" fill="white" class="play-btn__circle" />
-               <path d="M56.5937 45.5829L41.2488 56.2142L41.2488 34.9516L56.5937 45.5829Z"
-                   class="play-btn__triangle" />
-           </svg>
-       </button>
-   </div>
-   <?php */ ?>
+<div class="video" x-data="Video">
+  <video class="video__media" preload="meta" x-bind="video">
+      <source src="/upload/Ролик ВТК.mp4" type="video/mp4" />
+  </video>
+  <button class="video__play-btn play-btn play-btn--red" x-bind="playBtn">
+      <svg class="play-btn__icon" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="45.0018" cy="44.9009" r="44.3299" fill="white" class="play-btn__circle" />
+          <path d="M56.5937 45.5829L41.2488 56.2142L41.2488 34.9516L56.5937 45.5829Z"
+              class="play-btn__triangle" />
+      </svg>
+  </button>
+</div>
+<?php */ ?>
     </div>
 </section>

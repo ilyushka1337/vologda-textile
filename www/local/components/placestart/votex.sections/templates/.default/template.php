@@ -7,7 +7,7 @@
             <div class="text-column">
                 <div class="logo-column">
                     <div class="logo">
-                        <span class="icon votex-icon"></span>
+                        <span class="votex-icon"></span>
                         <p class="text p1">Наш бренд</p>
                     </div>
                 </div>

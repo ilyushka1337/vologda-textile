@@ -14,7 +14,13 @@
     .info-column {
         display: flex;
         flex-direction: column;
-        gap: base.clampFluid(30);
+        gap: base.clampFluid(60);
+
+        .contacts-block {
+            display: grid;
+            grid-template-columns: 100%;
+            gap: base.clampFluid(20);
+        }
     }
 
     @media (max-width: 767px) {
