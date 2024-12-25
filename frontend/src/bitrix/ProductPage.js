@@ -15,6 +15,7 @@ export default (params = {}, inWishlist = false) => ({
 
         let result = {}
         for (let property of params.SKU_PROPS) {
+            // console.log(this.currentOffer.PROPERTIES[property.CODE].VALUE, property.CODE)
             let currentOfferValue = this.currentOffer.PROPERTIES[property.CODE].VALUE
 
             let values = []
@@ -36,8 +37,11 @@ export default (params = {}, inWishlist = false) => ({
                 }
 
                 propertyValue.IS_CURRENT = propertyValue.NAME == currentOfferValue
+                // if (property.CODE == 'SIZE') {
+                //     console.log(currentOfferValue, propertyValue)
+                // }
                 if (propertyValue.NAME == currentOfferValue) {
-                    currentValue = propertyValue.NAME
+                    currentValue = currentOfferValue
                 }
                 values.push(propertyValue.NAME)
             }
@@ -77,7 +81,7 @@ export default (params = {}, inWishlist = false) => ({
                 if (!filter[code] || filter[code] !== offer.PROPERTIES[code].VALUE)
                     continue;
 
-                offersRelevancy[i] += code === selectedPropertyCode ? 2 : 1
+                offersRelevancy[i] += code === selectedPropertyCode ? 10 : 1
             }
             i++
         }
