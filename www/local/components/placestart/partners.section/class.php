@@ -28,7 +28,8 @@ class PartnersSectionComponent extends Boilerplate
     {
         $params = new Parameters();
         $params->group('DATA', '', 100, [
-            'IS_PAGE_BLOCK' => $params->checkbox('Добавить отступы блока')
+            'IS_PAGE_BLOCK' => $params->checkbox('Добавить отступы блока'),
+            'TITLE' => $params->string('Заголовок')
         ]);
         return $params;
     }

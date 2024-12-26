@@ -50,49 +50,51 @@ else
                 <a href="/catalog/kids/" class="link button">Kids</a>
                 <a href="/catalog/premium/" class="link button">Premium</a>
             </nav>
-            <div class="social-column">
-                <p class="text p2">Мы в соцсетях:</p>
-                <?php if ($siteVK): ?>
-                    <div>
-                        <?= tpl('ui/page-link', [
-                            'type' => 'link',
-                            'text' => 'ВКонтакте',
-                            'link' => $siteVK,
-                            'target' => '_blank'
-                        ]) ?>
-                    </div>
-                <?php endif ?>
-                <?php if ($siteTelegram): ?>
-                    <div>
-                        <?= tpl('ui/page-link', [
-                            'type' => 'link',
-                            'text' => 'Телеграмм',
-                            'link' => $siteTelegram,
-                            'target' => '_blank'
-                        ]) ?>
-                    </div>
-                <?php endif ?>
-                <?php if ($siteOK): ?>
-                    <div>
-                        <?= tpl('ui/page-link', [
-                            'type' => 'link',
-                            'text' => 'Одноклассники',
-                            'link' => $siteOK,
-                            'target' => '_blank'
-                        ]) ?>
-                    </div>
-                <?php endif ?>
-                <?php if ($siteYoutube): ?>
-                    <div>
-                        <?= tpl('ui/page-link', [
-                            'type' => 'link',
-                            'text' => 'YouTube',
-                            'link' => $siteYoutube,
-                            'target' => '_blank'
-                        ]) ?>
-                    </div>
-                <?php endif ?>
-            </div>
+            <?php if ($siteVK || $siteTelegram || $siteOK || $siteYoutube): ?>
+                <div class="social-column">
+                    <p class="text p2">Мы в соцсетях:</p>
+                    <?php if ($siteVK): ?>
+                        <div>
+                            <?= tpl('ui/page-link', [
+                                'type' => 'link',
+                                'text' => 'ВКонтакте',
+                                'link' => $siteVK,
+                                'target' => '_blank'
+                            ]) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($siteTelegram): ?>
+                        <div>
+                            <?= tpl('ui/page-link', [
+                                'type' => 'link',
+                                'text' => 'Телеграмм',
+                                'link' => $siteTelegram,
+                                'target' => '_blank'
+                            ]) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($siteOK): ?>
+                        <div>
+                            <?= tpl('ui/page-link', [
+                                'type' => 'link',
+                                'text' => 'Одноклассники',
+                                'link' => $siteOK,
+                                'target' => '_blank'
+                            ]) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($siteYoutube): ?>
+                        <div>
+                            <?= tpl('ui/page-link', [
+                                'type' => 'link',
+                                'text' => 'YouTube',
+                                'link' => $siteYoutube,
+                                'target' => '_blank'
+                            ]) ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+            <?php endif ?>
             <div class="marketplace-column">
                 <p class="text p2">Мы на маркетплейсах:</p>
                 <?php if ($siteWildberries): ?>
@@ -218,10 +220,6 @@ else
 <div class="mobile-menu mobile-info" x-data x-transition x-show="$store.mobileMenu.isOpen">
     <div class="mobile-menu__body">
         <div class="mobile-menu__content wrap">
-            <?= tpl('components/lang-switch', [
-                'lang' => 'RU'
-            ]) ?>
-
             <? $APPLICATION->IncludeComponent(
                 "bitrix:menu",
                 "header-menu",

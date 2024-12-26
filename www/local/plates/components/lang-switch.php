@@ -5,8 +5,8 @@
  */
 ?>
 
-<div class="lang-switch p2">
-    <a href="/" class="lang <?= $lang == 'RU' ? 'active' : '' ?>">RU</a>
+<div class="lang-switch p2" x-data="LangSwitch">
+    <button @click="setLang('ru')" :class="lang == 'ru' && 'active'" class="lang">RU</button>
     <div class="line"></div>
-    <a href="/" class="lang <?= $lang == 'EN' ? 'active' : '' ?>">EN</a>
+    <button @click="setLang('en')" :class="lang == 'en' && 'active'" class="lang">EN</button>
 </div>

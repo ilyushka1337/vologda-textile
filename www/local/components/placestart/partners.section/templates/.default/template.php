@@ -6,7 +6,9 @@
                     <div class="label label--gray">партнёры</div>
                 </div>
                 <div class="text-column">
-                    <h2 class="title h1">Нам доверяют более 5000 партнеров</h2>
+                    <?php if ($arParams['TITLE']): ?>
+                        <h2 class="title h1"><?= $arParams['TITLE'] ?></h2>
+                    <?php endif ?>
                 </div>
             </div>
         </div>

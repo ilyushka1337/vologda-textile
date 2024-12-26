@@ -4,26 +4,22 @@
         <div class="container">
             <div class="title-wrap">
                 <div class="label label--gray">производство</div>
-                <h1 class="h1 title">Ткани</h1>
+                <?php if ($arParams['TITLE']): ?>
+                    <h2 class="h1 title"><?= $arParams['TITLE'] ?></h2>
+                <?php endif ?>
             </div>
 
             <div class="text-wrap">
-                <div class="content-text">
-                    <p>Мы предлагаем широкий выбор готовых тканей разного назначения.</p>
-                    <ul>
-                        <li>Ткани для пледов и покрывал</li>
-                        <li>Ткани для полотенец</li>
-                        <li>Промышленные ткани</li>
-                        <li>Ткани для постельного белья</li>
-                    </ul>
-                </div>
-                <div class="content-text">
-                    <p>Наш ассортимент включает в себя ткани высокого качества, подходящие для различных целей —
-                        от пошива
-                        одежды и предметов интерьера до специализированной одежды</p>
-                    <p>Мы гарантируем высокое качество продукции и разнообразие вариантов, чтобы удовлетворить ваши
-                        потребности</p>
-                </div>
+                <?php if ($arResult['TEXT_1']): ?>
+                    <div class="content-text">
+                        <?= $arResult['TEXT_1'] ?>
+                    </div>
+                <?php endif ?>
+                <?php if ($arResult['TEXT_2']): ?>
+                    <div class="content-text">
+                        <?= $arResult['TEXT_2'] ?>
+                    </div>
+                <?php endif ?>
                 <?= tpl('ui/page-link', [
                     'type' => 'link',
                     'text' => 'Выбрать ткань',
@@ -32,8 +28,12 @@
             </div>
 
             <div class="img-wrap">
-                <img src="/local/assets/fabrics-1.jpg" loading="lazy" class="img1">
-                <img src="/local/assets/fabrics-2.jpg" loading="lazy" class="img2">
+                <?php if ($arResult['PICTURE_1']): ?>
+                    <img src="<?= $arResult['PICTURE_1']['SRC'] ?>" loading="lazy" class="img1">
+                <?php endif ?>
+                <?php if ($arResult['PICTURE_2']): ?>
+                    <img src="<?= $arResult['PICTURE_2']['SRC'] ?>" loading="lazy" class="img2">
+                <?php endif ?>
             </div>
         </div>
     </div>

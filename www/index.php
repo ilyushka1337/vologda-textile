@@ -14,11 +14,19 @@ $APPLICATION->SetTitle("1С-Битрикс: Управление сайтом");
     "IS_PAGE_BLOCK" => "Y"
 ]);
 ?>
-<? $APPLICATION->IncludeComponent('placestart:votex.sections', '', [
-    "CACHE_TIME" => "3600000",
-    "CACHE_TYPE" => "A",
-    "IS_PAGE_BLOCK" => "N"
-]);
+<? $APPLICATION->IncludeComponent(
+	"placestart:votex.sections", 
+	".default", 
+	array(
+		"CACHE_TIME" => "3600000",
+		"CACHE_TYPE" => "A",
+		"IS_PAGE_BLOCK" => "N",
+		"COMPONENT_TEMPLATE" => ".default",
+		"TEXT_1_CODE" => "glavnaya-o-brende-pervyy-tekst",
+		"TEXT_2_CODE" => "glavnaya-o-brende-vtoroy-tekst"
+	),
+	false
+);
 ?>
 <? $APPLICATION->IncludeComponent('placestart:new.section', '', [
     "CACHE_TIME" => "3600000",
@@ -48,11 +56,20 @@ $APPLICATION->SetTitle("1С-Битрикс: Управление сайтом");
     false
 );
 ?>
-<? $APPLICATION->IncludeComponent('placestart:fabrics.section', '', [
-    "CACHE_TIME" => "3600000",
-    "CACHE_TYPE" => "A",
-    "IS_PAGE_BLOCK" => "Y"
-]);
+<? $APPLICATION->IncludeComponent(
+	"placestart:fabrics.section", 
+	".default", 
+	array(
+		"CACHE_TIME" => "3600000",
+		"CACHE_TYPE" => "A",
+		"IS_PAGE_BLOCK" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"TITLE" => "Ткани",
+		"TEXT_1_CODE" => "glavnaya-tkani-pervyy-tekst",
+		"TEXT_2_CODE" => "glavnaya-tkani-vtoroy-tekst"
+	),
+	false
+);
 ?>
 <? $APPLICATION->IncludeComponent('placestart:advantages.section', '', [
     "CACHE_TIME" => "3600000",
@@ -74,11 +91,18 @@ $APPLICATION->SetTitle("1С-Битрикс: Управление сайтом");
     "IMG_POSITION" => "right"
 ]);
 ?>
-<? $APPLICATION->IncludeComponent('placestart:partners.section', '', [
-    "CACHE_TIME" => "3600000",
-    "CACHE_TYPE" => "A",
-    "IS_PAGE_BLOCK" => "Y"
-]);
+<? $APPLICATION->IncludeComponent(
+	"placestart:partners.section", 
+	".default", 
+	array(
+		"CACHE_TIME" => "3600000",
+		"CACHE_TYPE" => "A",
+		"IS_PAGE_BLOCK" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"TITLE" => "Нам доверяют более 5000 партнеров"
+	),
+	false
+);
 ?>
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

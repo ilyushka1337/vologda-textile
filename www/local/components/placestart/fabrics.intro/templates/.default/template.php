@@ -1,18 +1,24 @@
 <section class="fabrics-intro-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
     <div class="container">
-        <h1 class="title h1">Ткани</h1>
-        <div class="text1 content-text">
-            <p>Вологодский текстильный комбинат предлагает широкий выбор готовых тканей разного назначения
-            </p>
-        </div>
-        <div class="text2 content-text">
-            <p>Наш ассортимент включает в себя ткани высокого качества, подходящие для различных целей —
-                от пошива одежды и предметов интерьера до специализированной одежды</p>
-            <p>Мы гарантируем высокое качество продукции и разнообразие вариантов, чтобы удовлетворить ваши
-                потребности</p>
-        </div>
+        <?php if ($arParams['TITLE']): ?>
+            <h1 class="title h1"><?= $arParams['TITLE'] ?></h1>
+        <?php endif ?>
+        <?php if ($arResult['TEXT_1']): ?>
+            <div class="text1 content-text">
+                <?= $arResult['TEXT_1'] ?>
+            </div>
+        <?php endif ?>
+        <?php if ($arResult['TEXT_2']): ?>
+            <div class="text2 content-text">
+                <?= $arResult['TEXT_2'] ?>
+            </div>
+        <?php endif ?>
         <img src="/local/assets/decor.svg" alt="" class="decor">
-        <img src="/local/assets/fabrics-1.jpg" loading="lazy" class="img1">
-        <img src="/local/assets/fabrics-2.jpg" loading="lazy" class="img2">
+        <?php if ($arResult['PICTURE_1']): ?>
+            <img src="<?= $arResult['PICTURE_1']['SRC'] ?>" loading="lazy" class="img1">
+        <?php endif ?>
+        <?php if ($arResult['PICTURE_2']): ?>
+            <img src="<?= $arResult['PICTURE_2']['SRC'] ?>" loading="lazy" class="img2">
+        <?php endif ?>
     </div>
 </section>

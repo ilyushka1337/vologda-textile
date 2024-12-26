@@ -44,6 +44,9 @@ Alpine.data("HistorySlider", HistorySlider)
 import Video from "./Video";
 Alpine.data("Video", Video)
 
+import LangSwitch from "./LangSwitch";
+Alpine.data("LangSwitch", LangSwitch)
+
 import ContactsMap from "../components/ContactsMap";
 Alpine.data("ContactsMap", ContactsMap)
 
