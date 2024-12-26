@@ -43,7 +43,7 @@
 
     .menu {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         gap: base.clampFluid(40);
 
         .parent {
