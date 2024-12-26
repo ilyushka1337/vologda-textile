@@ -14,7 +14,8 @@ class MainScreenComponent extends Boilerplate
     {
         $this->arResult['SLIDES'] = [];
         $q = ElementSliderTable::getList([
-            'select' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'TITLE', 'LINK', 'PHONE_IMG', 'TABLET_IMG']
+            'select' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'TITLE', 'LINK', 'PHONE_IMG', 'TABLET_IMG'],
+            'order' => ['SORT']
         ]);
 
         while ($slide = $q->fetchObject()) {
@@ -22,9 +23,9 @@ class MainScreenComponent extends Boilerplate
                 'TITLE' => $slide->getTitle(),
                 'TEXT' => $slide->getPreviewText(),
                 'LINK' => $slide->getLink()?->getValue(),
-                'IMG' => Utils::resizeImage($slide->getPreviewPicture(), 1722, 670, 'proportional'),
-                'TABLET_IMG' => Utils::resizeImage($slide->getTabletImg()?->getValue(), 992, 427, 'proportional'),
-                'PHONE_IMG' => Utils::resizeImage($slide->getPhoneImg()?->getValue(), 575, 427, 'proportional')
+                'IMG' => Utils::resizeImage($slide->getPreviewPicture(), 1720, 670, 'proportional'),
+                'TABLET_IMG' => Utils::resizeImage($slide->getTabletImg()?->getValue(), 895, 450, 'proportional'),
+                'PHONE_IMG' => Utils::resizeImage($slide->getPhoneImg()?->getValue(), 540, 720, 'proportional')
             ];
         }
     }
