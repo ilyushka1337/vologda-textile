@@ -220,6 +220,10 @@ else
 <div class="mobile-menu mobile-info" x-data x-transition x-show="$store.mobileMenu.isOpen">
     <div class="mobile-menu__body">
         <div class="mobile-menu__content wrap">
+            <?= tpl('components/lang-switch', [
+                'lang' => 'RU'
+            ]) ?>
+
             <? $APPLICATION->IncludeComponent(
                 "bitrix:menu",
                 "header-menu",
