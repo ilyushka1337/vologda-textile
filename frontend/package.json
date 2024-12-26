@@ -15,7 +15,9 @@
     "devDependencies": {
         "@types/alpinejs": "^3.13.10",
         "@types/node": "^22.9.0",
+        "@unocss/preset-icons": "^0.65.2",
         "sass": "^1.81.0",
+        "unocss": "^0.65.2",
         "vite": "^5.4.11"
     },
     "dependencies": {

@@ -20,6 +20,8 @@ class ContactsSectionComponent extends Boilerplate
     {
         $this->arResult['SITE_PRODUCTION_ADDRESS'] = sprint_options_get('SITE_PRODUCTION_ADDRESS');
         $this->arResult['SITE_STORE_ADDRESS'] = sprint_options_get('SITE_STORE_ADDRESS');
+        $this->arResult['SITE_STORE_PHONE'] = sprint_options_get('SITE_STORE_PHONE');
+        $this->arResult['SITE_STORE_WORK_HOURS'] = sprint_options_get('SITE_STORE_WORK_HOURS');
         $this->arResult['SITE_WORK_HOURS'] = sprint_options_get('SITE_WORK_HOURS');
         $this->arResult['SITE_PHONE'] = sprint_options_get('SITE_PHONE');
         $this->arResult['SITE_EMAIL'] = sprint_options_get('SITE_EMAIL');

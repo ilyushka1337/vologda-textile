@@ -7,13 +7,18 @@ $APPLICATION->SetTitle("Ткани");
 Array()
 );?>
 <?$APPLICATION->IncludeComponent(
-	"placestart:fabrics.intro",
-	"",
-	Array(
+	"placestart:fabrics.intro", 
+	".default", 
+	array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
-		"IS_PAGE_BLOCK" => "Y"
-	)
+		"IS_PAGE_BLOCK" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"TITLE" => "Ткани",
+		"TEXT_1_CODE" => "stranitsa-tkani-tkani-pervyy-tekst",
+		"TEXT_2_CODE" => "stranitsa-tkani-tkani-vtoroy-tekst"
+	),
+	false
 );?>
 <?$APPLICATION->IncludeComponent(
 	"placestart:service.types",

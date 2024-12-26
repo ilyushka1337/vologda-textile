@@ -24,11 +24,13 @@ class NewsSectionComponent extends Boilerplate
             'select' => ['DETAIL_PAGE_URL']
         ])->fetchObject();
 
+
         while ($slide = $q->fetchObject()) {
+            $date = new \DateTime($slide->getActiveFrom());
             $this->arResult['NEWS'][] = [
                 'TITLE' => $slide->getName(),
                 'TEXT' => $slide->getPreviewText(),
-                'ACTIVE_FROM' => $slide->getActiveFrom(),
+                'ACTIVE_FROM' => $date->format('d.m.Y'),
                 'IMG' => Utils::resizeImage($slide->getPreviewPicture(), 1722, 670, 'proportional'),
                 'LINK' => str_replace(['#SITE_DIR#', '#ELEMENT_CODE#'], ['', $slide->getCode()], $iblock->getDetailPageUrl())
             ];

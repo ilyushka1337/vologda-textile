@@ -17,6 +17,14 @@ return (new Builder)
             ->setTitle('Адрес магазина')
     )
     ->addCustomOption(
+        (new StringOption('SITE_STORE_PHONE'))
+            ->setTitle('Номер телефона магазина')
+    )
+    ->addCustomOption(
+        (new StringOption('SITE_STORE_WORK_HOURS'))
+            ->setTitle('Режим работы магазина')
+    )
+    ->addCustomOption(
         (new StringOption('SITE_WORK_HOURS'))
             ->setTitle('Режим работы')
     )
@@ -26,7 +34,7 @@ return (new Builder)
     )
     ->addCustomOption(
         (new StringOption('SITE_PHONE'))
-            ->setTitle('Телефон')
+            ->setTitle('Номер телефона производства')
     )
     ->addCustomOption(
         (new StringOption('SITE_VK'))

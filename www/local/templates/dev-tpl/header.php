@@ -60,7 +60,7 @@ Loader::requireModule('placestart.wishlist');
                             <path d="M0 6.5H8" stroke="#BE0F34" />
                         </svg>
                         Каталог
-                        <span class="icon votex-icon"></span>
+                        <span class="votex-icon"></span>
                     </button>
 
                     <? $APPLICATION->IncludeComponent(

@@ -7,20 +7,20 @@
             <div class="text-column">
                 <div class="logo-column">
                     <div class="logo">
-                        <span class="icon votex-icon"></span>
+                        <span class="votex-icon"></span>
                         <p class="text p1">Наш бренд</p>
                     </div>
                 </div>
-                <div class="content-text">
-                    <p> – бренд готовых текстильных решений для дома от ведущего российского
-                        производителя, Вологодского текстильного комбината</p>
-                </div>
-                <div class="content-text">
-                    <p>
-                        Основанное в 1936 году предприятие выделяется современным парком оборудования, обеспечивающим
-                        полный цикл производства высококачественных тканей, для изготовления средств индивидуальной
-                        защиты, изделий для гостиничного бизнеса и домашнего текстиля.</p>
-                </div>
+                <?php if ($arResult['TEXT_1']): ?>
+                    <div class="content-text">
+                        <?= $arResult['TEXT_1'] ?>
+                    </div>
+                <?php endif ?>
+                <?php if ($arResult['TEXT_2']): ?>
+                    <div class="content-text">
+                        <?= $arResult['TEXT_2'] ?>
+                    </div>
+                <?php endif ?>
                 <div class="link-column">
                     <?= tpl('ui/page-link', [
                         'text' => 'Читать о бренде',

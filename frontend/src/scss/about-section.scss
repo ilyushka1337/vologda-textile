@@ -4,10 +4,19 @@
     padding: base.clampFluid(120) 0;
     background: base.$bg;
 
-    .container {
-        display: grid;
-        grid-template-columns: 43.5% 1fr;
-        gap: 0 base.clampFluid(70);
+    .wrap {
+        display: flex;
+        gap: base.clampFluid(20);
+    }
+
+    .tab {
+        display: flex;
+
+        .grid {
+            display: grid;
+            grid-template-columns: 43.5% 1fr;
+            gap: 0 base.clampFluid(70);
+        }
     }
 
     .top {
@@ -25,61 +34,59 @@
     }
 
     .img-column {
-        display: grid;
-        grid-template-columns: auto repeat(2, 1fr);
-        gap: base.clampFluid(20);
-
         .img {
-            width: base.clampFluid(595);
+            width: 100%;
             aspect-ratio: 1/1;
         }
+    }
 
-        .link-block {
-            display: flex;
-            align-items: center;
-            gap: base.clampFluid(16);
-            padding: base.clampFluid(50);
-            border: 1px solid currentColor;
-            writing-mode: vertical-lr;
-            transform: rotate(180deg);
+    .link-block {
+        display: flex;
+        align-items: center;
+        gap: base.clampFluid(16);
+        padding: base.clampFluid(20, 50);
+        border: 1px solid currentColor;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
 
-            .arrow-icon {
-                transform: rotate(90deg);
-                font-size: .5em;
-            }
+        .arrow-icon {
+            transform: rotate(90deg);
+            font-size: .5em;
+        }
 
-            &:hover {
-                color: base.$red;
-            }
+        &:hover {
+            color: base.$red;
         }
     }
 
     @media (max-width: 1279px) {
         .top {
             grid-template-columns: 100%;
-            grid-column: auto;
         }
 
-        .container {
-            grid-template-columns: 100%;
+        .tab {
+            .grid {
+                grid-template-columns: 100%;
+            }
+        }
+
+        .wrap {
+            flex-direction: column;
         }
 
         .img-column {
             margin-top: base.clampFluid(27, 27);
             grid-template-columns: 100%;
+        }
 
-            .img {
-                width: 100%;
-            }
+        .link-block {
+            width: 100%;
+            transform: none;
+            justify-content: space-between;
+            writing-mode: initial;
 
-            .link-block {
+            .arrow-icon {
                 transform: none;
-                justify-content: space-between;
-                writing-mode: initial;
-
-                .arrow-icon {
-                    transform: none;
-                }
             }
         }
     }

@@ -28,6 +28,23 @@
         }
     }
 
+    &__textarea {
+        display: block;
+        resize: none;
+
+        &--outline-gray {
+            border: 1px solid var(--invalid-color, base.$gray);
+            background: transparent;
+            color: base.$black;
+            --placeholder-color: #{base.$gray};
+        }
+
+        &--md {
+            padding: base.clampFluid(12);
+            @include base.p1;
+        }
+    }
+
     &--invalid {
         --invalid-color: #B12B2B;
     }

@@ -18,10 +18,11 @@ $this->setFrameMode(true);
 <div class="news-grid">
 	<?php
 	foreach ($arResult['ITEMS'] as $arPost) {
+		$date = new \DateTime($arPost['ACTIVE_FROM']);
 		echo tpl('components/post-block', [
 			'title' => $arPost['NAME'],
 			'img' => $arPost['PREVIEW_PICTURE'],
-			'date' => $arPost['ACTIVE_FROM'],
+			'date' => $date->format('d.m.Y'),
 			'link' => $arPost['DETAIL_PAGE_URL']
 		]);
 	}

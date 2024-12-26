@@ -9,7 +9,7 @@
     }
 
     .swiper-slide {
-        height: base.clampFluid(670);
+        aspect-ratio: 1720/670;
         padding: base.clampFluid(147) base.clampFluid(147) base.clampFluid(119);
         background: base.$bg;
     }
@@ -70,8 +70,8 @@
         }
 
         .swiper-slide {
+            aspect-ratio: 895/450;
             padding: 24px 15px;
-            height: 427px;
         }
 
         .bg {
@@ -100,6 +100,12 @@
                 width: auto;
                 flex: 1 0 auto;
             }
+        }
+    }
+
+    @media (max-width: 575px) {
+        .swiper-slide {
+            aspect-ratio: 540/720;
         }
     }
 }

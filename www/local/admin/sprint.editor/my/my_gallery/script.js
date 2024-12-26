@@ -3,6 +3,7 @@ sprint_editor.registerBlock("my_gallery", function ($, $el, data) {
 		{
 			images: [],
 			perRow: 2,
+			aspectRatio: '3-to-2'
 		},
 		data
 	)
@@ -30,6 +31,7 @@ sprint_editor.registerBlock("my_gallery", function ($, $el, data) {
 		})
 
 		data.perRow = $el.find('[name="per-row"]').val()
+		data.aspectRatio = $el.find('[name="aspect-ratio"]').val()
 
 		return data
 	}
@@ -159,6 +161,7 @@ sprint_editor.registerBlock("my_gallery", function ($, $el, data) {
 		}
 
 		$el.find('[name="per-row"]').val(data.perRow)
+		$el.find('[name="aspect-ratio"]').val(data.aspectRatio)
 	}
 	var togglepanel = function () {
 		if ($el.hasClass("sp-show")) {

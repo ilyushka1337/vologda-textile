@@ -14,9 +14,24 @@ $siteOzon = sprint_options_get('SITE_OZON');
 
 </main>
 <?
-$APPLICATION->IncludeComponent('placestart:feedback.section', '', [
-    'IS_PAGE_BLOCK' => 'N'
-]);
+if ($APPLICATION->GetCurDir() == '/fabrics/')
+    $APPLICATION->IncludeComponent('placestart:order-form.section', '', [
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "N",
+        'IS_PAGE_BLOCK' => 'N'
+    ]);
+elseif ($APPLICATION->GetCurDir() == '/partnership/')
+    $APPLICATION->IncludeComponent('placestart:order-form.section', '', [
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "N",
+        'IS_PAGE_BLOCK' => 'N'
+    ]);
+else
+    $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
+        "CACHE_TIME" => "3600000",
+        "CACHE_TYPE" => "N",
+        'IS_PAGE_BLOCK' => 'N'
+    ]);
 ?>
 <footer class="footer">
     <div class="top">
@@ -35,49 +50,51 @@ $APPLICATION->IncludeComponent('placestart:feedback.section', '', [
                 <a href="/catalog/kids/" class="link button">Kids</a>
                 <a href="/catalog/premium/" class="link button">Premium</a>
             </nav>
-            <div class="social-column">
-                <p class="text p2">Мы в соцсетях:</p>
-                <?php if ($siteVK): ?>
-                    <div>
-                        <?= tpl('ui/page-link', [
-                            'type' => 'link',
-                            'text' => 'ВКонтакте',
-                            'link' => $siteVK,
-                            'target' => '_blank'
-                        ]) ?>
-                    </div>
-                <?php endif ?>
-                <?php if ($siteTelegram): ?>
-                    <div>
-                        <?= tpl('ui/page-link', [
-                            'type' => 'link',
-                            'text' => 'Телеграмм',
-                            'link' => $siteTelegram,
-                            'target' => '_blank'
-                        ]) ?>
-                    </div>
-                <?php endif ?>
-                <?php if ($siteOK): ?>
-                    <div>
-                        <?= tpl('ui/page-link', [
-                            'type' => 'link',
-                            'text' => 'Одноклассники',
-                            'link' => $siteOK,
-                            'target' => '_blank'
-                        ]) ?>
-                    </div>
-                <?php endif ?>
-                <?php if ($siteYoutube): ?>
-                    <div>
-                        <?= tpl('ui/page-link', [
-                            'type' => 'link',
-                            'text' => 'YouTube',
-                            'link' => $siteYoutube,
-                            'target' => '_blank'
-                        ]) ?>
-                    </div>
-                <?php endif ?>
-            </div>
+            <?php if ($siteVK || $siteTelegram || $siteOK || $siteYoutube): ?>
+                <div class="social-column">
+                    <p class="text p2">Мы в соцсетях:</p>
+                    <?php if ($siteVK): ?>
+                        <div>
+                            <?= tpl('ui/page-link', [
+                                'type' => 'link',
+                                'text' => 'ВКонтакте',
+                                'link' => $siteVK,
+                                'target' => '_blank'
+                            ]) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($siteTelegram): ?>
+                        <div>
+                            <?= tpl('ui/page-link', [
+                                'type' => 'link',
+                                'text' => 'Телеграмм',
+                                'link' => $siteTelegram,
+                                'target' => '_blank'
+                            ]) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($siteOK): ?>
+                        <div>
+                            <?= tpl('ui/page-link', [
+                                'type' => 'link',
+                                'text' => 'Одноклассники',
+                                'link' => $siteOK,
+                                'target' => '_blank'
+                            ]) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($siteYoutube): ?>
+                        <div>
+                            <?= tpl('ui/page-link', [
+                                'type' => 'link',
+                                'text' => 'YouTube',
+                                'link' => $siteYoutube,
+                                'target' => '_blank'
+                            ]) ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+            <?php endif ?>
             <div class="marketplace-column">
                 <p class="text p2">Мы на маркетплейсах:</p>
                 <?php if ($siteWildberries): ?>
