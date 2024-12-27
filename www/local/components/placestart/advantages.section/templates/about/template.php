@@ -11,14 +11,16 @@
             <div class="advantage">
                 <img src="/local/assets/advantage-1.svg" loading="lazy" class="img">
                 <div class="text p1">
-                    <p class="h2">Выпуск составляет 5 млн</p>
+                    <p>Выпуск составляет</p>
+                    <p class="h2">5 млн</p>
                     <p>погонных метров в год</p>
                 </div>
             </div>
             <div class="advantage">
                 <img src="/local/assets/advantage-3.svg" loading="lazy" class="img">
                 <div class="text p1">
-                    <p class="h2">В ассортименте порядка 40 тыс.</p>
+                    <p>В ассортименте порядка</p>
+                    <p class="h2">40 тыс.</p>
                     <p>видов тканей</p>
                 </div>
             </div>
