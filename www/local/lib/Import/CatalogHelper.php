@@ -152,7 +152,7 @@ class CatalogHelper
      */
     public function offer(array $info, int $parentId): int|null
     {
-        $offerID = $this->findOffer($info['BARCODE']);
+        $offerID = $this->findOffer($info['BARCODE'], $info['IS_NEW']);
 
         $info['IS_NEW'] == 'N' ? 1 : 2;
         $info['SIZE'] ? $this->sizeHelper->value($info['SIZE']) : null;
@@ -355,11 +355,11 @@ class CatalogHelper
         return true;
     }
 
-    private function findOffer(string $barcode): int|null
+    private function findOffer(string $barcode, string $new): int|null
     {
         $q = ElementOffersTable::getList([
             'select' => ['ID'],
-            'filter' => ['BARCODE.VALUE' => $barcode],
+            'filter' => ['BARCODE.VALUE' => $barcode, 'IS_NEW.VALUE' => $new],
             'limit' => 1
         ]);
 
