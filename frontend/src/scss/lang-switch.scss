@@ -11,9 +11,18 @@
         background: currentColor;
     }
 
-    .lang {
-        &:not(.active) {
+    a.glink{
+        &.gt-current-lang{
+            font-weight: inherit;
+        }
+
+        &:not(.gt-current-lang){
             color: rgba(base.$black, .3);
+        }
+
+        &:not(:first-child){
+            border-left: 1px solid base.$black;
+            padding-left: base.clampFluid(3);
         }
     }
 }

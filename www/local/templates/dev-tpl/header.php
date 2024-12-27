@@ -37,6 +37,9 @@ Loader::requireModule('placestart.wishlist');
     <?php
     $wishlist = new Wishlist('WISHLIST');
     ?>
+
+    <script>window.gtranslateSettings = {"default_language":"ru","languages":["ru","en"],"wrapper_selector":"#lang-switch, #lang-switch-mobile"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/lc.js" defer></script>
 </head>
 
 <body hx-vals='{"sessid": "<?= bitrix_sessid() ?>"}'>
@@ -111,9 +114,8 @@ Loader::requireModule('placestart.wishlist');
                     <span class="icon phone-icon"></span>
                 </a>
 
-                <?= tpl('components/lang-switch', [
-                    'lang' => 'RU'
-                ]) ?>
+                <div class="lang-switch p2" id="lang-switch">
+                </div>
             </div>
         </header>
         <main id="main">
