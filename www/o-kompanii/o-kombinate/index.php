@@ -26,13 +26,21 @@ $APPLICATION->SetTitle("О комбинате");
 	)
 ); ?>
 <? $APPLICATION->IncludeComponent(
-	"placestart:texts.block",
-	"",
+	"placestart:texts.block", 
+	".default", 
 	array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
-		"IS_PAGE_BLOCK" => "Y"
-	)
+		"IS_PAGE_BLOCK" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"ELEMENT_CODES" => array(
+			0 => "moshchnost-kombinata",
+			1 => "osnashchenie-predpriyatiya",
+			2 => "vypuskaemaya-produktsiya",
+			3 => "kontrol-za-kachestvom-produktsii",
+		)
+	),
+	false
 ); ?>
 <? $APPLICATION->IncludeComponent(
 	"placestart:company.history",

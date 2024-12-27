@@ -1,40 +1,10 @@
 <section class="texts-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
     <div class="container container-sm">
-        <div class="block">
-            <h2 class="title h2">Мощность комбината</h2>
-            <div class="content-text">
-                    <p>Производственные мощности комбината сегодня заполнены на 100%.
-                        Ткацкое оборудование работает круглосуточно, поэтому заказы обслуживаются без перебоев.</p>
+        <?php foreach ($arResult['ELEMENS'] as $elem): ?>
+            <div class="block">
+                <h2 class="title h2"><?= $elem['NAME'] ?></h2>
+                <div class="content-text"><?= $elem['PREVIEW_TEXT'] ?></div>
             </div>
-        </div>
-        <div class="block">
-            <h2 class="title h2">Оснащение предприятия</h2>
-            <div class="content-text">
-                <p>На производстве задействованы: </p>
-                <ul>
-                    <li>Парк современных ткацких станков;</li>
-                    <li>Оборудование для отбелки, крашения и нанесения функциональных пропиток на ткани;</li>
-                    <li>Аппараты для крашения пряжи;</li>
-                    <li>Швейный цех;</li>
-                    <li>Собственная лаборатория для контроля качества на каждом этапе производства.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="block">
-            <h2 class="title h2">Выпускаемая продукция</h2>
-            <div class="content-text">
-                <ul>
-                    <li>Домашний текстиль</li>
-                    <li>Текстиль для отелей, гостиниц, ресторанов, СПА-комплексов</li>
-                    <li>Ткани для пошива спецодежды со спецсвойствами</li>
-                </ul>
-            </div>
-        </div>
-        <div class="block">
-            <h2 class="title h2">Контроль за качеством продукции</h2>
-            <div class="content-text">
-                <p>На предприятии строго следят за качеством производимой продукции. Внедрена и успешно функционирует многоступенчатая система контроля качества.</p>
-            </div>
-        </div>
+        <?php endforeach ?>
     </div>
 </section>
