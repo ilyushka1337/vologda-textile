@@ -2,11 +2,10 @@
     <div class="container" x-data="{activeTab: 0}">
         <div class="top">
             <div class="label-column">
-                <div class="label label--gray">о нас</div>
             </div>
             <div class="title-column">
-                <h2 class="h1 title">Всё что вы хотели знать <span class="red-text">про нас</span></h2>
-            </div>
+                <h2 class="h1 title">Всё что вы хотели знать <span class="red-text">о нас</span></h2>
+            </div>`
         </div>
         <div class="wrap">
             <?php foreach ($arResult['ELEMENTS'] as $i => $elem): ?>
