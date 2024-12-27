@@ -2,6 +2,7 @@
 use Placestart\Wishlist\Wishlist;
 use Bitrix\Main\Loader;
 Loader::requireModule('placestart.wishlist');
+Loader::requireModule('sprint.options');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -110,7 +111,7 @@ Loader::requireModule('placestart.wishlist');
                     ]) ?>
                 </a>
 
-                <a href="tel:" class="action phone">
+                <a href="tel:<?= sprint_options_get('SITE_STORE_PHONE') ?>" class="action phone">
                     <span class="icon phone-icon"></span>
                 </a>
 
