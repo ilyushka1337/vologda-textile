@@ -39,7 +39,15 @@
                 border: 1px solid transparent;
 
                 &.active {
-                    border-color: base.$red;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba($color: base.$red, $alpha: .3);
+                    }
                 }
             }
         }
