@@ -13,23 +13,23 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@types/alpinejs": "^3.13.10",
-        "@types/node": "^22.9.0",
+        "@types/alpinejs": "^3.13.11",
+        "@types/node": "^22.10.2",
         "@unocss/preset-icons": "^0.65.2",
-        "sass": "^1.81.0",
-        "unocss": "^0.65.2",
+        "sass": "^1.83.0",
+        "unocss": "^0.65.3",
         "vite": "^5.4.11"
     },
     "dependencies": {
-        "@alpinejs/collapse": "^3.14.1",
-        "@alpinejs/intersect": "^3.14.1",
-        "@alpinejs/mask": "^3.14.1",
+        "@alpinejs/collapse": "^3.14.8",
+        "@alpinejs/intersect": "^3.14.8",
+        "@alpinejs/mask": "^3.14.8",
         "@fancyapps/ui": "^5.0.36",
         "@fontsource-variable/montserrat": "^5.1.0",
-        "alpinejs": "^3.14.7",
+        "alpinejs": "^3.14.8",
         "htmx.org": "^1.9.12",
-        "ky": "^1.7.1",
-        "swiper": "^11.1.14"
+        "ky": "^1.7.4",
+        "swiper": "^11.1.15"
     },
     "browserslist": "> 0.9%, last 4 versions, iOS 14, not dead"
 }
