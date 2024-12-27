@@ -112,7 +112,7 @@ else
     </div>
     <div class="bottom">
         <div class="container">
-            <p class="p2">© ООО "Вологодский текстильный комбинат", <?= date('Y') ?></p>
+            <p class="p2">ООО «Вологодский текстильный комбинат», <?= date('Y') ?></p>
             <a href="/privacy-policy/" class="link p2">Политика конфиденциальности</a>
             <a href="https://place-start.ru/" target="_blank" class="link ps-link p2">
                 Сделано в
