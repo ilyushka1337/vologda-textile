@@ -21,8 +21,6 @@
 
     .top {
         margin-bottom: base.clampFluid(70);
-        @include base.label-columns-grid;
-        grid-column: span 2;
     }
 
     .text-column {

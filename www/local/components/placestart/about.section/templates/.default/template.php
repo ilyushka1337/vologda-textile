@@ -4,14 +4,12 @@ use Placestart\Core\Utils;
 <section class="about-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
     <div class="container" x-data="{activeTab: 0}">
         <div class="top">
-            <div class="label-column">
-            </div>
+            <?php if ($arParams['TITLE']): ?>
+                <h2 class="h1 title">
+                    <?= Utils::wrapGroup('<span class="red-text">$1<span>', $arParams['TITLE']) ?>
+                </h2>
+            <?php endif ?>
             <div class="title-column">
-                <?php if ($arParams['TITLE']): ?>
-                    <h2 class="h1 title">
-                        <?= Utils::wrapGroup('<span class="red-text">$1<span>', $arParams['TITLE']) ?>
-                    </h2>
-                <?php endif ?>
             </div>
         </div>
         <div class="wrap">
