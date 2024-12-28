@@ -1,11 +1,18 @@
+<?php
+use Placestart\Core\Utils;
+?>
 <section class="about-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
     <div class="container" x-data="{activeTab: 0}">
         <div class="top">
             <div class="label-column">
             </div>
             <div class="title-column">
-                <h2 class="h1 title">Всё что вы хотели знать <span class="red-text">о нас</span></h2>
-            </div>`
+                <?php if ($arParams['TITLE']): ?>
+                    <h2 class="h1 title">
+                        <?= Utils::wrapGroup('<span class="red-text">$1<span>', $arParams['TITLE']) ?>
+                    </h2>
+                <?php endif ?>
+            </div>
         </div>
         <div class="wrap">
             <?php foreach ($arResult['ELEMENTS'] as $i => $elem): ?>

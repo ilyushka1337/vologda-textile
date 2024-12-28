@@ -48,6 +48,7 @@ class AboutSectionComponent extends Boilerplate
             'ABOUT_ELEMENT_CODE' => $params->string('Символьный код текста "О комбинате"'),
             'PRODUCTION_ELEMENT_CODE' => $params->string('Символьный код текста "Производство"'),
             'PARTNERSHIP_ELEMENT_CODE' => $params->string('Символьный код текста "Партнерам"'),
+            'TITLE' => $params->string('Заголовок')
         ]);
         return $params;
     }

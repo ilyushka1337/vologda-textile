@@ -12,13 +12,10 @@
     }
 
     .advantage {
-        .title {
-            margin: base.clampFluid(-50) 0 base.clampFluid(30);
-        }
 
         .text {
             width: 80%;
-            margin: 0 auto;
+            margin: base.clampFluid(-50) auto 0;
         }
 
         .title,
@@ -30,6 +27,7 @@
             width: base.clampFluid(200);
             height: base.clampFluid(183);
             margin: 0 auto;
+            object-fit: scale-down;
         }
     }
 

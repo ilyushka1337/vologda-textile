@@ -1,12 +1,19 @@
+<?php
+use Placestart\Core\Utils;
+?>
 <?php if (count($arResult['REVIEWS']) > 0): ?>
     <section class="reviews-section <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
         <div class="container">
             <div class="top">
                 <div class="label-column">
-                    <div class="label label--gray">о бренде</div>
+                    <div class="label label--gray">отзывы</div>
                 </div>
                 <div class="text-column">
-                    <h2 class="title h1">Ваше мнение о наших товарах</h2>
+                    <?php if ($arParams['TITLE']): ?>
+                        <h2 class="title h1">
+                            <?= Utils::wrapGroup('<span class="red-text">$1<span>', $arParams['TITLE']) ?>
+                        </h2>
+                    <?php endif ?>
                 </div>
             </div>
 
