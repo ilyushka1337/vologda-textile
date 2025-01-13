@@ -38,8 +38,9 @@ class ReviewsSectionComponent extends Boilerplate
     public static function getComponentParameters(): Parameters
     {
         $params = new Parameters();
-        $params->group('DATA', '', 100, [
-            'IS_PAGE_BLOCK' => $params->checkbox('Добавить отступы блока')
+        $params->group('DATA', 'Параметры', 100, [
+            'IS_PAGE_BLOCK' => $params->checkbox('Добавить отступы блока'),
+            'TITLE' => $params->string('Заголовок')
         ]);
         return $params;
     }

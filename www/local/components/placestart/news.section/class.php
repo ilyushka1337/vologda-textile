@@ -16,7 +16,10 @@ class NewsSectionComponent extends Boilerplate
         $this->arResult['NEWS'] = [];
         $q = ElementNewsTable::getList([
             'select' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'ACTIVE_FROM', 'CODE'],
-            'limit' => 3
+            'limit' => 3,
+            'order' => [
+                'ACTIVE_FROM' => 'DESC'
+            ]
         ]);
 
         $iblock = IblockTable::getList([

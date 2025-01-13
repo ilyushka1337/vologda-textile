@@ -2,6 +2,7 @@
 use Placestart\Wishlist\Wishlist;
 use Bitrix\Main\Loader;
 Loader::requireModule('placestart.wishlist');
+Loader::requireModule('sprint.options');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -38,7 +39,7 @@ Loader::requireModule('placestart.wishlist');
     $wishlist = new Wishlist('WISHLIST');
     ?>
 
-    <script>window.gtranslateSettings = {"default_language":"ru","languages":["ru","en"],"wrapper_selector":"#lang-switch, #lang-switch-mobile"}</script>
+    <script>window.gtranslateSettings = { "default_language": "ru", "languages": ["ru", "en"], "wrapper_selector": "#lang-switch, #lang-switch-mobile" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/lc.js" defer></script>
 </head>
 
@@ -110,7 +111,7 @@ Loader::requireModule('placestart.wishlist');
                     ]) ?>
                 </a>
 
-                <a href="tel:" class="action phone">
+                <a href="tel:<?= sprint_options_get('SITE_PHONE') ?>" class="action phone">
                     <span class="icon phone-icon"></span>
                 </a>
 

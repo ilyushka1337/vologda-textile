@@ -1,8 +1,4 @@
 <?
-use Bitrix\Main\Loader;
-
-Loader::requireModule('sprint.options');
-
 $siteVK = sprint_options_get('SITE_VK');
 $siteTelegram = sprint_options_get('SITE_TELEGRAM');
 $siteOK = sprint_options_get('SITE_OK');
