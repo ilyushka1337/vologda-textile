@@ -12,9 +12,6 @@
     }
 
     .text-column {
-        display: flex;
-        flex-direction: column;
-        gap: base.clampFluid(20);
         flex: 0 0 38%;
     }
 
