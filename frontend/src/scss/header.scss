@@ -17,7 +17,7 @@
     .catalog-button {
         display: flex;
         align-items: center;
-        padding: base.clampFluid(10) base.clampFluid(16);
+        padding: base.clampFluid(10) base.clampFluid(16) base.clampFluid(6);
         line-height: 1.3;
         font-weight: 500;
         border: 1px solid #CBCCD1;
@@ -29,7 +29,8 @@
         }
 
         .votex-2-icon {
-            width: 3em;
+            width: 4em;
+            transform: translateY(-3px);
             margin-left: base.clampFluid(6);
         }
     }
