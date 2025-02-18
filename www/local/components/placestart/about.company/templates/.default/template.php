@@ -1,9 +1,12 @@
-<section class="about-company <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
-    <div class="container">
-        <div class="text-column">
-            <h1 class="title h1">Вологодский текстильный комбинат / Vologda textile factory</h1>
-            <p class="text p1">Вологодский текстильный комбинат — это уникальный производственный комплекс с мощной инфраструктурой, которая развита технической, организационной и научной базой.</p>
+<?php if (isset($arResult['TEXT']) && $arResult['TEXT']): ?>
+    <section class="about-company <?= $arParams['IS_PAGE_BLOCK'] == 'Y' ? 'page-block' : '' ?>">
+        <div class="container">
+            <div class="text-column">
+                <div class="content-text"><?= $arResult['TEXT'] ?></div>
+            </div>
+            <?php if ($arResult['IMG']): ?>
+                <img src="<?= $arResult['IMG']['SRC'] ?>" loading="lazy" class="img">
+            <?php endif ?>
         </div>
-        <img src="/local/assets/about-company-grid.jpg" alt="" loading="lazy" class="img">
-    </div>
-</section>
+    </section>
+<?php endif ?>

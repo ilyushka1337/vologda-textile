@@ -1,6 +1,7 @@
 <?php
 use \Bitrix\Iblock\SectionTable;
 use \Bitrix\Iblock\Model\Section;
+use \Bitrix\Iblock\InheritedProperty\SectionValues;
 
 
 if ($arResult['VARIABLES']['SECTION_ID'] > 0) {
@@ -35,4 +36,6 @@ if ($arResult['IS_PARENT_SECTION']) {
     if ($section = $result->fetch()) {
         $arResult['TEXT_CODE'] = $section['UF_SEO_TEXT'];
     }
+
+    $arResult['SEO_PROPS'] = (new SectionValues($arParams['IBLOCK_ID'], $arResult['VARIABLES']['SECTION_ID']))->getValues();
 }

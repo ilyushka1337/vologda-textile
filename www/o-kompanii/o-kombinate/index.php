@@ -1,50 +1,43 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("О комбинате");
-?>
-<? $APPLICATION->IncludeComponent(
+?><?$APPLICATION->IncludeComponent(
 	"placestart:page.head",
 	"",
-	array()
-); ?>
-<? $APPLICATION->IncludeComponent(
+Array()
+);?>
+<?$APPLICATION->IncludeComponent(
 	"placestart:about.company",
 	"",
-	array(
+	Array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
+		"ELEMENT_CODE" => "vologodskiy-tekstilnyy-kombinat-vologda-textile-factory",
 		"IS_PAGE_BLOCK" => "Y"
 	)
-); ?>
-<? $APPLICATION->IncludeComponent(
+);?>
+<?$APPLICATION->IncludeComponent(
 	"placestart:advantages.section",
 	"about",
-	array(
+	Array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
 		"IS_PAGE_BLOCK" => "Y"
 	)
-); ?>
-<? $APPLICATION->IncludeComponent(
-	"placestart:texts.block", 
-	".default", 
-	array(
+);?>
+<?$APPLICATION->IncludeComponent(
+	"placestart:texts.block",
+	".default",
+	Array(
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
-		"IS_PAGE_BLOCK" => "Y",
 		"COMPONENT_TEMPLATE" => ".default",
-		"ELEMENT_CODES" => array(
-			0 => "moshchnost-kombinata",
-			1 => "osnashchenie-predpriyatiya",
-			2 => "vypuskaemaya-produktsiya",
-			3 => "kontrol-za-kachestvom-produktsii",
-		)
-	),
-	false
-); ?>
-<? $APPLICATION->IncludeComponent(
+		"ELEMENT_CODES" => array(0=>"moshchnost-kombinata",1=>"osnashchenie-predpriyatiya",2=>"vypuskaemaya-produktsiya",3=>"kontrol-za-kachestvom-produktsii",),
+		"IS_PAGE_BLOCK" => "Y"
+	)
+);?>
+<?$APPLICATION->IncludeComponent(
 	"placestart:company.history",
 	"",
-	array()
-); ?>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+Array()
+);?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

@@ -64,7 +64,7 @@ Loader::requireModule('sprint.options');
                             <path d="M0 6.5H8" stroke="#BE0F34" />
                         </svg>
                         Каталог
-                        <span class="votex-icon"></span>
+                        <span class="votex-2-icon"></span>
                     </button>
 
                     <? $APPLICATION->IncludeComponent(
